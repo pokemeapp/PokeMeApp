@@ -1,1 +1,1 @@
-# mobile
+# PokeMeApp [![Build Status](https://travis-ci.org/pokemeapp/PokeMeApp.svg?branch=master)](https://travis-ci.org/pokemeapp/PokeMeApp)
