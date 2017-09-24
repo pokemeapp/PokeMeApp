@@ -8,12 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091351F76B2FF00C1451D /* AppDelegate.swift */; };
-		50C091381F76B2FF00C1451D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091371F76B2FF00C1451D /* ViewController.swift */; };
 		50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C091391F76B2FF00C1451D /* Main.storyboard */; };
 		50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C0913C1F76B2FF00C1451D /* Assets.xcassets */; };
 		50C091401F76B2FF00C1451D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C0913E1F76B2FF00C1451D /* LaunchScreen.storyboard */; };
 		50C0914B1F76B2FF00C1451D /* PokeMeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0914A1F76B2FF00C1451D /* PokeMeAppTests.swift */; };
 		50C091561F76B2FF00C1451D /* PokeMeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091551F76B2FF00C1451D /* PokeMeAppUITests.swift */; };
+		50C0916B1F77C16600C1451D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C091651F77C16600C1451D /* RxCocoa.framework */; };
+		50C0916C1F77C16600C1451D /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C091661F77C16600C1451D /* SDWebImage.framework */; };
+		50C0916D1F77C16600C1451D /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C091671F77C16600C1451D /* RxDataSources.framework */; };
+		50C0916E1F77C16600C1451D /* RxGesture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C091681F77C16600C1451D /* RxGesture.framework */; };
+		50C0916F1F77C16600C1451D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C091691F77C16600C1451D /* RxSwift.framework */; };
+		50C091701F77C16600C1451D /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C0916A1F77C16600C1451D /* NSObject_Rx.framework */; };
+		50C091771F77C17F00C1451D /* SDWebImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091711F77C17F00C1451D /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C091781F77C17F00C1451D /* NSObject_Rx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091721F77C17F00C1451D /* NSObject_Rx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C091791F77C17F00C1451D /* RxDataSources.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091731F77C17F00C1451D /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C0917A1F77C17F00C1451D /* RxGesture.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091741F77C17F00C1451D /* RxGesture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C0917B1F77C17F00C1451D /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091751F77C17F00C1451D /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C0917C1F77C17F00C1451D /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091761F77C17F00C1451D /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C0917F1F77C20500C1451D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0917E1F77C20500C1451D /* RegistrationViewController.swift */; };
+		50C091831F77C2CF00C1451D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091821F77C2CF00C1451D /* Constants.swift */; };
+		50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091851F77C36B00C1451D /* UIColor+Hexa.swift */; };
+		50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091891F77C8BF00C1451D /* UILabel+Locale.swift */; };
+		50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0918B1F77C8EC00C1451D /* String+Locale.swift */; };
+		50C091901F77C96800C1451D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C0918D1F77C96800C1451D /* RxBlocking.framework */; };
+		50C091911F77C96800C1451D /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C0918E1F77C96800C1451D /* Differentiator.framework */; };
+		50C091961F77C96F00C1451D /* Differentiator.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091931F77C96E00C1451D /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C091971F77C96F00C1451D /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091941F77C96E00C1451D /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091991F77CBED00C1451D /* RegistrationMasterView.swift */; };
+		50C0919C1F77CC2900C1451D /* RegistrationItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0919B1F77CC2900C1451D /* RegistrationItemViewModel.swift */; };
+		50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0919D1F77CC7200C1451D /* RegistrationItem.swift */; };
+		50C091A01F77E3C800C1451D /* RegistrationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0919F1F77E3C800C1451D /* RegistrationItemCell.swift */; };
+		50C091B21F77F25C00C1451D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50C091B41F77F25C00C1451D /* Localizable.strings */; };
+		50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091B71F77F4B200C1451D /* UIViewController+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +59,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		50C091631F77C11600C1451D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50C091771F77C17F00C1451D /* SDWebImage.framework in CopyFiles */,
+				50C091781F77C17F00C1451D /* NSObject_Rx.framework in CopyFiles */,
+				50C091791F77C17F00C1451D /* RxDataSources.framework in CopyFiles */,
+				50C091961F77C96F00C1451D /* Differentiator.framework in CopyFiles */,
+				50C091971F77C96F00C1451D /* RxBlocking.framework in CopyFiles */,
+				50C0917A1F77C17F00C1451D /* RxGesture.framework in CopyFiles */,
+				50C0917B1F77C17F00C1451D /* RxCocoa.framework in CopyFiles */,
+				50C0917C1F77C17F00C1451D /* RxSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		50C091321F76B2FF00C1451D /* PokeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C091351F76B2FF00C1451D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50C091371F76B2FF00C1451D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50C0913A1F76B2FF00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50C0913C1F76B2FF00C1451D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C0913F1F76B2FF00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +92,36 @@
 		50C091511F76B2FF00C1451D /* PokeMeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeMeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C091551F76B2FF00C1451D /* PokeMeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeMeAppUITests.swift; sourceTree = "<group>"; };
 		50C091571F76B2FF00C1451D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C091651F77C16600C1451D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		50C091661F77C16600C1451D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		50C091671F77C16600C1451D /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		50C091681F77C16600C1451D /* RxGesture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxGesture.framework; path = Carthage/Build/iOS/RxGesture.framework; sourceTree = "<group>"; };
+		50C091691F77C16600C1451D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		50C0916A1F77C16600C1451D /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		50C091711F77C17F00C1451D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		50C091721F77C17F00C1451D /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		50C091731F77C17F00C1451D /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		50C091741F77C17F00C1451D /* RxGesture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxGesture.framework; path = Carthage/Build/iOS/RxGesture.framework; sourceTree = "<group>"; };
+		50C091751F77C17F00C1451D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		50C091761F77C17F00C1451D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		50C0917E1F77C20500C1451D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		50C091821F77C2CF00C1451D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50C091851F77C36B00C1451D /* UIColor+Hexa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hexa.swift"; sourceTree = "<group>"; };
+		50C091891F77C8BF00C1451D /* UILabel+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Locale.swift"; sourceTree = "<group>"; };
+		50C0918B1F77C8EC00C1451D /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
+		50C0918D1F77C96800C1451D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		50C0918E1F77C96800C1451D /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		50C0918F1F77C96800C1451D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		50C091931F77C96E00C1451D /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		50C091941F77C96E00C1451D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		50C091951F77C96F00C1451D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		50C091991F77CBED00C1451D /* RegistrationMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationMasterView.swift; sourceTree = "<group>"; };
+		50C0919B1F77CC2900C1451D /* RegistrationItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationItemViewModel.swift; sourceTree = "<group>"; };
+		50C0919D1F77CC7200C1451D /* RegistrationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationItem.swift; sourceTree = "<group>"; };
+		50C0919F1F77E3C800C1451D /* RegistrationItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationItemCell.swift; sourceTree = "<group>"; };
+		50C091B51F77F26F00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50C091B61F77F27700C1451D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50C091B71F77F4B200C1451D /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +129,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C0916B1F77C16600C1451D /* RxCocoa.framework in Frameworks */,
+				50C0916C1F77C16600C1451D /* SDWebImage.framework in Frameworks */,
+				50C091901F77C96800C1451D /* RxBlocking.framework in Frameworks */,
+				50C091911F77C96800C1451D /* Differentiator.framework in Frameworks */,
+				50C0916D1F77C16600C1451D /* RxDataSources.framework in Frameworks */,
+				50C0916E1F77C16600C1451D /* RxGesture.framework in Frameworks */,
+				50C0916F1F77C16600C1451D /* RxSwift.framework in Frameworks */,
+				50C091701F77C16600C1451D /* NSObject_Rx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +160,20 @@
 		50C091291F76B2FF00C1451D = {
 			isa = PBXGroup;
 			children = (
+				50C091931F77C96E00C1451D /* Differentiator.framework */,
+				50C091941F77C96E00C1451D /* RxBlocking.framework */,
+				50C091951F77C96F00C1451D /* RxTest.framework */,
+				50C091721F77C17F00C1451D /* NSObject_Rx.framework */,
+				50C091751F77C17F00C1451D /* RxCocoa.framework */,
+				50C091731F77C17F00C1451D /* RxDataSources.framework */,
+				50C091741F77C17F00C1451D /* RxGesture.framework */,
+				50C091761F77C17F00C1451D /* RxSwift.framework */,
+				50C091711F77C17F00C1451D /* SDWebImage.framework */,
 				50C091341F76B2FF00C1451D /* PokeMeApp */,
 				50C091491F76B2FF00C1451D /* PokeMeAppTests */,
 				50C091541F76B2FF00C1451D /* PokeMeAppUITests */,
 				50C091331F76B2FF00C1451D /* Products */,
+				50C091641F77C16600C1451D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +190,14 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				50C0917D1F77C1C300C1451D /* Registration */,
+				50C091801F77C29B00C1451D /* Utilities */,
 				50C091351F76B2FF00C1451D /* AppDelegate.swift */,
-				50C091371F76B2FF00C1451D /* ViewController.swift */,
 				50C091391F76B2FF00C1451D /* Main.storyboard */,
 				50C0913C1F76B2FF00C1451D /* Assets.xcassets */,
 				50C0913E1F76B2FF00C1451D /* LaunchScreen.storyboard */,
 				50C091411F76B2FF00C1451D /* Info.plist */,
+				50C091B41F77F25C00C1451D /* Localizable.strings */,
 			);
 			path = PokeMeApp;
 			sourceTree = "<group>";
@@ -125,6 +220,62 @@
 			path = PokeMeAppUITests;
 			sourceTree = "<group>";
 		};
+		50C091641F77C16600C1451D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50C0918E1F77C96800C1451D /* Differentiator.framework */,
+				50C0918D1F77C96800C1451D /* RxBlocking.framework */,
+				50C0918F1F77C96800C1451D /* RxTest.framework */,
+				50C0916A1F77C16600C1451D /* NSObject_Rx.framework */,
+				50C091651F77C16600C1451D /* RxCocoa.framework */,
+				50C091671F77C16600C1451D /* RxDataSources.framework */,
+				50C091681F77C16600C1451D /* RxGesture.framework */,
+				50C091691F77C16600C1451D /* RxSwift.framework */,
+				50C091661F77C16600C1451D /* SDWebImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50C0917D1F77C1C300C1451D /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				50C0917E1F77C20500C1451D /* RegistrationViewController.swift */,
+				50C091991F77CBED00C1451D /* RegistrationMasterView.swift */,
+				50C0919F1F77E3C800C1451D /* RegistrationItemCell.swift */,
+				50C0919B1F77CC2900C1451D /* RegistrationItemViewModel.swift */,
+				50C0919D1F77CC7200C1451D /* RegistrationItem.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		50C091801F77C29B00C1451D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				50C091841F77C30C00C1451D /* Extensions */,
+				50C091811F77C2B200C1451D /* Constants */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		50C091811F77C2B200C1451D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				50C091821F77C2CF00C1451D /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		50C091841F77C30C00C1451D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50C091851F77C36B00C1451D /* UIColor+Hexa.swift */,
+				50C091891F77C8BF00C1451D /* UILabel+Locale.swift */,
+				50C0918B1F77C8EC00C1451D /* String+Locale.swift */,
+				50C091B71F77F4B200C1451D /* UIViewController+Keyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +286,7 @@
 				50C0912E1F76B2FF00C1451D /* Sources */,
 				50C0912F1F76B2FF00C1451D /* Frameworks */,
 				50C091301F76B2FF00C1451D /* Resources */,
+				50C091631F77C11600C1451D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -212,8 +364,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = 50C091291F76B2FF00C1451D;
 			productRefGroup = 50C091331F76B2FF00C1451D /* Products */;
@@ -233,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C091401F76B2FF00C1451D /* LaunchScreen.storyboard in Resources */,
+				50C091B21F77F25C00C1451D /* Localizable.strings in Resources */,
 				50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */,
 				50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */,
 			);
@@ -259,8 +412,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C091381F76B2FF00C1451D /* ViewController.swift in Sources */,
+				50C0919C1F77CC2900C1451D /* RegistrationItemViewModel.swift in Sources */,
+				50C0917F1F77C20500C1451D /* RegistrationViewController.swift in Sources */,
+				50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */,
 				50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */,
+				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
+				50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */,
+				50C091A01F77E3C800C1451D /* RegistrationItemCell.swift in Sources */,
+				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
+				50C091831F77C2CF00C1451D /* Constants.swift in Sources */,
+				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
+				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +474,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		50C091B41F77F25C00C1451D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50C091B51F77F26F00C1451D /* Base */,
+				50C091B61F77F27700C1451D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -319,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -376,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -428,7 +601,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSLJP987H9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PokeMeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.codeyard.PokeMeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +621,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSLJP987H9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PokeMeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.codeyard.PokeMeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
