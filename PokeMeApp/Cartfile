@@ -1,0 +1,5 @@
+github "ReactiveX/RxSwift"
+github "RxSwiftCommunity/RxDataSources"
+github "RxSwiftCommunity/RxGesture"
+github "RxSwiftCommunity/NSObject-Rx"
+github "rs/SDWebImage"
