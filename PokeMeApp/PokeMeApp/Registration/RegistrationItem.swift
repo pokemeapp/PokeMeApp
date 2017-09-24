@@ -9,5 +9,16 @@
 import UIKit
 
 class RegistrationItem: NSObject {
+    
+    var key: String = ""
+    
+    init(key: String) {
+        self.key = key
+        super.init()
+    }
+    
+    override init() {
+        super.init()
+    }
 
 }

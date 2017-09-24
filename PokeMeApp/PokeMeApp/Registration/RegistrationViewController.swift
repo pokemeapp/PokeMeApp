@@ -7,29 +7,47 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import NSObject_Rx
 
 class RegistrationViewController: UIViewController {
 
+    var masterView: RegistrationMasterView?
+    var registrationItems: Variable<[RegistrationItem]> = Variable([
+        RegistrationItem(key: "Registration.Username".localized),
+        RegistrationItem(key: "Registration.Email".localized),
+        RegistrationItem(key: "Registration.Password".localized),
+        RegistrationItem(key: "Registration.PasswordAgain".localized),
+        RegistrationItem(key: "Registration.FirstName".localized),
+        RegistrationItem(key: "Registration.LastName".localized),
+        ])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.initMasterView()
+        self.initObservers()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initMasterView(){
+        guard let masterView: RegistrationMasterView = self.view as? RegistrationMasterView else {
+            return
+        }
+        self.masterView = masterView
     }
-    */
 
+}
+
+extension RegistrationViewController {
+    
+    func initObservers(){
+        self.initBinding()
+    }
+    
+    func initBinding(){
+        self.registrationItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.RegistrationItemCell))({(_, model, cell: RegistrationItemCell) in
+            cell.bind(to: model)
+        }).addDisposableTo(rx.disposeBag)
+    }
+    
 }
