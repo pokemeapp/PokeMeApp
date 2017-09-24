@@ -1,24 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2aE-eA-4E3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="RegistrationViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="RegistrationMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="13i-3J-oax">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="GRf-RN-FIT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="D3V-eb-sye">
+                                            <rect key="frame" x="117.5" y="16" width="140" height="140"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="D3V-eb-sye" secondAttribute="height" multiplier="1:1" id="3Sh-jG-VQG"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umF-dq-bFz" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                            <rect key="frame" x="166" y="172" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Registration.Title"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="D3V-eb-sye" firstAttribute="height" secondItem="GRf-RN-FIT" secondAttribute="height" multiplier="0.7" id="1yG-LU-VSA"/>
+                                        <constraint firstItem="umF-dq-bFz" firstAttribute="centerX" secondItem="GRf-RN-FIT" secondAttribute="centerX" id="3NX-89-lZS"/>
+                                        <constraint firstItem="umF-dq-bFz" firstAttribute="top" secondItem="D3V-eb-sye" secondAttribute="bottom" constant="16" id="3yU-T3-pM7"/>
+                                        <constraint firstItem="D3V-eb-sye" firstAttribute="centerX" secondItem="GRf-RN-FIT" secondAttribute="centerX" id="Gvx-Cj-mbi"/>
+                                        <constraint firstItem="D3V-eb-sye" firstAttribute="top" secondItem="GRf-RN-FIT" secondAttribute="top" constant="16" id="htO-zw-0gi"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="OJc-Eg-PWH">
+                                    <rect key="frame" x="0.0" y="317" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RegistrationItemCell" id="cHL-FZ-W1h" customClass="RegistrationItemCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHL-FZ-W1h" id="GZd-xK-IDe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-uP-TgF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiU-2W-erU" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="10.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.6705882352941176" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Registration.Username"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S0F-cD-aSs">
+                                                            <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
+                                                            <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GiU-2W-erU" secondAttribute="trailing" constant="20" symbolic="YES" id="5am-mn-Wv2"/>
+                                                        <constraint firstItem="GiU-2W-erU" firstAttribute="centerY" secondItem="UZq-uP-TgF" secondAttribute="centerY" id="O9d-qI-4pN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="S0F-cD-aSs" secondAttribute="trailing" constant="8" id="QjA-wD-eMx"/>
+                                                        <constraint firstItem="GiU-2W-erU" firstAttribute="leading" secondItem="UZq-uP-TgF" secondAttribute="leading" constant="8" id="c0z-ak-qhA"/>
+                                                        <constraint firstItem="S0F-cD-aSs" firstAttribute="centerY" secondItem="UZq-uP-TgF" secondAttribute="centerY" id="sOH-ue-W3y"/>
+                                                        <constraint firstItem="S0F-cD-aSs" firstAttribute="width" secondItem="UZq-uP-TgF" secondAttribute="width" multiplier="0.5" id="xqP-oG-nY8"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="UZq-uP-TgF" secondAttribute="bottom" id="UTQ-og-M5A"/>
+                                                <constraint firstAttribute="trailing" secondItem="UZq-uP-TgF" secondAttribute="trailing" id="eHd-dn-rns"/>
+                                                <constraint firstItem="UZq-uP-TgF" firstAttribute="leading" secondItem="GZd-xK-IDe" secondAttribute="leading" id="fUE-o1-BTM"/>
+                                                <constraint firstItem="UZq-uP-TgF" firstAttribute="top" secondItem="GZd-xK-IDe" secondAttribute="top" id="unE-44-f0c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="inputTextField" destination="S0F-cD-aSs" id="vNC-P7-Tid"/>
+                                            <outlet property="keyLabel" destination="GiU-2W-erU" id="Nkm-iS-cTq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="13i-3J-oax" secondAttribute="trailing" id="5OK-q0-cbB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="13i-3J-oax" secondAttribute="bottom" id="Sze-3q-ifx"/>
+                            <constraint firstItem="13i-3J-oax" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eQe-lO-h5H"/>
+                            <constraint firstItem="13i-3J-oax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="evo-kb-Bjz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="tableView" destination="13i-3J-oax" id="Nyg-2v-xdP"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="apW-pe-xdU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="364" y="30.134932533733135"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3jg-o2-Oe8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2aE-eA-4E3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WCC-AR-WN0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NoS-Ye-sJt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfp-dn-0ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422" y="30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="116" height="116"/>
+    </resources>
 </document>
