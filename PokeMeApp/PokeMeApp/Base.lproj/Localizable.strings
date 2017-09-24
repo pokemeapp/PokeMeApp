@@ -6,4 +6,10 @@
   Copyright © 2017. Zsolt Pete. All rights reserved.
 */
 
-
+"Registration.Username" = "Username";
+"Registration.Email" = "Email";
+"Registration.Password" = "Password";
+"Registration.PasswordAgain" = "Password Again";
+"Registration.FirstName" = "First Name";
+"Registration.LastName" = "Last Name";
+"Registration.Title" = "Registration";
