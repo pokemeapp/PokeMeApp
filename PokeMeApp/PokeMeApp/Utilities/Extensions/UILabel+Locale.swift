@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UIKit
+
+class CYTranslatedLabel : UILabel {
+    
+    @IBInspectable var translationKey: String = "" {
+        didSet {
+            self.text = translationKey.localized
+        }
+    }
+    
+}
