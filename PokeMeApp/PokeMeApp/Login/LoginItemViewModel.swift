@@ -7,7 +7,18 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import NSObject_Rx
 
 class LoginItemViewModel: NSObject {
+    
+    var model: LoginItem = LoginItem() {
+        didSet {
+            self.key.value = model.key
+        }
+    }
 
+    var key: Variable<String> = Variable("")
+    
 }

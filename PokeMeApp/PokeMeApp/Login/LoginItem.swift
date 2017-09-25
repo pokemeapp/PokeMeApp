@@ -9,5 +9,12 @@
 import UIKit
 
 class LoginItem: NSObject {
-
+    
+    var key: String = ""
+    
+    init(key: String = "") {
+        self.key = key
+        super.init()
+    }
+    
 }

@@ -7,29 +7,60 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import NSObject_Rx
 
 class LoginViewController: UIViewController {
 
+    var masterView: LoginMasterView?
+    var loginItems: Variable<[LoginItem]> = Variable([
+        LoginItem(key: "Registration.Username".localized),
+        LoginItem(key: "Registration.Email".localized),
+        ])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.title = "Login.Title".localized
+        self.initMasterView()
+        self.initObservers()
+        self.initRegistrateButton()
+        self.initLoginButton()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initMasterView(){
+        guard let masterView: LoginMasterView = self.view as? LoginMasterView else {
+            return
+        }
+        self.masterView = masterView
     }
-    */
+    
+    func initRegistrateButton(){
+        self.masterView!.registrateButton.title = "Login.Registrate".localized
+        self.masterView!.registrateButton.buttonTapped = {
+            self.performSegue(withIdentifier: Constants.Segues.ShowRegistration, sender: nil)
+        }
+    }
+    
+    func initLoginButton(){
+        self.masterView!.loginButton.title = "Login.Login".localized
+        self.masterView!.loginButton.buttonTapped = {
+            print("tapped")
+        }
+    }
+    
+}
 
+extension LoginViewController {
+    
+    func initObservers(){
+        self.initBinding()
+    }
+    
+    func initBinding(){
+        self.loginItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.LoginItemCell))({(_, model, cell: LoginItemCell) in
+            cell.bind(to: model)
+        }).addDisposableTo(rx.disposeBag)
+    }
+    
 }
