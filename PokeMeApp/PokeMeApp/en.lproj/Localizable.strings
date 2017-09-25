@@ -13,3 +13,8 @@
 "Registration.FirstName" = "First Name";
 "Registration.LastName" = "Last Name";
 "Registration.Title" = "Registration";
+"Registration.Registrate" = "Registrate";
+
+"Login.Title" = "Login";
+"Login.Registrate" = "Registrate";
+"Login.Login" = "Login";
