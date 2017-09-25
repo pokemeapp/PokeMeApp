@@ -32,29 +32,32 @@
                                                 <constraint firstAttribute="width" secondItem="D3V-eb-sye" secondAttribute="height" multiplier="1:1" id="3Sh-jG-VQG"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umF-dq-bFz" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                            <rect key="frame" x="166" y="172" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Registration.Title"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="D3V-eb-sye" firstAttribute="height" secondItem="GRf-RN-FIT" secondAttribute="height" multiplier="0.7" id="1yG-LU-VSA"/>
-                                        <constraint firstItem="umF-dq-bFz" firstAttribute="centerX" secondItem="GRf-RN-FIT" secondAttribute="centerX" id="3NX-89-lZS"/>
-                                        <constraint firstItem="umF-dq-bFz" firstAttribute="top" secondItem="D3V-eb-sye" secondAttribute="bottom" constant="16" id="3yU-T3-pM7"/>
                                         <constraint firstItem="D3V-eb-sye" firstAttribute="centerX" secondItem="GRf-RN-FIT" secondAttribute="centerX" id="Gvx-Cj-mbi"/>
                                         <constraint firstItem="D3V-eb-sye" firstAttribute="top" secondItem="GRf-RN-FIT" secondAttribute="top" constant="16" id="htO-zw-0gi"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="OJc-Eg-PWH">
-                                    <rect key="frame" x="0.0" y="317" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="317" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYm-Be-PF0" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                            <rect key="frame" x="94.5" y="4" width="187.5" height="47"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="fYm-Be-PF0" secondAttribute="height" multiplier="16:4" id="pqG-Xl-bMm"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="fYm-Be-PF0" firstAttribute="centerX" secondItem="OJc-Eg-PWH" secondAttribute="centerX" id="Ues-dp-Bci"/>
+                                        <constraint firstItem="fYm-Be-PF0" firstAttribute="width" secondItem="OJc-Eg-PWH" secondAttribute="width" multiplier="0.5" id="tbW-j0-iqh"/>
+                                        <constraint firstItem="fYm-Be-PF0" firstAttribute="top" secondItem="OJc-Eg-PWH" secondAttribute="top" constant="4" id="u9r-ax-CKE"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RegistrationItemCell" id="cHL-FZ-W1h" customClass="RegistrationItemCell" customModule="PokeMeApp" customModuleProvider="target">
@@ -118,6 +121,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
+                            <outlet property="registrateButton" destination="fYm-Be-PF0" id="Ky3-Qo-WjI"/>
                             <outlet property="tableView" destination="13i-3J-oax" id="Nyg-2v-xdP"/>
                         </connections>
                     </view>
@@ -125,7 +129,158 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="30.134932533733135"/>
+            <point key="canvasLocation" x="1255" y="715"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Gib-QH-9su">
+            <objects>
+                <viewController id="pCp-kK-cjl" customClass="LoginViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96F-pS-Q7w" customClass="LoginMasterView" customModule="PokeMeApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hh8-54-ayH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="K7E-3P-RIi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3m7-2B-Muk">
+                                            <rect key="frame" x="117.5" y="16" width="140" height="140"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="3m7-2B-Muk" secondAttribute="height" multiplier="1:1" id="SkV-tE-Eng"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="3m7-2B-Muk" firstAttribute="top" secondItem="K7E-3P-RIi" secondAttribute="top" constant="16" id="FBA-7R-XzQ"/>
+                                        <constraint firstItem="3m7-2B-Muk" firstAttribute="height" secondItem="K7E-3P-RIi" secondAttribute="height" multiplier="0.7" id="PXB-L8-9Lj"/>
+                                        <constraint firstItem="3m7-2B-Muk" firstAttribute="centerX" secondItem="K7E-3P-RIi" secondAttribute="centerX" id="Td2-NV-YDB"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="eWt-NH-IGN">
+                                    <rect key="frame" x="0.0" y="317" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dlc-l1-aDI" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                            <rect key="frame" x="19" y="4" width="150" height="37.5"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Dlc-l1-aDI" secondAttribute="height" multiplier="16:4" id="UZi-7F-Ixd"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vq-nX-OJ4" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                            <rect key="frame" x="206.5" y="4" width="150" height="37.5"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="0Vq-nX-OJ4" secondAttribute="height" multiplier="16:4" id="jQZ-JB-4Mr"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-bk-bdB" customClass="CYTranslatedButton" customModule="PokeMeApp" customModuleProvider="target">
+                                            <rect key="frame" x="169.5" y="35" width="35" height="26"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Login.Registrate"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Dlc-l1-aDI" firstAttribute="centerX" secondItem="eWt-NH-IGN" secondAttribute="centerX" multiplier="0.5" id="3VO-9a-K1o"/>
+                                        <constraint firstItem="SSK-bk-bdB" firstAttribute="top" secondItem="Dlc-l1-aDI" secondAttribute="bottom" constant="-16" id="Eii-qX-1f8"/>
+                                        <constraint firstItem="0Vq-nX-OJ4" firstAttribute="centerX" secondItem="eWt-NH-IGN" secondAttribute="centerX" multiplier="1.5" id="Gry-md-86X"/>
+                                        <constraint firstItem="Dlc-l1-aDI" firstAttribute="top" secondItem="eWt-NH-IGN" secondAttribute="top" constant="4" id="Sco-Ot-RhZ"/>
+                                        <constraint firstItem="SSK-bk-bdB" firstAttribute="centerX" secondItem="eWt-NH-IGN" secondAttribute="centerX" id="SqU-IV-89R"/>
+                                        <constraint firstItem="0Vq-nX-OJ4" firstAttribute="top" secondItem="Dlc-l1-aDI" secondAttribute="top" id="Wgf-Bq-WES"/>
+                                        <constraint firstItem="0Vq-nX-OJ4" firstAttribute="width" secondItem="Dlc-l1-aDI" secondAttribute="width" id="j8J-uF-8Po"/>
+                                        <constraint firstItem="Dlc-l1-aDI" firstAttribute="width" secondItem="eWt-NH-IGN" secondAttribute="width" multiplier="0.4" id="sJW-SH-38F"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="SSK-bk-bdB"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoginItemCell" id="xpp-dv-6pD" customClass="LoginItemCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpp-dv-6pD" id="mIx-1e-otX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY5-cH-ctH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f2-ed-UCm" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="10.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Registration.Username"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sJ-Bo-Goi">
+                                                            <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
+                                                            <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="6f2-ed-UCm" firstAttribute="centerY" secondItem="uY5-cH-ctH" secondAttribute="centerY" id="5Zv-lB-VxR"/>
+                                                        <constraint firstItem="6sJ-Bo-Goi" firstAttribute="centerY" secondItem="uY5-cH-ctH" secondAttribute="centerY" id="AFj-va-fe9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6sJ-Bo-Goi" secondAttribute="trailing" constant="8" id="N9J-jY-4iG"/>
+                                                        <constraint firstItem="6f2-ed-UCm" firstAttribute="leading" secondItem="uY5-cH-ctH" secondAttribute="leading" constant="8" id="PfU-aV-G7P"/>
+                                                        <constraint firstItem="6sJ-Bo-Goi" firstAttribute="width" secondItem="uY5-cH-ctH" secondAttribute="width" multiplier="0.5" id="fK7-qa-nMF"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6f2-ed-UCm" secondAttribute="trailing" constant="20" symbolic="YES" id="wG5-EA-uS0"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uY5-cH-ctH" firstAttribute="top" secondItem="mIx-1e-otX" secondAttribute="top" id="CND-q9-IIb"/>
+                                                <constraint firstItem="uY5-cH-ctH" firstAttribute="leading" secondItem="mIx-1e-otX" secondAttribute="leading" id="EYG-Uk-0ES"/>
+                                                <constraint firstAttribute="trailing" secondItem="uY5-cH-ctH" secondAttribute="trailing" id="LXC-M8-UMx"/>
+                                                <constraint firstAttribute="bottom" secondItem="uY5-cH-ctH" secondAttribute="bottom" id="cGw-e9-ZmM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="inputTextField" destination="6sJ-Bo-Goi" id="Dfp-16-q8A"/>
+                                            <outlet property="keyLabel" destination="6f2-ed-UCm" id="cXS-iz-GwT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hh8-54-ayH" firstAttribute="leading" secondItem="ahJ-0m-ako" secondAttribute="leading" id="IGh-k4-RTp"/>
+                            <constraint firstItem="ahJ-0m-ako" firstAttribute="bottom" secondItem="hh8-54-ayH" secondAttribute="bottom" id="mdf-aQ-BkW"/>
+                            <constraint firstItem="ahJ-0m-ako" firstAttribute="trailing" secondItem="hh8-54-ayH" secondAttribute="trailing" id="u4x-vt-bXz"/>
+                            <constraint firstItem="hh8-54-ayH" firstAttribute="top" secondItem="ahJ-0m-ako" secondAttribute="top" id="yWe-xV-YzP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ahJ-0m-ako"/>
+                        <connections>
+                            <outlet property="loginButton" destination="Dlc-l1-aDI" id="h0F-xo-y9N"/>
+                            <outlet property="registrateButton" destination="0Vq-nX-OJ4" id="vFw-aR-7gw"/>
+                            <outlet property="tableView" destination="hh8-54-ayH" id="PgG-7x-all"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="EVC-kU-qc0"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowRegistration" id="ld7-xo-hYu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcV-g9-wic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3jg-o2-Oe8">
@@ -138,7 +293,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NoS-Ye-sJt"/>
+                        <segue destination="pCp-kK-cjl" kind="relationship" relationship="rootViewController" id="Esm-pr-fdj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfp-dn-0ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
