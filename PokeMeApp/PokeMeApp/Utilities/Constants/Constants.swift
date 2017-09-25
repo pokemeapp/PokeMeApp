@@ -16,5 +16,10 @@ struct Constants {
     
     struct Cells {
         static let RegistrationItemCell = "RegistrationItemCell"
+        static let LoginItemCell = "LoginItemCell"
+    }
+    
+    struct Segues {
+        static let ShowRegistration =  "ShowRegistration"
     }
 }
