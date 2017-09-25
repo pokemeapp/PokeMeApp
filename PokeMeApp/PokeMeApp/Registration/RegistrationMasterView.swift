@@ -10,5 +10,6 @@ import UIKit
 
 class RegistrationMasterView: UIView {
 
+    @IBOutlet weak var registrateButton: PMButton!
     @IBOutlet weak var tableView: UITableView!
 }

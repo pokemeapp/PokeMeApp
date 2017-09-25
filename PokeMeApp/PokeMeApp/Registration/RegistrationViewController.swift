@@ -25,8 +25,10 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Registration.Title".localized
         self.initMasterView()
         self.initObservers()
+        self.initRegistrateButton()
     }
     
     func initMasterView(){
@@ -34,6 +36,13 @@ class RegistrationViewController: UIViewController {
             return
         }
         self.masterView = masterView
+    }
+    
+    func initRegistrateButton(){
+        self.masterView!.registrateButton.title = "Registration.Registrate".localized
+        self.masterView!.registrateButton.buttonTapped = {
+            print("tapped")
+        }
     }
 
 }
