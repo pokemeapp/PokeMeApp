@@ -1,0 +1,3 @@
+[submodule "PokeMeKit"]
+	path = PokeMeKit
+	url = git@github.com:pokemeapp/PokeMeKit.git

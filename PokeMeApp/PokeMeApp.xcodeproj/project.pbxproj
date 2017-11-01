@@ -52,6 +52,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		28BF6EF51FAA4BD400F07129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 285DF1D71F7127EB0029548A;
+			remoteInfo = PokeMeKit;
+		};
+		28BF6EF71FAA4BD400F07129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 285DF1E01F7127EC0029548A;
+			remoteInfo = PokeMeKitTests;
+		};
+		28BF6EF91FAA4C0C00F07129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 285DF1D61F7127EB0029548A;
+			remoteInfo = PokeMeKit;
+		};
 		50C091471F76B2FF00C1451D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 50C0912A1F76B2FF00C1451D /* Project object */;
@@ -89,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PokeMeKit.xcodeproj; path = ../PokeMeKit/PokeMeKit.xcodeproj; sourceTree = "<group>"; };
 		503736931F797473001C9C13 /* PMButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PMButton.xib; sourceTree = "<group>"; };
 		503736951F79761C001C9C13 /* PMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMButton.swift; sourceTree = "<group>"; };
 		503736981F797F59001C9C13 /* CYTranslatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYTranslatedButton.swift; sourceTree = "<group>"; };
@@ -173,6 +195,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28BF6EF11FAA4BD300F07129 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28BF6EF61FAA4BD400F07129 /* PokeMeKit.framework */,
+				28BF6EF81FAA4BD400F07129 /* PokeMeKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		503736921F79745A001C9C13 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +235,7 @@
 		50C091291F76B2FF00C1451D = {
 			isa = PBXGroup;
 			children = (
+				28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */,
 				50C091931F77C96E00C1451D /* Differentiator.framework */,
 				50C091941F77C96E00C1451D /* RxBlocking.framework */,
 				50C091951F77C96F00C1451D /* RxTest.framework */,
@@ -339,6 +371,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				28BF6EFA1FAA4C0C00F07129 /* PBXTargetDependency */,
 			);
 			name = PokeMeApp;
 			productName = PokeMeApp;
@@ -418,6 +451,12 @@
 			mainGroup = 50C091291F76B2FF00C1451D;
 			productRefGroup = 50C091331F76B2FF00C1451D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 28BF6EF11FAA4BD300F07129 /* Products */;
+					ProjectRef = 28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				50C091311F76B2FF00C1451D /* PokeMeApp */,
@@ -426,6 +465,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		28BF6EF61FAA4BD400F07129 /* PokeMeKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PokeMeKit.framework;
+			remoteRef = 28BF6EF51FAA4BD400F07129 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28BF6EF81FAA4BD400F07129 /* PokeMeKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PokeMeKitTests.xctest;
+			remoteRef = 28BF6EF71FAA4BD400F07129 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		50C091301F76B2FF00C1451D /* Resources */ = {
@@ -502,6 +558,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		28BF6EFA1FAA4C0C00F07129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PokeMeKit;
+			targetProxy = 28BF6EF91FAA4C0C00F07129 /* PBXContainerItemProxy */;
+		};
 		50C091481F76B2FF00C1451D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 50C091311F76B2FF00C1451D /* PokeMeApp */;
