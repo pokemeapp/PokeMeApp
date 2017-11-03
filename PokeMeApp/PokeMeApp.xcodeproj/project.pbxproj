@@ -16,6 +16,8 @@
 		503736A21F79884D001C9C13 /* LoginItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503736A11F79884D001C9C13 /* LoginItemCell.swift */; };
 		503736A41F798868001C9C13 /* LoginItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503736A31F798868001C9C13 /* LoginItemViewModel.swift */; };
 		503736A61F798876001C9C13 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503736A51F798876001C9C13 /* LoginItem.swift */; };
+		503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503796AF1FACF85300988B54 /* UserDashboardViewController.swift */; };
+		503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503796B11FACF88100988B54 /* UserDashboardMasterView.swift */; };
 		50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091351F76B2FF00C1451D /* AppDelegate.swift */; };
 		50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C091391F76B2FF00C1451D /* Main.storyboard */; };
 		50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C0913C1F76B2FF00C1451D /* Assets.xcassets */; };
@@ -66,13 +68,6 @@
 			remoteGlobalIDString = 285DF1E01F7127EC0029548A;
 			remoteInfo = PokeMeKitTests;
 		};
-		28BF6EF91FAA4C0C00F07129 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 285DF1D61F7127EB0029548A;
-			remoteInfo = PokeMeKit;
-		};
 		50C091471F76B2FF00C1451D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 50C0912A1F76B2FF00C1451D /* Project object */;
@@ -119,6 +114,8 @@
 		503736A11F79884D001C9C13 /* LoginItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemCell.swift; sourceTree = "<group>"; };
 		503736A31F798868001C9C13 /* LoginItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemViewModel.swift; sourceTree = "<group>"; };
 		503736A51F798876001C9C13 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
+		503796AF1FACF85300988B54 /* UserDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardViewController.swift; sourceTree = "<group>"; };
+		503796B11FACF88100988B54 /* UserDashboardMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardMasterView.swift; sourceTree = "<group>"; };
 		50C091321F76B2FF00C1451D /* PokeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C091351F76B2FF00C1451D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C0913A1F76B2FF00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -232,6 +229,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		503796AD1FACF7F900988B54 /* UserDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				503796AF1FACF85300988B54 /* UserDashboardViewController.swift */,
+				503796B11FACF88100988B54 /* UserDashboardMasterView.swift */,
+			);
+			path = UserDashboard;
+			sourceTree = "<group>";
+		};
 		50C091291F76B2FF00C1451D = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +272,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				503796AD1FACF7F900988B54 /* UserDashboard */,
 				503736A71F7990E3001C9C13 /* Protocols */,
 				5037369A1F79867F001C9C13 /* Login */,
 				50C0917D1F77C1C300C1451D /* Registration */,
@@ -371,7 +378,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				28BF6EFA1FAA4C0C00F07129 /* PBXTargetDependency */,
 			);
 			name = PokeMeApp;
 			productName = PokeMeApp;
@@ -523,6 +529,7 @@
 				50C0917F1F77C20500C1451D /* RegistrationViewController.swift in Sources */,
 				5037369E1F7986C7001C9C13 /* LoginViewController.swift in Sources */,
 				50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */,
+				503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */,
 				50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
@@ -534,6 +541,7 @@
 				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
 				50C091831F77C2CF00C1451D /* Constants.swift in Sources */,
 				503736991F797F59001C9C13 /* CYTranslatedButton.swift in Sources */,
+				503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */,
 				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
 				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
 			);
@@ -558,11 +566,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		28BF6EFA1FAA4C0C00F07129 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PokeMeKit;
-			targetProxy = 28BF6EF91FAA4C0C00F07129 /* PBXContainerItemProxy */;
-		};
 		50C091481F76B2FF00C1451D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 50C091311F76B2FF00C1451D /* PokeMeApp */;
