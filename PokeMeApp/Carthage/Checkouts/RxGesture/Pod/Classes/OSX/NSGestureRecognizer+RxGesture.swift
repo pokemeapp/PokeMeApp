@@ -24,15 +24,16 @@ import RxCocoa
 
 public extension ObservableType where E: NSGestureRecognizer {
 
-
     /**
      Filters the observable `GestureRecognizer` events sequence based on the `GestureRecognizer` state.
 
      - parameter states: A `UIGestureRecognizerState` collection that is used to filter the `GestureRecognizer` events sequence.
      - returns: An observable `GestureRecognizer` events sequence that only contains events emitted while the `GestureRecognizer`'s state match any of the given `states`.
      */
-    public func when(_ states: NSGestureRecognizerState...) -> Observable<E> {
-        return when(states)
+    public func when(_ states: NSGestureRecognizer.State...) -> Observable<E> {
+        return filter { gesture in
+            return states.contains(gesture.state)
+        }
     }
 
     /**
@@ -41,8 +42,8 @@ public extension ObservableType where E: NSGestureRecognizer {
      - parameter states: A `UIGestureRecognizerState` collection that is used to filter the `GestureRecognizer` events sequence.
      - returns: An observable `GestureRecognizer` events sequence that only contains events emitted while the `GestureRecognizer`'s state match any of the given `states`.
      */
-    internal func when(_ states: [NSGestureRecognizerState]) -> Observable<E> {
-        return self.filter { gesture in
+    internal func when(_ states: [NSGestureRecognizer.State]) -> Observable<E> {
+        return filter { gesture in
             return states.contains(gesture.state)
         }
     }
@@ -53,7 +54,7 @@ public extension ObservableType where E: NSGestureRecognizer {
      - parameter view: A `TargetView` value on which the gesture took place.
      */
     public func asLocation(in view: TargetView = .view) -> Observable<NSPoint> {
-        return self.map { gesture in
+        return map { gesture in
             return gesture.location(in: view.targetView(for: gesture))
         }
     }

@@ -6,6 +6,23 @@ Current master
 
 - Nothing yet!
 
+4.2.0
+-----
+
+- Re-adds HasDisposeBag protocol. See [#49](https://github.com/RxSwiftCommunity/NSObject-Rx/pull/49) - [@twittemb](https://github.com/twittemb)
+- Fixes for Carthage. See [#56](https://github.com/RxSwiftCommunity/NSObject-Rx/pull/56) - [@Gurpartap](https://github.com/Gurpartap)
+
+4.1.0
+-----
+
+- Upgrades to RxSwift 4.0. See [#50](https://github.com/RxSwiftCommunity/NSObject-Rx/pull/50) - [@joanii](https://github.com/joanii)
+
+4.0.0
+-----
+
+- Fixes a warning when used in application extensions. See [#45](https://github.com/RxSwiftCommunity/NSObject-Rx/pull/45) - [@mono0926](https://github.com/mono0926)
+- Removes suport for using dispose bags on reference types. See [#47](https://github.com/RxSwiftCommunity/NSObject-Rx/issues/47) - [@grinder81](https://github.com/grinder81)
+
 3.0.1
 -----
 

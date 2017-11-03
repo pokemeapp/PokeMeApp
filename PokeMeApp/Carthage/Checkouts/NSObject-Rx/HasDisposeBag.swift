@@ -1,53 +1,44 @@
-//
-//  DisposeBagable.swift
-//  NSObject-Rx
-//
-//  Created by Thibault Wittemberg on 2017-08-25.
-//  Copyright © 2017 RxSwiftCommunity. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 import ObjectiveC
 
-fileprivate struct AssociatedKeys {
-    static var disposeBag = "disposeBag"
-}
+fileprivate var disposeBagContext: UInt8 = 0
 
-/// each DisposeBagable offers a unique Rx DisposeBag instance
-public protocol HasDisposeBag {
+/// each HasDisposeBag offers a unique RxSwift DisposeBag instance
+public protocol HasDisposeBag: class {
 
-    /// a unique Rx DisposeBag instance
+    /// a unique RxSwift DisposeBag instance
     var disposeBag: DisposeBag { get set }
 }
 
 extension HasDisposeBag {
 
-    private func doLocked(forClosure closure: () -> Void) {
-        objc_sync_enter(self); defer { objc_sync_exit(self) }
-        closure()
+    func synchronizedBag<T>( _ action: () -> T) -> T {
+        objc_sync_enter(self)
+        let result = action()
+        objc_sync_exit(self)
+        return result
     }
 
     public var disposeBag: DisposeBag {
         get {
-            var rxDisposeBag: DisposeBag!
-            doLocked {
-                let lookup = objc_getAssociatedObject(self, &AssociatedKeys.disposeBag) as? DisposeBag
-                if let lookup = lookup {
-                    rxDisposeBag = lookup
-                } else {
-                    let newDisposeBag = DisposeBag()
-                    objc_setAssociatedObject(self, &AssociatedKeys.disposeBag, newDisposeBag, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                    rxDisposeBag = newDisposeBag
+            return synchronizedBag {
+                if let disposeObject = objc_getAssociatedObject(self, &disposeBagContext) as? DisposeBag {
+                    return disposeObject
                 }
+                let disposeObject = DisposeBag()
+                objc_setAssociatedObject(self, &disposeBagContext, disposeObject, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                return disposeObject
             }
-            return rxDisposeBag
         }
 
         set {
-            doLocked {
-                objc_setAssociatedObject(self, &AssociatedKeys.disposeBag, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            synchronizedBag {
+                objc_setAssociatedObject(self, &disposeBagContext, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }
 }
+
+
+
