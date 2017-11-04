@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GillSans.ttc">
+            <string>GillSans</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Registration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -71,8 +76,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiU-2W-erU" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="10.5" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="8" y="11" width="36" height="20"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.6705882352941176" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -154,8 +159,50 @@
                     <view key="view" contentMode="scaleToFill" id="n2v-1D-SGD" customClass="UserDashboardMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-Ru-IsA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserHabitCell" id="Jgk-oV-f53" customClass="UserHabitCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jgk-oV-f53" id="UNc-3j-u47">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqr-Xw-C5q" customClass="UserHabitCellView" customModule="PokeMeApp" customModuleProvider="target">
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="55.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="lqr-Xw-C5q" secondAttribute="bottom" constant="4" id="25I-sq-RxM"/>
+                                                <constraint firstAttribute="trailing" secondItem="lqr-Xw-C5q" secondAttribute="trailing" constant="4" id="DY9-Xj-LSt"/>
+                                                <constraint firstItem="lqr-Xw-C5q" firstAttribute="leading" secondItem="UNc-3j-u47" secondAttribute="leading" constant="4" id="RT4-nU-uNw"/>
+                                                <constraint firstItem="lqr-Xw-C5q" firstAttribute="top" secondItem="UNc-3j-u47" secondAttribute="top" id="h2J-nC-MDR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="userHabitCellView" destination="lqr-Xw-C5q" id="xib-pu-lRa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GHK-Ru-IsA" firstAttribute="leading" secondItem="OsD-Xv-F3g" secondAttribute="leading" id="POw-Bd-VcA"/>
+                            <constraint firstItem="OsD-Xv-F3g" firstAttribute="bottom" secondItem="GHK-Ru-IsA" secondAttribute="bottom" id="kI3-ii-LVI"/>
+                            <constraint firstItem="OsD-Xv-F3g" firstAttribute="trailing" secondItem="GHK-Ru-IsA" secondAttribute="trailing" id="pwg-my-uer"/>
+                            <constraint firstItem="GHK-Ru-IsA" firstAttribute="top" secondItem="OsD-Xv-F3g" secondAttribute="top" id="wyN-Cd-JKv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OsD-Xv-F3g"/>
+                        <connections>
+                            <outlet property="tableView" destination="GHK-Ru-IsA" id="uBE-7f-rv0"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="vfM-17-wio">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="user" id="K0y-nd-H17">
@@ -195,9 +242,9 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEd-Ol-Q2W">
-                                        <rect key="frame" x="118" y="40" width="249" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="118" y="40.5" width="249" height="20"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -339,8 +386,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f2-ed-UCm" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="10.5" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="8" y="11" width="36" height="20"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
