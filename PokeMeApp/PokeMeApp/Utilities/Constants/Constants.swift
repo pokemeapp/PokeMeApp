@@ -12,6 +12,7 @@ import UIKit
 struct Constants {
     struct Colors {
         static let Green = UIColor(rgb: 0x00ab00)
+        static let ShadowGrey = UIColor(rgb: 0xa8a8a8)
     }
     
     struct Cells {
