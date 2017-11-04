@@ -8,6 +8,18 @@
 
 import UIKit
 
-class MockUser: NSObject {
+class MockUser {
 
+    var username: String?
+    var password: String?
+    var fullName: String?
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var phoneNumber: String?
+    var imageURL: String?
+    var birthday: String?
+    var gender: String?
+    var region: String?
+    
 }

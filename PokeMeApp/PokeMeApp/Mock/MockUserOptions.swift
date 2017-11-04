@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+enum MockUserOption{
+    case username
+    case password
+    case fullName
+    case firstName
+    case lastName
+    case email
+    case phoneNumber
+    case imageURL
+    case birthday
+    case gender
+    case region
+    
+}
