@@ -9,13 +9,22 @@
 import UIKit
 
 class ProfileImageView: UIImageView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.initialize()
     }
-    */
+    
+    func initialize(){
+        self.clipsToBounds = true
+        self.addBorder(color: Constants.Colors.Green, width: 1.0)
+        self.addShadow(color: Constants.Colors.ShadowGrey, radius: 1.0, opacity: 0.5, offset: CGSize(width: 1.0, height: 1.0))
+        self.layer.cornerRadius = self.frame.size.height / 2.0
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        self.layer.cornerRadius = self.frame.size.height / 2.0
+    }
 
 }

@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileMasterView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: ProfileImageView!
+    
+    override func awakeFromNib() {
+        let mockUserGenerator = MockUserGenerator(options: [.firstName, .lastName, .fullName, .imageURL])
+        let mockUsers = mockUserGenerator.createMockUsers(1)
+        let mockUser = mockUsers.first!
+        self.nameLabel.text = mockUser.fullName
+        SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: mockUser.imageURL!), options: .progressiveDownload, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
+            if maybeImage != nil || finished == true, error == nil{
+                self?.profileImageView.image = maybeImage!
+            }
+        }
     }
-    */
-
 }
