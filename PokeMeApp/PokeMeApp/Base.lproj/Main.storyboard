@@ -177,16 +177,57 @@
             </objects>
             <point key="canvasLocation" x="2106" y="1415"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="RzT-Ef-VS0">
             <objects>
-                <viewController id="fPy-By-rYu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mnB-WK-Faf">
+                <viewController id="fPy-By-rYu" customClass="ProfileViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mnB-WK-Faf" customClass="ProfileMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="557-Kc-L6d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="L6D-kD-zCG" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="15" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="L6D-kD-zCG" secondAttribute="height" multiplier="1:1" id="bWZ-Vt-x98"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEd-Ol-Q2W">
+                                        <rect key="frame" x="118" y="40" width="249" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="L6D-kD-zCG" firstAttribute="height" secondItem="557-Kc-L6d" secondAttribute="height" multiplier="0.7" id="1pf-UA-Sg0"/>
+                                    <constraint firstAttribute="height" constant="100" id="4it-4i-K3z"/>
+                                    <constraint firstItem="L6D-kD-zCG" firstAttribute="centerY" secondItem="557-Kc-L6d" secondAttribute="centerY" id="BYW-Ro-KeE"/>
+                                    <constraint firstItem="NEd-Ol-Q2W" firstAttribute="leading" secondItem="L6D-kD-zCG" secondAttribute="trailing" constant="16" id="PJh-IJ-NC2"/>
+                                    <constraint firstItem="NEd-Ol-Q2W" firstAttribute="centerY" secondItem="557-Kc-L6d" secondAttribute="centerY" id="UTV-lg-8iK"/>
+                                    <constraint firstAttribute="trailing" secondItem="NEd-Ol-Q2W" secondAttribute="trailing" constant="8" id="Ykf-na-nEz"/>
+                                    <constraint firstItem="L6D-kD-zCG" firstAttribute="leading" secondItem="557-Kc-L6d" secondAttribute="leading" constant="32" id="r5W-3b-rm7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="557-Kc-L6d" firstAttribute="top" secondItem="ZGy-nf-41f" secondAttribute="top" id="00s-8N-s0A"/>
+                            <constraint firstItem="557-Kc-L6d" firstAttribute="width" secondItem="mnB-WK-Faf" secondAttribute="width" id="Mt4-l0-dlK"/>
+                            <constraint firstItem="557-Kc-L6d" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="ORR-lv-KEt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZGy-nf-41f"/>
+                        <connections>
+                            <outlet property="nameLabel" destination="NEd-Ol-Q2W" id="jS2-aR-f4s"/>
+                            <outlet property="profileImageView" destination="L6D-kD-zCG" id="4bY-9A-Rhl"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="profileMasterView" destination="mnB-WK-Faf" id="Ifz-Uz-1Uj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIc-a8-fhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,6 +461,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default_profile_image" width="25" height="25"/>
         <image name="logo" width="116" height="116"/>
         <image name="user" width="25" height="25"/>
     </resources>
