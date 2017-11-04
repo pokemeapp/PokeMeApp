@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIView {
+    
+    func addBorder(color: UIColor = .black, width: CGFloat = 1.0){
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
+    
+}
