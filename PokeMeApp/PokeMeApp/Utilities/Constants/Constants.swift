@@ -18,10 +18,15 @@ struct Constants {
     struct Cells {
         static let RegistrationItemCell = "RegistrationItemCell"
         static let LoginItemCell = "LoginItemCell"
+        static let UserHabitCell = "UserHabitCell"
     }
     
     struct Segues {
         static let ShowRegistration =  "ShowRegistration"
         static let ShowUserProfile =  "ShowUserProfile"
+    }
+    
+    struct Images {
+        static let DefaultProfileImage: UIImage = #imageLiteral(resourceName: "default_profile_image")
     }
 }
