@@ -18,6 +18,11 @@
 		503736A61F798876001C9C13 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503736A51F798876001C9C13 /* LoginItem.swift */; };
 		503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503796AF1FACF85300988B54 /* UserDashboardViewController.swift */; };
 		503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503796B11FACF88100988B54 /* UserDashboardMasterView.swift */; };
+		503EBEC71FAE33F40060CC42 /* UserHabitCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503EBEC61FAE33F40060CC42 /* UserHabitCellView.xib */; };
+		503EBECC1FAE3F700060CC42 /* MockHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBECB1FAE3F700060CC42 /* MockHabit.swift */; };
+		503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBECD1FAE40240060CC42 /* MockHabitGenerator.swift */; };
+		503EBED01FAE40B60060CC42 /* MockHabitDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBECF1FAE40B60060CC42 /* MockHabitDatabase.swift */; };
+		503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBED11FAE43BD0060CC42 /* UserHabitViewModel.swift */; };
 		50434D591FAE0700008B01F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D581FAE0700008B01F5 /* ProfileViewController.swift */; };
 		50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D5A1FAE0711008B01F5 /* ProfileMasterView.swift */; };
 		50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D5C1FAE0847008B01F5 /* ProfileImageView.swift */; };
@@ -28,6 +33,8 @@
 		50434D6A1FAE1161008B01F5 /* MockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D691FAE1161008B01F5 /* MockUser.swift */; };
 		50434D6C1FAE14EB008B01F5 /* MockUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D6B1FAE14EB008B01F5 /* MockUserDatabase.swift */; };
 		50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D6D1FAE1809008B01F5 /* Array+Sample.swift */; };
+		50434D741FAE2E54008B01F5 /* UserHabitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */; };
+		50434D761FAE2EC0008B01F5 /* UserHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */; };
 		50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091351F76B2FF00C1451D /* AppDelegate.swift */; };
 		50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C091391F76B2FF00C1451D /* Main.storyboard */; };
 		50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C0913C1F76B2FF00C1451D /* Assets.xcassets */; };
@@ -133,6 +140,11 @@
 		503736A51F798876001C9C13 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
 		503796AF1FACF85300988B54 /* UserDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardViewController.swift; sourceTree = "<group>"; };
 		503796B11FACF88100988B54 /* UserDashboardMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardMasterView.swift; sourceTree = "<group>"; };
+		503EBEC61FAE33F40060CC42 /* UserHabitCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHabitCellView.xib; sourceTree = "<group>"; };
+		503EBECB1FAE3F700060CC42 /* MockHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHabit.swift; sourceTree = "<group>"; };
+		503EBECD1FAE40240060CC42 /* MockHabitGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHabitGenerator.swift; sourceTree = "<group>"; };
+		503EBECF1FAE40B60060CC42 /* MockHabitDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHabitDatabase.swift; sourceTree = "<group>"; };
+		503EBED11FAE43BD0060CC42 /* UserHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitViewModel.swift; sourceTree = "<group>"; };
 		50434D581FAE0700008B01F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		50434D5A1FAE0711008B01F5 /* ProfileMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMasterView.swift; sourceTree = "<group>"; };
 		50434D5C1FAE0847008B01F5 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
@@ -143,6 +155,8 @@
 		50434D691FAE1161008B01F5 /* MockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUser.swift; sourceTree = "<group>"; };
 		50434D6B1FAE14EB008B01F5 /* MockUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDatabase.swift; sourceTree = "<group>"; };
 		50434D6D1FAE1809008B01F5 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
+		50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitCellView.swift; sourceTree = "<group>"; };
+		50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitCell.swift; sourceTree = "<group>"; };
 		50C091321F76B2FF00C1451D /* PokeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C091351F76B2FF00C1451D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C0913A1F76B2FF00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -234,6 +248,8 @@
 				503736931F797473001C9C13 /* PMButton.xib */,
 				503736951F79761C001C9C13 /* PMButton.swift */,
 				50434D5C1FAE0847008B01F5 /* ProfileImageView.swift */,
+				50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */,
+				503EBEC61FAE33F40060CC42 /* UserHabitCellView.xib */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -260,6 +276,8 @@
 		503796AD1FACF7F900988B54 /* UserDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */,
+				503EBED11FAE43BD0060CC42 /* UserHabitViewModel.swift */,
 				503796AF1FACF85300988B54 /* UserDashboardViewController.swift */,
 				503796B11FACF88100988B54 /* UserDashboardMasterView.swift */,
 			);
@@ -283,6 +301,9 @@
 				50434D691FAE1161008B01F5 /* MockUser.swift */,
 				50434D6B1FAE14EB008B01F5 /* MockUserDatabase.swift */,
 				50434D6D1FAE1809008B01F5 /* Array+Sample.swift */,
+				503EBECB1FAE3F700060CC42 /* MockHabit.swift */,
+				503EBECD1FAE40240060CC42 /* MockHabitGenerator.swift */,
+				503EBECF1FAE40B60060CC42 /* MockHabitDatabase.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -549,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C091401F76B2FF00C1451D /* LaunchScreen.storyboard in Resources */,
+				503EBEC71FAE33F40060CC42 /* UserHabitCellView.xib in Resources */,
 				503736941F797473001C9C13 /* PMButton.xib in Resources */,
 				50C091B21F77F25C00C1451D /* Localizable.strings in Resources */,
 				50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */,
@@ -589,15 +611,21 @@
 				5037369E1F7986C7001C9C13 /* LoginViewController.swift in Sources */,
 				50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */,
 				50434D591FAE0700008B01F5 /* ProfileViewController.swift in Sources */,
+				503EBECC1FAE3F700060CC42 /* MockHabit.swift in Sources */,
 				503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */,
 				50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */,
+				503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
 				50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */,
+				503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */,
 				50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */,
 				503736A21F79884D001C9C13 /* LoginItemCell.swift in Sources */,
 				503736961F79761C001C9C13 /* PMButton.swift in Sources */,
+				50434D761FAE2EC0008B01F5 /* UserHabitCell.swift in Sources */,
+				50434D741FAE2E54008B01F5 /* UserHabitCellView.swift in Sources */,
 				503736A41F798868001C9C13 /* LoginItemViewModel.swift in Sources */,
+				503EBED01FAE40B60060CC42 /* MockHabitDatabase.swift in Sources */,
 				50C091A01F77E3C800C1451D /* RegistrationItemCell.swift in Sources */,
 				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
 				50434D5F1FAE08BC008B01F5 /* UIView+Border.swift in Sources */,
