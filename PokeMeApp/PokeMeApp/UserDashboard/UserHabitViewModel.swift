@@ -18,16 +18,22 @@ class UserHabitViewModel: NSObject {
         didSet {
             self.name.value = model.name ?? ""
             self.habitDescription.value = model.habitDescription ?? ""
-            self.image.value = Constants.Images.DefaultProfileImage
-            SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: model.imageURL!), options: .progressiveDownload, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
-                if maybeImage != nil || finished == true, error == nil{
-                    self?.image.value = maybeImage!
-                }
+            if model.imageURL != nil {
+                self.downloadImage(url: model.imageURL!)
             }
+            
         }
     }
     
     var name: Variable<String> = Variable("")
     var habitDescription: Variable<String> = Variable("")
     var image: Variable<UIImage> = Variable(UIImage())
+    
+    func downloadImage(url: String){
+        SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: url), options: .useNSURLCache, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
+            if maybeImage != nil || finished == true, error == nil{
+                self?.image.value = maybeImage!
+            }
+        }
+    }
 }

@@ -29,6 +29,7 @@ class UserHabitCell: UITableViewCell {
     
     func bind(to model: MockHabit){
         self.viewModel.model = model
+        bindComponents()
     }
 
 }

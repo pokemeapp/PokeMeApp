@@ -18,7 +18,7 @@ class ProfileMasterView: UIView {
         let mockUsers = mockUserGenerator.createMockUsers(1)
         let mockUser = mockUsers.first!
         self.nameLabel.text = mockUser.fullName
-        SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: mockUser.imageURL!), options: .progressiveDownload, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
+        SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: mockUser.imageURL!), options: .useNSURLCache, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
             if maybeImage != nil || finished == true, error == nil{
                 self?.profileImageView.image = maybeImage!
             }

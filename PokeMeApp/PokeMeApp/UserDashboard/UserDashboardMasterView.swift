@@ -9,5 +9,6 @@
 import UIKit
 
 class UserDashboardMasterView: UIView {
-
+    @IBOutlet weak var tableView: UITableView!
+    
 }
