@@ -27,16 +27,14 @@ class PMButton: UIView {
     }
     
     func style(){
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 10.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        self.addBorder(color: Constants.Colors.Green, width: 1.0)
+        self.addShadow(color: Constants.Colors.ShadowGrey, radius: 10, opacity: 0.8, offset: CGSize(width: 1.0, height: 1.0))
         self.layer.masksToBounds = true
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.layer.cornerRadius = 8.0
+        self.layer.cornerRadius = 3.0
     }
     
     override init(frame: CGRect) {
