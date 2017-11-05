@@ -6,4 +6,26 @@
 //  Copyright © 2017. Zsolt Pete. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
+
+struct NewUserHabitSection {
+    var header: String
+    var items: [UserHabitWrapper]
+    
+}
+
+extension NewUserHabitSection : SectionModelType {
+    
+    init(original: NewUserHabitSection, items: [UserHabitWrapper]) {
+        self = original
+        self.items = items
+    }
+    
+    
+    var identity: String {
+        return header
+    }
+}

@@ -8,6 +8,9 @@
 
 import UIKit
 
-class UserHabitDay: NSObject {
+struct UserHabitDay {
+    
+    var id: String?
+    var isSelected: Bool?
 
 }

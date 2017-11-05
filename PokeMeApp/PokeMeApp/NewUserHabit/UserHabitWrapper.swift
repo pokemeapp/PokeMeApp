@@ -8,6 +8,15 @@
 
 import UIKit
 
-class UserHabitWrapper: NSObject {
+enum UserHabitCellType{
+    case name
+    case description
+    case day
+    case time
+}
 
+struct UserHabitWrapper {
+    var name: String?
+    var days: [UserHabitDay]?
+    var type: UserHabitCellType?
 }

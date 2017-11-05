@@ -7,7 +7,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class NewUserHabitDescriptionsViewModel: NSObject {
 
+    var model: String = "" {
+        didSet {
+            self.habitDescription.value = model
+        }
+    }
+    
+    var habitDescription: Variable<String> = Variable("")
+    
 }
