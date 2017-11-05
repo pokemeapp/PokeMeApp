@@ -20,3 +20,7 @@
 "Login.Login" = "Login";
 
 "UserHabitCell.Done" = "Done";
+"UserHabitSectionName" = "Name";
+"UserHabitSectionDescription" = "Description";
+"UserHabitSectionDate" = "Date";
+"Close" = "Close";
