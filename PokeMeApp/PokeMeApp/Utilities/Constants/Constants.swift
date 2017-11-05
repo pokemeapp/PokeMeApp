@@ -19,14 +19,23 @@ struct Constants {
         static let RegistrationItemCell = "RegistrationItemCell"
         static let LoginItemCell = "LoginItemCell"
         static let UserHabitCell = "UserHabitCell"
+        static let NewUserHabitNameCell = "NewUserHabitNameCell"
+        static let NewUserHabitDescriptionsCell = "NewUserHabitDescriptionsCell"
+        static let NewUserHabitTimeCell = "NewUserHabitTimeCell"
+        static let NewUserHabitDayCell = "NewUserHabitDayCell"
     }
     
     struct Segues {
         static let ShowRegistration =  "ShowRegistration"
         static let ShowUserProfile =  "ShowUserProfile"
+        static let ShowUserHabit =  "ShowUserHabit"
     }
     
     struct Images {
         static let DefaultProfileImage: UIImage = #imageLiteral(resourceName: "default_profile_image")
+    }
+    
+    struct Strings {
+        static let DefaultHabitTime = "12:00"
     }
 }
