@@ -35,6 +35,19 @@
 		50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D6D1FAE1809008B01F5 /* Array+Sample.swift */; };
 		50434D741FAE2E54008B01F5 /* UserHabitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */; };
 		50434D761FAE2EC0008B01F5 /* UserHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */; };
+		509031A81FAE58D5001D234B /* NewUserHabitMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031A71FAE58D5001D234B /* NewUserHabitMasterView.swift */; };
+		509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031A91FAE58EB001D234B /* NewUserHabitViewController.swift */; };
+		509031AC1FAE5912001D234B /* NewUserHabitNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031AB1FAE5912001D234B /* NewUserHabitNameCell.swift */; };
+		509031AE1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031AD1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift */; };
+		509031B01FAE5935001D234B /* NewUserHabitTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031AF1FAE5935001D234B /* NewUserHabitTimeCell.swift */; };
+		509031B21FAE595F001D234B /* NewUserHabitDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031B11FAE595F001D234B /* NewUserHabitDayCell.swift */; };
+		509031B41FAE5B5A001D234B /* NewUserHabitNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031B31FAE5B5A001D234B /* NewUserHabitNameViewModel.swift */; };
+		509031B61FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031B51FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift */; };
+		509031B81FAE5B8E001D234B /* NewUserHabitTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031B71FAE5B8E001D234B /* NewUserHabitTimeViewModel.swift */; };
+		509031BA1FAE5BA3001D234B /* NewUserHabitDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031B91FAE5BA3001D234B /* NewUserHabitDayViewModel.swift */; };
+		509031BC1FAE5EE7001D234B /* NewUserHabitSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031BB1FAE5EE7001D234B /* NewUserHabitSection.swift */; };
+		509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031BF1FAE60A3001D234B /* UserHabitDay.swift */; };
+		509031C21FAF59C0001D234B /* UserHabitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031C11FAF59C0001D234B /* UserHabitWrapper.swift */; };
 		50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091351F76B2FF00C1451D /* AppDelegate.swift */; };
 		50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C091391F76B2FF00C1451D /* Main.storyboard */; };
 		50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C0913C1F76B2FF00C1451D /* Assets.xcassets */; };
@@ -157,6 +170,19 @@
 		50434D6D1FAE1809008B01F5 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
 		50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitCellView.swift; sourceTree = "<group>"; };
 		50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitCell.swift; sourceTree = "<group>"; };
+		509031A71FAE58D5001D234B /* NewUserHabitMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitMasterView.swift; sourceTree = "<group>"; };
+		509031A91FAE58EB001D234B /* NewUserHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitViewController.swift; sourceTree = "<group>"; };
+		509031AB1FAE5912001D234B /* NewUserHabitNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitNameCell.swift; sourceTree = "<group>"; };
+		509031AD1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitDescriptionsCell.swift; sourceTree = "<group>"; };
+		509031AF1FAE5935001D234B /* NewUserHabitTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitTimeCell.swift; sourceTree = "<group>"; };
+		509031B11FAE595F001D234B /* NewUserHabitDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitDayCell.swift; sourceTree = "<group>"; };
+		509031B31FAE5B5A001D234B /* NewUserHabitNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitNameViewModel.swift; sourceTree = "<group>"; };
+		509031B51FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitDescriptionsViewModel.swift; sourceTree = "<group>"; };
+		509031B71FAE5B8E001D234B /* NewUserHabitTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitTimeViewModel.swift; sourceTree = "<group>"; };
+		509031B91FAE5BA3001D234B /* NewUserHabitDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitDayViewModel.swift; sourceTree = "<group>"; };
+		509031BB1FAE5EE7001D234B /* NewUserHabitSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitSection.swift; sourceTree = "<group>"; };
+		509031BF1FAE60A3001D234B /* UserHabitDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitDay.swift; sourceTree = "<group>"; };
+		509031C11FAF59C0001D234B /* UserHabitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitWrapper.swift; sourceTree = "<group>"; };
 		50C091321F76B2FF00C1451D /* PokeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C091351F76B2FF00C1451D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C0913A1F76B2FF00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -308,6 +334,26 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		509031A31FAE5891001D234B /* NewUserHabit */ = {
+			isa = PBXGroup;
+			children = (
+				509031A91FAE58EB001D234B /* NewUserHabitViewController.swift */,
+				509031A71FAE58D5001D234B /* NewUserHabitMasterView.swift */,
+				509031AB1FAE5912001D234B /* NewUserHabitNameCell.swift */,
+				509031AD1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift */,
+				509031AF1FAE5935001D234B /* NewUserHabitTimeCell.swift */,
+				509031B11FAE595F001D234B /* NewUserHabitDayCell.swift */,
+				509031B31FAE5B5A001D234B /* NewUserHabitNameViewModel.swift */,
+				509031B51FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift */,
+				509031B71FAE5B8E001D234B /* NewUserHabitTimeViewModel.swift */,
+				509031B91FAE5BA3001D234B /* NewUserHabitDayViewModel.swift */,
+				509031BB1FAE5EE7001D234B /* NewUserHabitSection.swift */,
+				509031BF1FAE60A3001D234B /* UserHabitDay.swift */,
+				509031C11FAF59C0001D234B /* UserHabitWrapper.swift */,
+			);
+			path = NewUserHabit;
+			sourceTree = "<group>";
+		};
 		50C091291F76B2FF00C1451D = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +388,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				509031A31FAE5891001D234B /* NewUserHabit */,
 				50434D621FAE0CF7008B01F5 /* Mock */,
 				50434D561FAE06DD008B01F5 /* Profile */,
 				503796AD1FACF7F900988B54 /* UserDashboard */,
@@ -601,12 +648,17 @@
 			files = (
 				50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
+				509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */,
 				50434D681FAE1141008B01F5 /* MockUserGenerator.swift in Sources */,
 				503736A01F798803001C9C13 /* LoginMasterView.swift in Sources */,
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
+				509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */,
+				509031B21FAE595F001D234B /* NewUserHabitDayCell.swift in Sources */,
 				503736971F797B6F001C9C13 /* PMButton.xib in Sources */,
 				50434D6A1FAE1161008B01F5 /* MockUser.swift in Sources */,
 				50C0919C1F77CC2900C1451D /* RegistrationItemViewModel.swift in Sources */,
+				509031BC1FAE5EE7001D234B /* NewUserHabitSection.swift in Sources */,
+				509031B81FAE5B8E001D234B /* NewUserHabitTimeViewModel.swift in Sources */,
 				50C0917F1F77C20500C1451D /* RegistrationViewController.swift in Sources */,
 				5037369E1F7986C7001C9C13 /* LoginViewController.swift in Sources */,
 				50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */,
@@ -617,10 +669,14 @@
 				503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
+				509031B01FAE5935001D234B /* NewUserHabitTimeCell.swift in Sources */,
 				50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */,
+				509031B61FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift in Sources */,
+				509031AE1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift in Sources */,
 				503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */,
 				50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */,
 				503736A21F79884D001C9C13 /* LoginItemCell.swift in Sources */,
+				509031A81FAE58D5001D234B /* NewUserHabitMasterView.swift in Sources */,
 				503736961F79761C001C9C13 /* PMButton.swift in Sources */,
 				50434D761FAE2EC0008B01F5 /* UserHabitCell.swift in Sources */,
 				50434D741FAE2E54008B01F5 /* UserHabitCellView.swift in Sources */,
@@ -630,12 +686,16 @@
 				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
 				50434D5F1FAE08BC008B01F5 /* UIView+Border.swift in Sources */,
 				50434D6C1FAE14EB008B01F5 /* MockUserDatabase.swift in Sources */,
+				509031B41FAE5B5A001D234B /* NewUserHabitNameViewModel.swift in Sources */,
 				50C091831F77C2CF00C1451D /* Constants.swift in Sources */,
 				503736991F797F59001C9C13 /* CYTranslatedButton.swift in Sources */,
 				50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */,
+				509031BA1FAE5BA3001D234B /* NewUserHabitDayViewModel.swift in Sources */,
+				509031C21FAF59C0001D234B /* UserHabitWrapper.swift in Sources */,
 				503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */,
 				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
 				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
+				509031AC1FAE5912001D234B /* NewUserHabitNameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
