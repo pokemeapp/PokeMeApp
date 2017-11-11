@@ -45,7 +45,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }else if indexPath.section == 2 {
             let cell: NewUserHabitTimeCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitTimeCell, for: indexPath) as! NewUserHabitTimeCell
-            cell.timeLabel.text = Constants.Strings.DefaultHabitTime
+            cell.timeLabel.text = habit?.date == nil ? Constants.Strings.DefaultHabitTime : habit!.date?.toHourMinute() 
             return cell
         }
         return UITableViewCell()
@@ -65,13 +65,10 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func closePickerView(_ sender: Any) {
         let date = self.newUserHabitMasterView.pickerView.date
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        let dateString = formatter.string(from: date)
-        let cell: NewUserHabitTimeCell = self.newUserHabitMasterView.tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitTimeCell) as! NewUserHabitTimeCell
-        cell.timeLabel.text = dateString
+        habit?.date = date
         self.pickerViewBottomConstraint.constant = -200.0
         self.newUserHabitMasterView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.newUserHabitMasterView.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .none)
     }
     
     

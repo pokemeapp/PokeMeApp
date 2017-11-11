@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+extension Date {
+    
+    func toHourMinute() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let string = formatter.string(from: self)
+        return string
+    }
+    
+}
