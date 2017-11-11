@@ -48,6 +48,7 @@
 		509031BC1FAE5EE7001D234B /* NewUserHabitSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031BB1FAE5EE7001D234B /* NewUserHabitSection.swift */; };
 		509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031BF1FAE60A3001D234B /* UserHabitDay.swift */; };
 		509031C21FAF59C0001D234B /* UserHabitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031C11FAF59C0001D234B /* UserHabitWrapper.swift */; };
+		50ABEBC11FB753B20005EEA0 /* Date+ToHourMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ABEBC01FB753B20005EEA0 /* Date+ToHourMinute.swift */; };
 		50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091351F76B2FF00C1451D /* AppDelegate.swift */; };
 		50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C091391F76B2FF00C1451D /* Main.storyboard */; };
 		50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C0913C1F76B2FF00C1451D /* Assets.xcassets */; };
@@ -183,6 +184,7 @@
 		509031BB1FAE5EE7001D234B /* NewUserHabitSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitSection.swift; sourceTree = "<group>"; };
 		509031BF1FAE60A3001D234B /* UserHabitDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitDay.swift; sourceTree = "<group>"; };
 		509031C11FAF59C0001D234B /* UserHabitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitWrapper.swift; sourceTree = "<group>"; };
+		50ABEBC01FB753B20005EEA0 /* Date+ToHourMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToHourMinute.swift"; sourceTree = "<group>"; };
 		50C091321F76B2FF00C1451D /* PokeMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C091351F76B2FF00C1451D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C0913A1F76B2FF00C1451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 				503736981F797F59001C9C13 /* CYTranslatedButton.swift */,
 				50434D5E1FAE08BC008B01F5 /* UIView+Border.swift */,
 				50434D601FAE0965008B01F5 /* UIView+Shadow.swift */,
+				50ABEBC01FB753B20005EEA0 /* Date+ToHourMinute.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
 				509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */,
+				50ABEBC11FB753B20005EEA0 /* Date+ToHourMinute.swift in Sources */,
 				50434D681FAE1141008B01F5 /* MockUserGenerator.swift in Sources */,
 				503736A01F798803001C9C13 /* LoginMasterView.swift in Sources */,
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
