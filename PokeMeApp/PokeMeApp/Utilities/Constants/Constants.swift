@@ -33,6 +33,10 @@ struct Constants {
     
     struct Images {
         static let DefaultProfileImage: UIImage = #imageLiteral(resourceName: "default_profile_image")
+        static let Warning: UIImage = #imageLiteral(resourceName: "warning")
+        static let Notification: UIImage = #imageLiteral(resourceName: "noti")
+        static let Health: UIImage = #imageLiteral(resourceName: "health")
+        static let Today: UIImage = #imageLiteral(resourceName: "today")
     }
     
     struct Strings {
