@@ -144,26 +144,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qMa-u4-643">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qMa-u4-643">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="lfq-s1-NIe">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="lfq-s1-NIe" customClass="NewHabitHeaderView" customModule="PokeMeApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-Ad-6Rj" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-Ad-6Rj" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
                                             <rect key="frame" x="147" y="60" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="QoM-Ad-6Rj" secondAttribute="height" multiplier="1:1" id="PXb-CD-sj9"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH7-mC-7qj">
+                                            <rect key="frame" x="106" y="60" width="25" height="25"/>
+                                            <state key="normal" image="health"/>
+                                            <connections>
+                                                <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="vDB-0A-ZOf"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-sY-2jY">
+                                            <rect key="frame" x="108.5" y="118" width="20" height="22"/>
+                                            <state key="normal" image="today"/>
+                                            <connections>
+                                                <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="ZtH-O6-itR"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-UZ-sBK">
+                                            <rect key="frame" x="243" y="60" width="20" height="22"/>
+                                            <state key="normal" image="noti"/>
+                                            <connections>
+                                                <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="l9J-Al-isJ"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8k-l2-ujp">
+                                            <rect key="frame" x="243" y="118" width="20" height="22"/>
+                                            <state key="normal" image="warning"/>
+                                            <connections>
+                                                <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="Z7V-cm-Vxo"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="QoM-Ad-6Rj" firstAttribute="centerY" secondItem="lfq-s1-NIe" secondAttribute="centerY" id="3rn-vy-eVJ"/>
+                                        <constraint firstItem="dDi-UZ-sBK" firstAttribute="leading" secondItem="QoM-Ad-6Rj" secondAttribute="trailing" constant="16" id="Dgi-qm-4yU"/>
+                                        <constraint firstItem="g8k-l2-ujp" firstAttribute="bottom" secondItem="QoM-Ad-6Rj" secondAttribute="bottom" id="KKa-2p-Fsf"/>
+                                        <constraint firstItem="9N3-sY-2jY" firstAttribute="bottom" secondItem="QoM-Ad-6Rj" secondAttribute="bottom" id="OZq-kS-dAU"/>
+                                        <constraint firstItem="cH7-mC-7qj" firstAttribute="top" secondItem="QoM-Ad-6Rj" secondAttribute="top" id="XyW-Jh-4zd"/>
+                                        <constraint firstItem="cH7-mC-7qj" firstAttribute="trailing" secondItem="QoM-Ad-6Rj" secondAttribute="leading" constant="-16" id="YtO-hg-OJS"/>
                                         <constraint firstItem="QoM-Ad-6Rj" firstAttribute="height" secondItem="lfq-s1-NIe" secondAttribute="height" multiplier="0.4" id="caO-hN-fnh"/>
+                                        <constraint firstItem="g8k-l2-ujp" firstAttribute="centerX" secondItem="dDi-UZ-sBK" secondAttribute="centerX" id="mTi-ZS-48S"/>
+                                        <constraint firstItem="dDi-UZ-sBK" firstAttribute="top" secondItem="QoM-Ad-6Rj" secondAttribute="top" id="n9K-dh-QQl"/>
+                                        <constraint firstItem="9N3-sY-2jY" firstAttribute="centerX" secondItem="cH7-mC-7qj" secondAttribute="centerX" id="ovS-fQ-4eM"/>
                                         <constraint firstItem="QoM-Ad-6Rj" firstAttribute="centerX" secondItem="lfq-s1-NIe" secondAttribute="centerX" id="rUk-DQ-Apj"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="healthButton" destination="cH7-mC-7qj" id="ciy-j5-TLE"/>
+                                        <outlet property="imageView" destination="QoM-Ad-6Rj" id="nXy-L0-fkx"/>
+                                        <outlet property="notificationButton" destination="dDi-UZ-sBK" id="cqx-CN-qkN"/>
+                                        <outlet property="todayButton" destination="9N3-sY-2jY" id="QCK-Ew-YGH"/>
+                                        <outlet property="warningButton" destination="g8k-l2-ujp" id="Wwk-jM-AMr"/>
+                                    </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewUserHabitNameCell" id="k98-ce-I2e" customClass="NewUserHabitNameCell" customModule="PokeMeApp" customModuleProvider="target">
@@ -282,6 +325,273 @@
                                             <outlet property="timeLabel" destination="RP6-Ag-cjE" id="frP-CZ-0Mv"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewUserHabitDayCell" id="jhD-Z7-Ry4" customClass="NewUserHabitDayCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jhD-Z7-Ry4" id="VQW-a9-eoT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92U-nc-bBk">
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="44"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xg7-Lx-BhJ">
+                                                            <rect key="frame" x="0.0" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikl-ZF-Zp4" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Monday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-y8-eXF" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="1QZ-y8-eXF" secondAttribute="height" multiplier="1:1" id="MmF-kv-0eM"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="1QZ-y8-eXF" firstAttribute="height" secondItem="xg7-Lx-BhJ" secondAttribute="height" multiplier="0.4" id="Qu2-zy-M6Y"/>
+                                                                <constraint firstItem="1QZ-y8-eXF" firstAttribute="centerX" secondItem="xg7-Lx-BhJ" secondAttribute="centerX" constant="4" id="ULe-2n-OsQ"/>
+                                                                <constraint firstItem="1QZ-y8-eXF" firstAttribute="leading" secondItem="Ikl-ZF-Zp4" secondAttribute="trailing" constant="4" id="bpD-mk-ntl"/>
+                                                                <constraint firstItem="1QZ-y8-eXF" firstAttribute="centerY" secondItem="xg7-Lx-BhJ" secondAttribute="centerY" id="ts5-4i-dbp"/>
+                                                                <constraint firstItem="Ikl-ZF-Zp4" firstAttribute="centerY" secondItem="xg7-Lx-BhJ" secondAttribute="centerY" id="y1t-xE-mHl"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-KD-tRL">
+                                                            <rect key="frame" x="52.5" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZL-XG-K0v" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Tuesday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZm-mE-oYN" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="VZm-mE-oYN" secondAttribute="height" multiplier="1:1" id="X7X-2z-g5F"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="tZL-XG-K0v" firstAttribute="centerY" secondItem="lhN-KD-tRL" secondAttribute="centerY" id="EnM-EC-Nuw"/>
+                                                                <constraint firstItem="VZm-mE-oYN" firstAttribute="centerY" secondItem="lhN-KD-tRL" secondAttribute="centerY" id="GIY-QA-tBK"/>
+                                                                <constraint firstItem="VZm-mE-oYN" firstAttribute="leading" secondItem="tZL-XG-K0v" secondAttribute="trailing" constant="4" id="Jkp-8n-T1g"/>
+                                                                <constraint firstItem="VZm-mE-oYN" firstAttribute="centerX" secondItem="lhN-KD-tRL" secondAttribute="centerX" constant="4" id="Ugj-8I-mLk"/>
+                                                                <constraint firstItem="VZm-mE-oYN" firstAttribute="height" secondItem="lhN-KD-tRL" secondAttribute="height" multiplier="0.4" id="bxa-tb-pyL"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHr-fm-LkV">
+                                                            <rect key="frame" x="105" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBA-Eq-wFn" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Wednesday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-7k-wlw" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="VdK-7k-wlw" secondAttribute="height" multiplier="1:1" id="W4u-2u-eiA"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="VdK-7k-wlw" firstAttribute="centerX" secondItem="VHr-fm-LkV" secondAttribute="centerX" constant="4" id="eGn-AX-LUX"/>
+                                                                <constraint firstItem="VdK-7k-wlw" firstAttribute="leading" secondItem="oBA-Eq-wFn" secondAttribute="trailing" constant="4" id="gv3-Tx-5Fs"/>
+                                                                <constraint firstItem="VdK-7k-wlw" firstAttribute="centerY" secondItem="VHr-fm-LkV" secondAttribute="centerY" id="k3C-LV-86W"/>
+                                                                <constraint firstItem="oBA-Eq-wFn" firstAttribute="centerY" secondItem="VHr-fm-LkV" secondAttribute="centerY" id="r4j-6w-GOc"/>
+                                                                <constraint firstItem="VdK-7k-wlw" firstAttribute="height" secondItem="VHr-fm-LkV" secondAttribute="height" multiplier="0.4" id="xed-Nh-0FI"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dam-Eg-DGK">
+                                                            <rect key="frame" x="157" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ri-YS-dlN" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Thursday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMD-kP-xA3" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="tMD-kP-xA3" secondAttribute="height" multiplier="1:1" id="uI4-TT-Tr3"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="tMD-kP-xA3" firstAttribute="centerX" secondItem="Dam-Eg-DGK" secondAttribute="centerX" constant="4" id="1dY-IT-PfF"/>
+                                                                <constraint firstItem="tMD-kP-xA3" firstAttribute="leading" secondItem="5Ri-YS-dlN" secondAttribute="trailing" constant="4" id="8w4-mG-xjd"/>
+                                                                <constraint firstItem="tMD-kP-xA3" firstAttribute="centerY" secondItem="Dam-Eg-DGK" secondAttribute="centerY" id="MCE-yp-t3u"/>
+                                                                <constraint firstItem="5Ri-YS-dlN" firstAttribute="centerY" secondItem="Dam-Eg-DGK" secondAttribute="centerY" id="dwc-Uz-n2m"/>
+                                                                <constraint firstItem="tMD-kP-xA3" firstAttribute="height" secondItem="Dam-Eg-DGK" secondAttribute="height" multiplier="0.4" id="lLl-g4-45V"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vce-eB-X9S">
+                                                            <rect key="frame" x="209.5" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n17-b2-eo2" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Friday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjz-ko-GAn" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="bjz-ko-GAn" secondAttribute="height" multiplier="1:1" id="QMn-G9-aTk"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="bjz-ko-GAn" firstAttribute="leading" secondItem="n17-b2-eo2" secondAttribute="trailing" constant="4" id="6S0-C5-DyV"/>
+                                                                <constraint firstItem="bjz-ko-GAn" firstAttribute="centerY" secondItem="vce-eB-X9S" secondAttribute="centerY" id="DQs-Ij-HSk"/>
+                                                                <constraint firstItem="n17-b2-eo2" firstAttribute="centerY" secondItem="vce-eB-X9S" secondAttribute="centerY" id="PM7-Ug-k8f"/>
+                                                                <constraint firstItem="bjz-ko-GAn" firstAttribute="height" secondItem="vce-eB-X9S" secondAttribute="height" multiplier="0.4" id="g42-C9-1tE"/>
+                                                                <constraint firstItem="bjz-ko-GAn" firstAttribute="centerX" secondItem="vce-eB-X9S" secondAttribute="centerX" constant="4" id="gQK-mh-H8c"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-LM-7nS">
+                                                            <rect key="frame" x="262" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZL-q6-z5z" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Saturday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C4-eJ-5C3" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="7C4-eJ-5C3" secondAttribute="height" multiplier="1:1" id="WlB-1Y-xAJ"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="7C4-eJ-5C3" firstAttribute="leading" secondItem="5ZL-q6-z5z" secondAttribute="trailing" constant="4" id="TTi-bi-OK9"/>
+                                                                <constraint firstItem="7C4-eJ-5C3" firstAttribute="height" secondItem="Qxn-LM-7nS" secondAttribute="height" multiplier="0.4" id="TuD-01-b6T"/>
+                                                                <constraint firstItem="5ZL-q6-z5z" firstAttribute="centerY" secondItem="Qxn-LM-7nS" secondAttribute="centerY" id="XNa-2p-CG9"/>
+                                                                <constraint firstItem="7C4-eJ-5C3" firstAttribute="centerY" secondItem="Qxn-LM-7nS" secondAttribute="centerY" id="k7v-nF-mEx"/>
+                                                                <constraint firstItem="7C4-eJ-5C3" firstAttribute="centerX" secondItem="Qxn-LM-7nS" secondAttribute="centerX" constant="4" id="w6M-Wc-fY3"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5g-bj-LMG">
+                                                            <rect key="frame" x="314.5" y="-0.5" width="52.5" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-5o-HgX" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="UserHabit.Days.Sunday"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWf-I0-6h6" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="oWf-I0-6h6" secondAttribute="height" multiplier="1:1" id="8cz-DY-3ts"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="oWf-I0-6h6" firstAttribute="leading" secondItem="uQX-5o-HgX" secondAttribute="trailing" constant="4" id="5yW-vc-SeO"/>
+                                                                <constraint firstItem="oWf-I0-6h6" firstAttribute="centerX" secondItem="o5g-bj-LMG" secondAttribute="centerX" constant="4" id="INE-vl-lNL"/>
+                                                                <constraint firstItem="oWf-I0-6h6" firstAttribute="centerY" secondItem="o5g-bj-LMG" secondAttribute="centerY" id="gC9-QC-0LO"/>
+                                                                <constraint firstItem="oWf-I0-6h6" firstAttribute="height" secondItem="o5g-bj-LMG" secondAttribute="height" multiplier="0.4" id="jE5-bR-pTa"/>
+                                                                <constraint firstItem="uQX-5o-HgX" firstAttribute="centerY" secondItem="o5g-bj-LMG" secondAttribute="centerY" id="mHB-Kh-r06"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="xg7-Lx-BhJ" secondAttribute="bottom" id="1ol-lF-RPj"/>
+                                                        <constraint firstItem="vce-eB-X9S" firstAttribute="centerY" secondItem="92U-nc-bBk" secondAttribute="centerY" id="2j4-R6-lhh"/>
+                                                        <constraint firstItem="vce-eB-X9S" firstAttribute="width" secondItem="Dam-Eg-DGK" secondAttribute="width" id="56a-SR-bsl"/>
+                                                        <constraint firstItem="xg7-Lx-BhJ" firstAttribute="width" secondItem="92U-nc-bBk" secondAttribute="width" multiplier="1/7" id="CBY-5I-xhe"/>
+                                                        <constraint firstItem="o5g-bj-LMG" firstAttribute="height" secondItem="Qxn-LM-7nS" secondAttribute="height" id="ExH-YW-2L7"/>
+                                                        <constraint firstItem="VHr-fm-LkV" firstAttribute="leading" secondItem="lhN-KD-tRL" secondAttribute="trailing" id="It2-8J-Kc4"/>
+                                                        <constraint firstItem="vce-eB-X9S" firstAttribute="height" secondItem="Dam-Eg-DGK" secondAttribute="height" id="KdV-hf-uFy"/>
+                                                        <constraint firstItem="Dam-Eg-DGK" firstAttribute="width" secondItem="VHr-fm-LkV" secondAttribute="width" id="LPL-1A-xJA"/>
+                                                        <constraint firstItem="Qxn-LM-7nS" firstAttribute="height" secondItem="vce-eB-X9S" secondAttribute="height" id="M2S-fO-GeF"/>
+                                                        <constraint firstItem="lhN-KD-tRL" firstAttribute="width" secondItem="xg7-Lx-BhJ" secondAttribute="width" id="RUK-w1-zkf"/>
+                                                        <constraint firstItem="vce-eB-X9S" firstAttribute="trailing" secondItem="Qxn-LM-7nS" secondAttribute="leading" id="RZC-a2-IeM"/>
+                                                        <constraint firstItem="vce-eB-X9S" firstAttribute="leading" secondItem="Dam-Eg-DGK" secondAttribute="trailing" id="SFl-GB-af2"/>
+                                                        <constraint firstItem="lhN-KD-tRL" firstAttribute="height" secondItem="xg7-Lx-BhJ" secondAttribute="height" id="a3T-1d-omF"/>
+                                                        <constraint firstItem="Dam-Eg-DGK" firstAttribute="leading" secondItem="VHr-fm-LkV" secondAttribute="trailing" id="aHH-2c-8RM"/>
+                                                        <constraint firstItem="Qxn-LM-7nS" firstAttribute="width" secondItem="vce-eB-X9S" secondAttribute="width" id="ceX-4Y-cLk"/>
+                                                        <constraint firstItem="Qxn-LM-7nS" firstAttribute="trailing" secondItem="o5g-bj-LMG" secondAttribute="leading" id="cqR-iM-X28"/>
+                                                        <constraint firstItem="xg7-Lx-BhJ" firstAttribute="height" secondItem="92U-nc-bBk" secondAttribute="height" id="cxO-wU-kKq"/>
+                                                        <constraint firstItem="lhN-KD-tRL" firstAttribute="leading" secondItem="xg7-Lx-BhJ" secondAttribute="trailing" id="gpv-1H-5US"/>
+                                                        <constraint firstItem="lhN-KD-tRL" firstAttribute="centerY" secondItem="92U-nc-bBk" secondAttribute="centerY" id="hMS-Uo-e5e"/>
+                                                        <constraint firstItem="VHr-fm-LkV" firstAttribute="width" secondItem="lhN-KD-tRL" secondAttribute="width" id="qm0-Cu-oNl"/>
+                                                        <constraint firstItem="o5g-bj-LMG" firstAttribute="width" secondItem="Qxn-LM-7nS" secondAttribute="width" id="rWq-r3-Ked"/>
+                                                        <constraint firstItem="VHr-fm-LkV" firstAttribute="height" secondItem="lhN-KD-tRL" secondAttribute="height" id="tmk-H1-Cg2"/>
+                                                        <constraint firstItem="Dam-Eg-DGK" firstAttribute="centerY" secondItem="92U-nc-bBk" secondAttribute="centerY" id="tsY-H3-uvp"/>
+                                                        <constraint firstItem="Dam-Eg-DGK" firstAttribute="height" secondItem="VHr-fm-LkV" secondAttribute="height" id="uPb-hM-1TV"/>
+                                                        <constraint firstItem="xg7-Lx-BhJ" firstAttribute="top" secondItem="92U-nc-bBk" secondAttribute="top" id="ufQ-wi-d8R"/>
+                                                        <constraint firstItem="o5g-bj-LMG" firstAttribute="centerY" secondItem="92U-nc-bBk" secondAttribute="centerY" id="xuu-iI-OGk"/>
+                                                        <constraint firstItem="Qxn-LM-7nS" firstAttribute="centerY" secondItem="92U-nc-bBk" secondAttribute="centerY" id="yFb-u5-Fc8"/>
+                                                        <constraint firstItem="xg7-Lx-BhJ" firstAttribute="leading" secondItem="92U-nc-bBk" secondAttribute="leading" id="yOJ-GU-xIY"/>
+                                                        <constraint firstItem="VHr-fm-LkV" firstAttribute="centerY" secondItem="92U-nc-bBk" secondAttribute="centerY" id="zgn-zH-vdf"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="92U-nc-bBk" firstAttribute="top" secondItem="VQW-a9-eoT" secondAttribute="top" id="K3P-0d-wxJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="92U-nc-bBk" secondAttribute="bottom" id="X6h-dS-UVv"/>
+                                                <constraint firstAttribute="trailing" secondItem="92U-nc-bBk" secondAttribute="trailing" constant="4" id="gAK-5q-kAb"/>
+                                                <constraint firstItem="92U-nc-bBk" firstAttribute="leading" secondItem="VQW-a9-eoT" secondAttribute="leading" constant="4" id="v06-yH-t0f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="fridayCheckBox" destination="bjz-ko-GAn" id="s3g-xT-2Mp"/>
+                                            <outlet property="mondayCheckBox" destination="1QZ-y8-eXF" id="S2t-V1-rQE"/>
+                                            <outlet property="saturdayCheckBox" destination="7C4-eJ-5C3" id="Gxb-Oi-cme"/>
+                                            <outlet property="sundayCheckBox" destination="oWf-I0-6h6" id="fcI-4k-FKc"/>
+                                            <outlet property="thursdayCheckBox" destination="tMD-kP-xA3" id="nyg-bd-ZhF"/>
+                                            <outlet property="tuesdayCheckBox" destination="VZm-mE-oYN" id="SVP-Pl-cC1"/>
+                                            <outlet property="wednesdayCheckBox" destination="VdK-7k-wlw" id="Pxm-58-rCJ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fd3-MV-hya">
@@ -332,6 +642,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0YL-hT-a75"/>
                         <connections>
+                            <outlet property="headerView" destination="lfq-s1-NIe" id="ZwE-7G-ax9"/>
                             <outlet property="pickerView" destination="Lr2-Ev-aaj" id="CU0-mx-Say"/>
                             <outlet property="tableView" destination="qMa-u4-643" id="jXE-37-1Ia"/>
                         </connections>
@@ -719,7 +1030,11 @@
     </scenes>
     <resources>
         <image name="default_profile_image" width="25" height="25"/>
+        <image name="health" width="25" height="25"/>
         <image name="logo" width="116" height="116"/>
+        <image name="noti" width="20" height="20"/>
+        <image name="today" width="20" height="20"/>
         <image name="user" width="25" height="25"/>
+        <image name="warning" width="20" height="20"/>
     </resources>
 </document>
