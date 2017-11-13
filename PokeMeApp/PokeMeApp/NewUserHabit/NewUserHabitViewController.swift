@@ -24,6 +24,10 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         self.newUserHabitMasterView.tableView.dataSource = self
         self.newUserHabitMasterView.tableView.delegate = self
         self.hideKeyboardWhenTappedAround()
+        if habit != nil {
+            self.newUserHabitMasterView.headerView.bindComponents(habit!)
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,6 +35,9 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 2 {
+            return 2
+        }
         return 1
     }
     
@@ -43,7 +50,11 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
             let cell: NewUserHabitDescriptionsCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitDescriptionsCell, for: indexPath) as! NewUserHabitDescriptionsCell
             cell.descriptionLabel.text = habit?.habitDescription ?? ""
             return cell
-        }else if indexPath.section == 2 {
+        }else if indexPath.section == 2 && indexPath.row == 0 {
+            let cell: NewUserHabitDayCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitDayCell, for: indexPath) as! NewUserHabitDayCell
+            
+            return cell
+        }else if indexPath.section == 2 && indexPath.row == 1{
             let cell: NewUserHabitTimeCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitTimeCell, for: indexPath) as! NewUserHabitTimeCell
             cell.timeLabel.text = habit?.date == nil ? Constants.Strings.DefaultHabitTime : habit!.date?.toHourMinute() 
             return cell
@@ -56,11 +67,13 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
+        if indexPath.section == 2 && indexPath.row == 1{
             self.pickerViewBottomConstraint.constant = 0.0
         }
-        self.newUserHabitMasterView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
-        self.newUserHabitMasterView.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+        if indexPath != IndexPath(row: 0, section: 2){
+            self.newUserHabitMasterView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
+            self.newUserHabitMasterView.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+        }
     }
     
     @IBAction func closePickerView(_ sender: Any) {

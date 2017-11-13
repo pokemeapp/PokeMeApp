@@ -12,4 +12,5 @@ class NewUserHabitMasterView: UIView {
 
     @IBOutlet weak var pickerView: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: NewHabitHeaderView!
 }

@@ -18,8 +18,8 @@ class UserHabitViewModel: NSObject {
         didSet {
             self.name.value = model.name ?? ""
             self.habitDescription.value = model.habitDescription ?? ""
-            if model.imageURL != nil {
-                self.downloadImage(url: model.imageURL!)
+            if model.type != nil {
+                self.setType(model.type)
             }
             
         }
@@ -29,11 +29,10 @@ class UserHabitViewModel: NSObject {
     var habitDescription: Variable<String> = Variable("")
     var image: Variable<UIImage> = Variable(UIImage())
     
-    func downloadImage(url: String){
-        SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: url), options: .useNSURLCache, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
-            if maybeImage != nil || finished == true, error == nil{
-                self?.image.value = maybeImage!
-            }
+    func setType(_ type: HabitType?){
+        guard let type = type else {
+            return
         }
+        self.image.value = HabitHelper.shared.convertImage(from: type)
     }
 }

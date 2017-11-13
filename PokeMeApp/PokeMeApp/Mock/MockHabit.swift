@@ -10,7 +10,7 @@ import Foundation
 
 struct MockHabit{
     
-    var imageURL: String?
+    var type: HabitType?
     var name: String?
     var habitDescription: String?
     var date: Date?
