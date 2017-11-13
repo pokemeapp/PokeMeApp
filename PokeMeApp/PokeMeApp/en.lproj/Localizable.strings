@@ -24,3 +24,12 @@
 "UserHabitSectionDescription" = "Description";
 "UserHabitSectionDate" = "Date";
 "Close" = "Close";
+
+"UserHabit.Days.Monday" = "M";
+"UserHabit.Days.Tuesday" = "T";
+"UserHabit.Days.Wednesday" = "W";
+"UserHabit.Days.Thursday" = "T";
+"UserHabit.Days.Friday" = "F";
+"UserHabit.Days.Saturday" = "S";
+"UserHabit.Days.Sunday" = "S";
+
