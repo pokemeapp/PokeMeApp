@@ -40,6 +40,12 @@
 		505C14861FBA2DBB0032FB59 /* PMCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */; };
 		505C14881FBA39B40032FB59 /* NewHabitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14871FBA39B40032FB59 /* NewHabitHeaderView.swift */; };
 		505C148A1FBA48820032FB59 /* HabitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14891FBA48820032FB59 /* HabitHelper.swift */; };
+		505C148F1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C148E1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift */; };
+		505C14921FBB7DF70032FB59 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14911FBB7DF70032FB59 /* SearchViewController.swift */; };
+		505C14941FBB82800032FB59 /* SearchedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14931FBB82800032FB59 /* SearchedUserCell.swift */; };
+		505C14961FBB82A80032FB59 /* SearchedUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14951FBB82A80032FB59 /* SearchedUserViewModel.swift */; };
+		505C14981FBB87050032FB59 /* SearchUserMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14971FBB87050032FB59 /* SearchUserMasterView.swift */; };
+		505C149A1FBB877F0032FB59 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14991FBB877F0032FB59 /* SearchHeaderView.swift */; };
 		509031A81FAE58D5001D234B /* NewUserHabitMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031A71FAE58D5001D234B /* NewUserHabitMasterView.swift */; };
 		509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031A91FAE58EB001D234B /* NewUserHabitViewController.swift */; };
 		509031AC1FAE5912001D234B /* NewUserHabitNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509031AB1FAE5912001D234B /* NewUserHabitNameCell.swift */; };
@@ -182,6 +188,12 @@
 		505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMCheckBox.swift; sourceTree = "<group>"; };
 		505C14871FBA39B40032FB59 /* NewHabitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitHeaderView.swift; sourceTree = "<group>"; };
 		505C14891FBA48820032FB59 /* HabitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitHelper.swift; sourceTree = "<group>"; };
+		505C148E1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDashboardViewController.swift; sourceTree = "<group>"; };
+		505C14911FBB7DF70032FB59 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		505C14931FBB82800032FB59 /* SearchedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedUserCell.swift; sourceTree = "<group>"; };
+		505C14951FBB82A80032FB59 /* SearchedUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedUserViewModel.swift; sourceTree = "<group>"; };
+		505C14971FBB87050032FB59 /* SearchUserMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserMasterView.swift; sourceTree = "<group>"; };
+		505C14991FBB877F0032FB59 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		509031A71FAE58D5001D234B /* NewUserHabitMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitMasterView.swift; sourceTree = "<group>"; };
 		509031A91FAE58EB001D234B /* NewUserHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitViewController.swift; sourceTree = "<group>"; };
 		509031AB1FAE5912001D234B /* NewUserHabitNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserHabitNameCell.swift; sourceTree = "<group>"; };
@@ -350,6 +362,26 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		505C148C1FBB7D8A0032FB59 /* FriendsDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				505C148E1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift */,
+			);
+			path = FriendsDashboard;
+			sourceTree = "<group>";
+		};
+		505C14901FBB7DE30032FB59 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				505C14911FBB7DF70032FB59 /* SearchViewController.swift */,
+				505C14931FBB82800032FB59 /* SearchedUserCell.swift */,
+				505C14951FBB82A80032FB59 /* SearchedUserViewModel.swift */,
+				505C14971FBB87050032FB59 /* SearchUserMasterView.swift */,
+				505C14991FBB877F0032FB59 /* SearchHeaderView.swift */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
 		509031A31FAE5891001D234B /* NewUserHabit */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +438,8 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				505C14901FBB7DE30032FB59 /* SearchViewController */,
+				505C148C1FBB7D8A0032FB59 /* FriendsDashboard */,
 				509031A31FAE5891001D234B /* NewUserHabit */,
 				50434D621FAE0CF7008B01F5 /* Mock */,
 				50434D561FAE06DD008B01F5 /* Profile */,
@@ -673,6 +707,7 @@
 				50434D681FAE1141008B01F5 /* MockUserGenerator.swift in Sources */,
 				503736A01F798803001C9C13 /* LoginMasterView.swift in Sources */,
 				505C148A1FBA48820032FB59 /* HabitHelper.swift in Sources */,
+				505C14981FBB87050032FB59 /* SearchUserMasterView.swift in Sources */,
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
 				509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */,
 				509031B21FAE595F001D234B /* NewUserHabitDayCell.swift in Sources */,
@@ -688,17 +723,20 @@
 				503EBECC1FAE3F700060CC42 /* MockHabit.swift in Sources */,
 				503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */,
 				50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */,
+				505C14961FBB82A80032FB59 /* SearchedUserViewModel.swift in Sources */,
 				503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
 				509031B01FAE5935001D234B /* NewUserHabitTimeCell.swift in Sources */,
 				50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */,
+				505C148F1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift in Sources */,
 				509031B61FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift in Sources */,
 				509031AE1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift in Sources */,
 				503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */,
 				50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */,
 				503736A21F79884D001C9C13 /* LoginItemCell.swift in Sources */,
 				509031A81FAE58D5001D234B /* NewUserHabitMasterView.swift in Sources */,
+				505C14941FBB82800032FB59 /* SearchedUserCell.swift in Sources */,
 				503736961F79761C001C9C13 /* PMButton.swift in Sources */,
 				50434D761FAE2EC0008B01F5 /* UserHabitCell.swift in Sources */,
 				50434D741FAE2E54008B01F5 /* UserHabitCellView.swift in Sources */,
@@ -709,12 +747,14 @@
 				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
 				50434D5F1FAE08BC008B01F5 /* UIView+Border.swift in Sources */,
 				50434D6C1FAE14EB008B01F5 /* MockUserDatabase.swift in Sources */,
+				505C149A1FBB877F0032FB59 /* SearchHeaderView.swift in Sources */,
 				509031B41FAE5B5A001D234B /* NewUserHabitNameViewModel.swift in Sources */,
 				50C091831F77C2CF00C1451D /* Constants.swift in Sources */,
 				503736991F797F59001C9C13 /* CYTranslatedButton.swift in Sources */,
 				50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */,
 				509031BA1FAE5BA3001D234B /* NewUserHabitDayViewModel.swift in Sources */,
 				509031C21FAF59C0001D234B /* UserHabitWrapper.swift in Sources */,
+				505C14921FBB7DF70032FB59 /* SearchViewController.swift in Sources */,
 				503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */,
 				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
 				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
