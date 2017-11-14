@@ -7,29 +7,38 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet var searchUserMasterView: SearchUserMasterView!
+    let disposeBag = DisposeBag()
+    var mockUsers: Variable<[MockUser]> = Variable([])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.searchUserMasterView.searchHeaderView.searchController.becomeFirstResponder()
+        let mockUserGenerator = MockUserGenerator(options: [.imageURL, .firstName, .lastName, .fullName])
+        self.mockUsers.value = mockUserGenerator.createMockUsers(10)
+        self.initObservers()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension SearchViewController {
+    
+    func initObservers(){
+        self.initTableView()
     }
-    */
-
+    
+    func initTableView(){
+        self.mockUsers.asObservable().bind(to: self.searchUserMasterView.tableView.rx.items(cellIdentifier: Constants.Cells.SearchedUserCell))({(_, model, cell: SearchedUserCell) in
+            cell.bind(to: model)
+        }).addDisposableTo(disposeBag)
+    }
+    
 }

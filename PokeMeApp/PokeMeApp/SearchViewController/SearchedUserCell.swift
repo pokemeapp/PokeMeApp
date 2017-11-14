@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchedUserCell: UITableViewCell {
 
+    let disposeBag = DisposeBag()
+    let viewModel = SearchedUserViewModel()
+    
+    @IBOutlet weak var addButton: PMButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: ProfileImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
+    }
+    
+    func bindComponents(){
+        self.viewModel.image.asObservable().bind(to: self.profileImageView.rx.image).addDisposableTo(disposeBag)
+        self.viewModel.name.asObservable().bind(to: self.nameLabel.rx.text).addDisposableTo(disposeBag)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func bind(to user: MockUser){
+        self.viewModel.model = user
     }
-
+    
 }

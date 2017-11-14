@@ -40,28 +40,28 @@ class MockUserGenerator {
         return mockUsers
     }
     
-    func addFirstName(_ mockUsers: [MockUser]) -> [MockUser]{
+    private func addFirstName(_ mockUsers: [MockUser]) -> [MockUser]{
         for mockUser in mockUsers {
             mockUser.firstName = mockUserDatabase?.firstNames.sample()
         }
         return mockUsers
     }
     
-    func addLastName(_ mockUsers: [MockUser]) -> [MockUser]{
+    private func addLastName(_ mockUsers: [MockUser]) -> [MockUser]{
         for mockUser in mockUsers {
             mockUser.lastName = mockUserDatabase?.lastNames.sample()
         }
         return mockUsers
     }
     
-    func addImageUrl(_ mockUsers: [MockUser]) -> [MockUser]{
+    private func addImageUrl(_ mockUsers: [MockUser]) -> [MockUser]{
         for mockUser in mockUsers {
             mockUser.imageURL = mockUserDatabase?.imageUrls.sample()
         }
         return mockUsers
     }
     
-    func addFullName(_ mockUsers: [MockUser]) -> [MockUser]{
+    private func addFullName(_ mockUsers: [MockUser]) -> [MockUser]{
         for mockUser in mockUsers {
             if let firstName = mockUser.firstName, let lastName = mockUser.lastName {
                 mockUser.fullName = "\(firstName)" + " " +  "\(lastName)"
