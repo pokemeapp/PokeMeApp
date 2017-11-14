@@ -23,12 +23,14 @@ struct Constants {
         static let NewUserHabitDescriptionsCell = "NewUserHabitDescriptionsCell"
         static let NewUserHabitTimeCell = "NewUserHabitTimeCell"
         static let NewUserHabitDayCell = "NewUserHabitDayCell"
+        static let SearchedUserCell = "SearchedUserCell"
     }
     
     struct Segues {
         static let ShowRegistration =  "ShowRegistration"
         static let ShowUserProfile =  "ShowUserProfile"
         static let ShowUserHabit =  "ShowUserHabit"
+        static let ShowSearch =  "ShowSearch"
     }
     
     struct Images {
