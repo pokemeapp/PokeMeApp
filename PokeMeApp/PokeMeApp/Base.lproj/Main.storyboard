@@ -660,14 +660,55 @@
         <scene sceneID="xNC-D9-vcX">
             <objects>
                 <viewController id="So6-na-497" customClass="FriendsDashboardViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CA9-i7-cFp">
+                    <view key="view" contentMode="scaleToFill" id="CA9-i7-cFp" customClass="FriendDashboardMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YXZ-QB-0OA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendHabitCell" id="jDt-qs-Mkh" customClass="FriendHabitCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jDt-qs-Mkh" id="oDO-CC-SIW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYX-mK-Cy6" customClass="FriendHabitCellView" customModule="PokeMeApp" customModuleProvider="target">
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="55.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PYX-mK-Cy6" firstAttribute="top" secondItem="oDO-CC-SIW" secondAttribute="top" id="O1f-aU-QSc"/>
+                                                <constraint firstItem="PYX-mK-Cy6" firstAttribute="leading" secondItem="oDO-CC-SIW" secondAttribute="leading" constant="4" id="RfO-UG-dMu"/>
+                                                <constraint firstAttribute="bottom" secondItem="PYX-mK-Cy6" secondAttribute="bottom" constant="4" id="Rgv-XC-fSp"/>
+                                                <constraint firstAttribute="trailing" secondItem="PYX-mK-Cy6" secondAttribute="trailing" constant="4" id="RyK-QZ-qrW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendHabitCellView" destination="PYX-mK-Cy6" id="3XN-vk-3lz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yrG-tz-shs" firstAttribute="bottom" secondItem="YXZ-QB-0OA" secondAttribute="bottom" id="82f-Dn-Kux"/>
+                            <constraint firstItem="YXZ-QB-0OA" firstAttribute="leading" secondItem="yrG-tz-shs" secondAttribute="leading" id="bWj-SC-7yK"/>
+                            <constraint firstItem="YXZ-QB-0OA" firstAttribute="top" secondItem="yrG-tz-shs" secondAttribute="top" id="jn2-x7-EGz"/>
+                            <constraint firstItem="yrG-tz-shs" firstAttribute="trailing" secondItem="YXZ-QB-0OA" secondAttribute="trailing" id="pji-ve-6rM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yrG-tz-shs"/>
+                        <connections>
+                            <outlet property="tableView" destination="YXZ-QB-0OA" id="P3U-Ey-Q2w"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="zEe-Se-ZsZ"/>
                     <connections>
+                        <outlet property="masterView" destination="CA9-i7-cFp" id="Eo3-LY-Dhc"/>
                         <segue destination="lQ4-v3-R6v" kind="presentation" identifier="ShowSearch" id="bhq-iG-ckM"/>
                     </connections>
                 </viewController>
