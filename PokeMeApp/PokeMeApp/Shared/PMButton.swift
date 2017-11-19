@@ -53,6 +53,7 @@ class PMButton: UIView {
         view.autoresizingMask =
             [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+        self.button.translationKey = title
     }
     
     func loadViewFromNib() -> UIView? {
