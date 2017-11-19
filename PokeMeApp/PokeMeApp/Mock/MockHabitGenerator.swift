@@ -14,9 +14,11 @@ class MockHabitGenerator {
     
     func createMockHabits(_ count: Int) -> [MockHabit] {
         self.mockHabitDatabase = MockHabitDatabase()
+        let mockUserGenerator = MockUserGenerator(options: [.firstName, .lastName, .fullName])
+        let mockUsers = mockUserGenerator.createMockUsers(count)
         var mockHabits: [MockHabit] = []
         for i in stride(from: 0, to: count, by: 1){
-            mockHabits.append(MockHabit(type: mockHabitDatabase?.types.sample(), name: mockHabitDatabase?.names[i], habitDescription: mockHabitDatabase?.habitDescriptions[i], date: nil, imageURL: mockHabitDatabase?.imageUrls.sample()))
+            mockHabits.append(MockHabit(user: mockUsers[i], type: mockHabitDatabase?.types.sample(), name: mockHabitDatabase?.names[i], habitDescription: mockHabitDatabase?.habitDescriptions[i], date: nil, imageURL: mockHabitDatabase?.imageUrls.sample()))
         }
         return mockHabits
     }
