@@ -32,6 +32,7 @@ struct Constants {
         static let ShowUserProfile =  "ShowUserProfile"
         static let ShowUserHabit =  "ShowUserHabit"
         static let ShowSearch =  "ShowSearch"
+        static let ShowMessagingPopUp =  "ShowMessagingPopUp"
     }
     
     struct Images {
@@ -44,5 +45,9 @@ struct Constants {
     
     struct Strings {
         static let DefaultHabitTime = "12:00"
+    }
+    
+    struct Times {
+        static let MessagePopUpAnimation: Double = 0.4
     }
 }
