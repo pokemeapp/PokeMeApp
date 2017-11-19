@@ -21,6 +21,7 @@ class SearchedUserCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.bindComponents()
+        self.addButton.title = "SearchedUser.AddButton.Title".localized
     }
     
     func bindComponents(){

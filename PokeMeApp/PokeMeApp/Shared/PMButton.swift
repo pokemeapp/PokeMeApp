@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias PMButtonCompletionBlock = () -> Void
+typealias PMButtonCompletionBlock = (_ button: PMButton) -> Void
 
 class PMButton: UIView {
     
@@ -70,7 +70,7 @@ class PMButton: UIView {
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
-        self.buttonTapped?()
+        self.buttonTapped?(self)
     }
     
     

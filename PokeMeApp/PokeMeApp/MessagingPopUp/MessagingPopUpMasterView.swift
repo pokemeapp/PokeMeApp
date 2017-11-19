@@ -19,6 +19,7 @@ enum MessagePopUpAnimateTo {
 class MessagingPopUpMasterView: UIView {
     
     let disposeBag = DisposeBag()
+    var isTextViewEditing = false
     
     @IBOutlet weak var messageOptionsView: MessageOptionsView!
     @IBOutlet weak var customMessageView: CustomMessageView!
@@ -27,6 +28,7 @@ class MessagingPopUpMasterView: UIView {
         super.awakeFromNib()
         self.customMessageView.alpha = 0.0
         self.initTapGesture()
+        self.customMessageView.textView.delegate = self
     }
     
 }
@@ -34,22 +36,29 @@ class MessagingPopUpMasterView: UIView {
 extension MessagingPopUpMasterView {
     
     func initTapGesture(){
-        self.rx.tapGesture().when(.recognized).subscribe(onNext: { gesture in
-            self.parentViewController?.dismiss(animated: true, completion: nil)
+        self.rx.tapGesture().when(.ended).subscribe(onNext: { [weak self]gesture in
+            self?.perform(#selector(self!.hideIfNeeded), with: nil, afterDelay: 0.2)
         }).addDisposableTo(disposeBag)
+    }
+    
+    @objc func hideIfNeeded(){
+        if  self.isTextViewEditing {
+            
+        }else{
+            self.parentViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
 }
 
-extension UIView {
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
+extension MessagingPopUpMasterView : UITextViewDelegate{
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.isTextViewEditing = true
     }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.isTextViewEditing = false
+    }
+    
 }

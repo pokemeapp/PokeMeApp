@@ -40,7 +40,7 @@ class RegistrationViewController: UIViewController {
     
     func initRegistrateButton(){
         self.masterView!.registrateButton.title = "Registration.Registrate".localized
-        self.masterView!.registrateButton.buttonTapped = {
+        self.masterView!.registrateButton.buttonTapped = { button in
             print("tapped")
         }
     }

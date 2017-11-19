@@ -31,14 +31,26 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
         self.performSegue(withIdentifier: Constants.Segues.ShowSearch, sender: nil)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segues.ShowMessagingPopUp {
+            guard let habit = sender as? MockHabit else {
+                return
+            }
+            guard let viewControlletr = segue.destination as? MessagingPopUpViewController else {
+                return
+            }
+            viewControlletr.mockHabit = habit
+        }
+    }
+    
 }
 
 extension FriendsDashboardViewController {
     
     func initObservers(){
         self.userHabits.asObservable().bind(to: self.masterView.tableView.rx.items(cellIdentifier: Constants.Cells.FriendHabitCell))({ (_, model: MockHabit, cell: FriendHabitCell) in
-            cell.buttonTapped = { [weak self] in
-                self!.performSegue(withIdentifier: Constants.Segues.ShowMessagingPopUp, sender: nil)
+            cell.buttonTapped = { [weak self] button in
+                self!.performSegue(withIdentifier: Constants.Segues.ShowMessagingPopUp, sender: model)
             }
             cell.bind(to: model)
         }).addDisposableTo(disposeBag)

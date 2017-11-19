@@ -37,14 +37,14 @@ class LoginViewController: UIViewController {
     
     func initRegistrateButton(){
         self.masterView!.registrateButton.title = "Login.Registrate".localized
-        self.masterView!.registrateButton.buttonTapped = {
+        self.masterView!.registrateButton.buttonTapped = { button in
             self.performSegue(withIdentifier: Constants.Segues.ShowRegistration, sender: nil)
         }
     }
     
     func initLoginButton(){
         self.masterView!.loginButton.title = "Login.Login".localized
-        self.masterView!.loginButton.buttonTapped = {
+         self.masterView!.loginButton.buttonTapped = { button in
             print("tapped")
         }
     }
