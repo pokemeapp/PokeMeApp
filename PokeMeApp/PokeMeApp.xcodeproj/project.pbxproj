@@ -12,6 +12,11 @@
 		501799271FC21A96000A6D46 /* FriendDashboardMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799261FC21A96000A6D46 /* FriendDashboardMasterView.swift */; };
 		501799291FC21AAE000A6D46 /* FriendHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799281FC21AAE000A6D46 /* FriendHabitCell.swift */; };
 		5017992B1FC21ACB000A6D46 /* FriendHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992A1FC21ACB000A6D46 /* FriendHabitViewModel.swift */; };
+		5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992D1FC22483000A6D46 /* MessagingPopUpViewController.swift */; };
+		501799301FC226AF000A6D46 /* MessagingPopUpMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992F1FC226AF000A6D46 /* MessagingPopUpMasterView.swift */; };
+		501799321FC226C7000A6D46 /* MessageOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799311FC226C7000A6D46 /* MessageOptionsView.swift */; };
+		501799341FC22922000A6D46 /* CustomMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799331FC22922000A6D46 /* CustomMessageView.swift */; };
+		501799381FC23478000A6D46 /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799371FC23478000A6D46 /* UIView+Corner.swift */; };
 		503736941F797473001C9C13 /* PMButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503736931F797473001C9C13 /* PMButton.xib */; };
 		503736961F79761C001C9C13 /* PMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503736951F79761C001C9C13 /* PMButton.swift */; };
 		503736971F797B6F001C9C13 /* PMButton.xib in Sources */ = {isa = PBXBuildFile; fileRef = 503736931F797473001C9C13 /* PMButton.xib */; };
@@ -166,6 +171,11 @@
 		501799261FC21A96000A6D46 /* FriendDashboardMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDashboardMasterView.swift; sourceTree = "<group>"; };
 		501799281FC21AAE000A6D46 /* FriendHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHabitCell.swift; sourceTree = "<group>"; };
 		5017992A1FC21ACB000A6D46 /* FriendHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHabitViewModel.swift; sourceTree = "<group>"; };
+		5017992D1FC22483000A6D46 /* MessagingPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPopUpViewController.swift; sourceTree = "<group>"; };
+		5017992F1FC226AF000A6D46 /* MessagingPopUpMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPopUpMasterView.swift; sourceTree = "<group>"; };
+		501799311FC226C7000A6D46 /* MessageOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageOptionsView.swift; sourceTree = "<group>"; };
+		501799331FC22922000A6D46 /* CustomMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageView.swift; sourceTree = "<group>"; };
+		501799371FC23478000A6D46 /* UIView+Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
 		503736931F797473001C9C13 /* PMButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PMButton.xib; sourceTree = "<group>"; };
 		503736951F79761C001C9C13 /* PMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMButton.swift; sourceTree = "<group>"; };
 		503736981F797F59001C9C13 /* CYTranslatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYTranslatedButton.swift; sourceTree = "<group>"; };
@@ -302,6 +312,17 @@
 				28BF6EF81FAA4BD400F07129 /* PokeMeKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5017992C1FC22456000A6D46 /* MessagingPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				5017992D1FC22483000A6D46 /* MessagingPopUpViewController.swift */,
+				5017992F1FC226AF000A6D46 /* MessagingPopUpMasterView.swift */,
+				501799311FC226C7000A6D46 /* MessageOptionsView.swift */,
+				501799331FC22922000A6D46 /* CustomMessageView.swift */,
+			);
+			path = MessagingPopUp;
 			sourceTree = "<group>";
 		};
 		503736921F79745A001C9C13 /* Shared */ = {
@@ -453,6 +474,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				5017992C1FC22456000A6D46 /* MessagingPopUp */,
 				505C14901FBB7DE30032FB59 /* SearchViewController */,
 				505C148C1FBB7D8A0032FB59 /* FriendsDashboard */,
 				509031A31FAE5891001D234B /* NewUserHabit */,
@@ -549,6 +571,7 @@
 				50434D5E1FAE08BC008B01F5 /* UIView+Border.swift */,
 				50434D601FAE0965008B01F5 /* UIView+Shadow.swift */,
 				50ABEBC01FB753B20005EEA0 /* Date+ToHourMinute.swift */,
+				501799371FC23478000A6D46 /* UIView+Corner.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -717,8 +740,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */,
+				501799341FC22922000A6D46 /* CustomMessageView.swift in Sources */,
 				5017992B1FC21ACB000A6D46 /* FriendHabitViewModel.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
+				5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */,
 				509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */,
 				50ABEBC11FB753B20005EEA0 /* Date+ToHourMinute.swift in Sources */,
 				50434D681FAE1141008B01F5 /* MockUserGenerator.swift in Sources */,
@@ -727,6 +752,7 @@
 				505C14981FBB87050032FB59 /* SearchUserMasterView.swift in Sources */,
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
 				509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */,
+				501799321FC226C7000A6D46 /* MessageOptionsView.swift in Sources */,
 				509031B21FAE595F001D234B /* NewUserHabitDayCell.swift in Sources */,
 				503736971F797B6F001C9C13 /* PMButton.xib in Sources */,
 				50434D6A1FAE1161008B01F5 /* MockUser.swift in Sources */,
@@ -765,10 +791,12 @@
 				503EBED01FAE40B60060CC42 /* MockHabitDatabase.swift in Sources */,
 				50C091A01F77E3C800C1451D /* RegistrationItemCell.swift in Sources */,
 				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
+				501799381FC23478000A6D46 /* UIView+Corner.swift in Sources */,
 				50434D5F1FAE08BC008B01F5 /* UIView+Border.swift in Sources */,
 				50434D6C1FAE14EB008B01F5 /* MockUserDatabase.swift in Sources */,
 				505C149A1FBB877F0032FB59 /* SearchHeaderView.swift in Sources */,
 				509031B41FAE5B5A001D234B /* NewUserHabitNameViewModel.swift in Sources */,
+				501799301FC226AF000A6D46 /* MessagingPopUpMasterView.swift in Sources */,
 				50C091831F77C2CF00C1451D /* Constants.swift in Sources */,
 				503736991F797F59001C9C13 /* CYTranslatedButton.swift in Sources */,
 				50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */,
