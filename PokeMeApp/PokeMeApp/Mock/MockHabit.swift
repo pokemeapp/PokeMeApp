@@ -14,5 +14,6 @@ struct MockHabit{
     var name: String?
     var habitDescription: String?
     var date: Date?
+    var imageURL: String?
     
 }

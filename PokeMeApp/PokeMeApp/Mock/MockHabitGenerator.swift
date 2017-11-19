@@ -16,7 +16,7 @@ class MockHabitGenerator {
         self.mockHabitDatabase = MockHabitDatabase()
         var mockHabits: [MockHabit] = []
         for i in stride(from: 0, to: count, by: 1){
-            mockHabits.append(MockHabit(type: mockHabitDatabase?.types.sample(), name: mockHabitDatabase?.names[i], habitDescription: mockHabitDatabase?.habitDescriptions[i], date: nil))
+            mockHabits.append(MockHabit(type: mockHabitDatabase?.types.sample(), name: mockHabitDatabase?.names[i], habitDescription: mockHabitDatabase?.habitDescriptions[i], date: nil, imageURL: mockHabitDatabase?.imageUrls.sample()))
         }
         return mockHabits
     }
