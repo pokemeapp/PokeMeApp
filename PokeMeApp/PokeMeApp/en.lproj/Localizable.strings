@@ -34,3 +34,12 @@
 "UserHabit.Days.Sunday" = "S";
 
 "FriendHabitCell.Send" = "Send";
+
+"MesageOption1.Title" = "You can do it!";
+"MesageOption2.Title" = "Just do it!";
+"MesageOption3.Title" = "Do you need a hand?";
+"MesageOption4.Title" = "Custom...";
+"CustomMessage.Title" = "Send";
+"CustomMessage.BackButton.Title" = "Back";
+
+"PMButton.DefaultTitle" = "Title";
