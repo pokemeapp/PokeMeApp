@@ -9,13 +9,19 @@
 import UIKit
 
 class MessageOptionsView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBOutlet weak var option1Button: PMButton!
+    @IBOutlet weak var option2Button: PMButton!
+    @IBOutlet weak var option3Button: PMButton!
+    @IBOutlet weak var option4Button: PMButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.option1Button.title = "MesageOption1.Title".localized
+        self.option2Button.title = "MesageOption2.Title".localized
+        self.option3Button.title = "MesageOption3.Title".localized
+        self.option4Button.title = "MesageOption4.Title".localized
+        self.roundCorners(corners: .allCorners, radius: 5.0)
     }
-    */
 
 }

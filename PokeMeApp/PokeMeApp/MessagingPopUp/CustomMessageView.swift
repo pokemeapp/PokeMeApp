@@ -10,12 +10,12 @@ import UIKit
 
 class CustomMessageView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var sendButton: PMButton!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.sendButton.title = "CustomMessage.Title".localized
+        self.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 5.0)
     }
-    */
-
+    
 }
