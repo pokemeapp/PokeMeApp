@@ -17,6 +17,8 @@
 		501799321FC226C7000A6D46 /* MessageOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799311FC226C7000A6D46 /* MessageOptionsView.swift */; };
 		501799341FC22922000A6D46 /* CustomMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799331FC22922000A6D46 /* CustomMessageView.swift */; };
 		501799381FC23478000A6D46 /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799371FC23478000A6D46 /* UIView+Corner.swift */; };
+		5017993C1FC239D1000A6D46 /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017993B1FC239D1000A6D46 /* LocalPushManager.swift */; };
+		5017993E1FC23F8B000A6D46 /* UIView+ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017993D1FC23F8B000A6D46 /* UIView+ParentController.swift */; };
 		503736941F797473001C9C13 /* PMButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503736931F797473001C9C13 /* PMButton.xib */; };
 		503736961F79761C001C9C13 /* PMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503736951F79761C001C9C13 /* PMButton.swift */; };
 		503736971F797B6F001C9C13 /* PMButton.xib in Sources */ = {isa = PBXBuildFile; fileRef = 503736931F797473001C9C13 /* PMButton.xib */; };
@@ -176,6 +178,8 @@
 		501799311FC226C7000A6D46 /* MessageOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageOptionsView.swift; sourceTree = "<group>"; };
 		501799331FC22922000A6D46 /* CustomMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageView.swift; sourceTree = "<group>"; };
 		501799371FC23478000A6D46 /* UIView+Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
+		5017993B1FC239D1000A6D46 /* LocalPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
+		5017993D1FC23F8B000A6D46 /* UIView+ParentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ParentController.swift"; sourceTree = "<group>"; };
 		503736931F797473001C9C13 /* PMButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PMButton.xib; sourceTree = "<group>"; };
 		503736951F79761C001C9C13 /* PMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMButton.swift; sourceTree = "<group>"; };
 		503736981F797F59001C9C13 /* CYTranslatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYTranslatedButton.swift; sourceTree = "<group>"; };
@@ -323,6 +327,14 @@
 				501799331FC22922000A6D46 /* CustomMessageView.swift */,
 			);
 			path = MessagingPopUp;
+			sourceTree = "<group>";
+		};
+		501799391FC239AF000A6D46 /* PushManager */ = {
+			isa = PBXGroup;
+			children = (
+				5017993B1FC239D1000A6D46 /* LocalPushManager.swift */,
+			);
+			path = PushManager;
 			sourceTree = "<group>";
 		};
 		503736921F79745A001C9C13 /* Shared */ = {
@@ -474,6 +486,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				501799391FC239AF000A6D46 /* PushManager */,
 				5017992C1FC22456000A6D46 /* MessagingPopUp */,
 				505C14901FBB7DE30032FB59 /* SearchViewController */,
 				505C148C1FBB7D8A0032FB59 /* FriendsDashboard */,
@@ -572,6 +585,7 @@
 				50434D601FAE0965008B01F5 /* UIView+Shadow.swift */,
 				50ABEBC01FB753B20005EEA0 /* Date+ToHourMinute.swift */,
 				501799371FC23478000A6D46 /* UIView+Corner.swift */,
+				5017993D1FC23F8B000A6D46 /* UIView+ParentController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -753,6 +767,7 @@
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
 				509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */,
 				501799321FC226C7000A6D46 /* MessageOptionsView.swift in Sources */,
+				5017993E1FC23F8B000A6D46 /* UIView+ParentController.swift in Sources */,
 				509031B21FAE595F001D234B /* NewUserHabitDayCell.swift in Sources */,
 				503736971F797B6F001C9C13 /* PMButton.xib in Sources */,
 				50434D6A1FAE1161008B01F5 /* MockUser.swift in Sources */,
@@ -802,6 +817,7 @@
 				50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */,
 				509031BA1FAE5BA3001D234B /* NewUserHabitDayViewModel.swift in Sources */,
 				509031C21FAF59C0001D234B /* UserHabitWrapper.swift in Sources */,
+				5017993C1FC239D1000A6D46 /* LocalPushManager.swift in Sources */,
 				505C14921FBB7DF70032FB59 /* SearchViewController.swift in Sources */,
 				503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */,
 				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
