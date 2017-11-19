@@ -43,3 +43,5 @@
 "CustomMessage.BackButton.Title" = "Back";
 
 "PMButton.DefaultTitle" = "Title";
+
+"SearchedUser.AddButton.Title" = "Add";
