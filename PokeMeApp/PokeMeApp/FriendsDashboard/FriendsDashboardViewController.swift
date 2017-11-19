@@ -37,6 +37,9 @@ extension FriendsDashboardViewController {
     
     func initObservers(){
         self.userHabits.asObservable().bind(to: self.masterView.tableView.rx.items(cellIdentifier: Constants.Cells.FriendHabitCell))({ (_, model: MockHabit, cell: FriendHabitCell) in
+            cell.buttonTapped = { [weak self] in
+                self!.performSegue(withIdentifier: Constants.Segues.ShowMessagingPopUp, sender: nil)
+            }
             cell.bind(to: model)
         }).addDisposableTo(disposeBag)
     }

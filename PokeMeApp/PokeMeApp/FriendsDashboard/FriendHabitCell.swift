@@ -16,6 +16,7 @@ class FriendHabitCell: UITableViewCell {
     
     @IBOutlet weak var friendHabitCellView: FriendHabitCellView!
     var viewModel: FriendHabitViewModel = FriendHabitViewModel()
+    var buttonTapped: PMButtonCompletionBlock?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +24,10 @@ class FriendHabitCell: UITableViewCell {
     }
     
     func bindComponents(){
-        self.viewModel.name.asObservable().bind(to: self.friendHabitCellView.nameLabel.rx.text).disposed(by: disposeBag)
-        self.viewModel.habitDescription.asObservable().bind(to: self.friendHabitCellView.descriptionLabel.rx.text).disposed(by: disposeBag)
+        self.viewModel.userFullName.asObservable().bind(to: self.friendHabitCellView.nameLabel.rx.text).disposed(by: disposeBag)
+        self.viewModel.name.asObservable().bind(to: self.friendHabitCellView.descriptionLabel.rx.text).disposed(by: disposeBag)
         self.viewModel.image.asObservable().bind(to: self.friendHabitCellView.profileImageView.rx.image).disposed(by: disposeBag)
+        self.friendHabitCellView.sendButton.buttonTapped = self.buttonTapped
     }
     
     func bind(to model: MockHabit){

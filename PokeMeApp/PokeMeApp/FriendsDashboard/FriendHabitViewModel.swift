@@ -18,6 +18,7 @@ class FriendHabitViewModel: NSObject {
         didSet {
             self.name.value = model.name ?? ""
             self.habitDescription.value = model.habitDescription ?? ""
+            self.userFullName.value = model.user?.fullName ?? ""
             SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: model.imageURL!), options: .useNSURLCache, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
                 if maybeImage != nil || finished == true, error == nil{
                     self?.image.value = maybeImage!
@@ -30,5 +31,6 @@ class FriendHabitViewModel: NSObject {
     var name: Variable<String> = Variable("")
     var habitDescription: Variable<String> = Variable("")
     var image: Variable<UIImage> = Variable(UIImage())
+    var userFullName: Variable<String> = Variable("")
     
 }
