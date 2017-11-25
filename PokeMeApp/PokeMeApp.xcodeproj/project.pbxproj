@@ -109,6 +109,10 @@
 		50F38D011FC9F23A00838CB4 /* DropdownMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D001FC9F23A00838CB4 /* DropdownMessageView.swift */; };
 		50F38D031FC9F37E00838CB4 /* DropdownMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D021FC9F37E00838CB4 /* DropdownMessageManager.swift */; };
 		50F38D051FC9F3A200838CB4 /* DropdownNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D041FC9F3A200838CB4 /* DropdownNotification.swift */; };
+		50F38D071FCA13B200838CB4 /* TBEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F38D061FCA13B100838CB4 /* TBEmptyDataSet.framework */; };
+		50F38D081FCA13BD00838CB4 /* TBEmptyDataSet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50F38D061FCA13B100838CB4 /* TBEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50F38D0B1FCA18DD00838CB4 /* EmptyDataSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F38D0A1FCA18DD00838CB4 /* EmptyDataSet.xib */; };
+		50F38D0D1FCA18F500838CB4 /* EmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D0C1FCA18F500838CB4 /* EmptyDataSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +160,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				50F38D081FCA13BD00838CB4 /* TBEmptyDataSet.framework in CopyFiles */,
 				50C091771F77C17F00C1451D /* SDWebImage.framework in CopyFiles */,
 				50C091781F77C17F00C1451D /* NSObject_Rx.framework in CopyFiles */,
 				50C091791F77C17F00C1451D /* RxDataSources.framework in CopyFiles */,
@@ -282,6 +287,9 @@
 		50F38D001FC9F23A00838CB4 /* DropdownMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownMessageView.swift; sourceTree = "<group>"; };
 		50F38D021FC9F37E00838CB4 /* DropdownMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownMessageManager.swift; sourceTree = "<group>"; };
 		50F38D041FC9F3A200838CB4 /* DropdownNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownNotification.swift; sourceTree = "<group>"; };
+		50F38D061FCA13B100838CB4 /* TBEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TBEmptyDataSet.framework; path = Carthage/Build/iOS/TBEmptyDataSet.framework; sourceTree = "<group>"; };
+		50F38D0A1FCA18DD00838CB4 /* EmptyDataSet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataSet.xib; sourceTree = "<group>"; };
+		50F38D0C1FCA18F500838CB4 /* EmptyDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +300,7 @@
 				50C0916B1F77C16600C1451D /* RxCocoa.framework in Frameworks */,
 				50C0916C1F77C16600C1451D /* SDWebImage.framework in Frameworks */,
 				50C091901F77C96800C1451D /* RxBlocking.framework in Frameworks */,
+				50F38D071FCA13B200838CB4 /* TBEmptyDataSet.framework in Frameworks */,
 				50C091911F77C96800C1451D /* Differentiator.framework in Frameworks */,
 				50C0916D1F77C16600C1451D /* RxDataSources.framework in Frameworks */,
 				50C0916E1F77C16600C1451D /* RxGesture.framework in Frameworks */,
@@ -349,6 +358,7 @@
 		503736921F79745A001C9C13 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				50F38D091FCA183400838CB4 /* EmptyDataSet */,
 				503736931F797473001C9C13 /* PMButton.xib */,
 				503736951F79761C001C9C13 /* PMButton.swift */,
 				50434D5C1FAE0847008B01F5 /* ProfileImageView.swift */,
@@ -544,6 +554,7 @@
 		50C091641F77C16600C1451D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50F38D061FCA13B100838CB4 /* TBEmptyDataSet.framework */,
 				505C14801FBA2CFB0032FB59 /* M13Checkbox.framework */,
 				50C0918E1F77C96800C1451D /* Differentiator.framework */,
 				50C0918D1F77C96800C1451D /* RxBlocking.framework */,
@@ -602,6 +613,15 @@
 				5017993D1FC23F8B000A6D46 /* UIView+ParentController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		50F38D091FCA183400838CB4 /* EmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				50F38D0A1FCA18DD00838CB4 /* EmptyDataSet.xib */,
+				50F38D0C1FCA18F500838CB4 /* EmptyDataSet.swift */,
+			);
+			path = EmptyDataSet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,6 +764,7 @@
 				50C091401F76B2FF00C1451D /* LaunchScreen.storyboard in Resources */,
 				503EBEC71FAE33F40060CC42 /* UserHabitCellView.xib in Resources */,
 				503736941F797473001C9C13 /* PMButton.xib in Resources */,
+				50F38D0B1FCA18DD00838CB4 /* EmptyDataSet.xib in Resources */,
 				50C091B21F77F25C00C1451D /* Localizable.strings in Resources */,
 				50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */,
 				50F38CFF1FC9F22B00838CB4 /* DropdownMessageView.xib in Resources */,
@@ -802,6 +823,7 @@
 				503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */,
 				50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */,
 				505C14961FBB82A80032FB59 /* SearchedUserViewModel.swift in Sources */,
+				50F38D0D1FCA18F500838CB4 /* EmptyDataSet.swift in Sources */,
 				503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
