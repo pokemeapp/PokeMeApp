@@ -12,18 +12,10 @@ class DropdownNotification: NSObject {
 
     var message: String
     var profileImageURL: String?
-    var notificationType: UserNotificationType?
-    var notificationAboutId: String?
-    var notificationById: String?
-    var notifiedAboutSecondaryId: String?
     
-    init(message: String, url: String? = nil, notificationType: UserNotificationType?, notificationAboutId: String? = nil, notificationById: String? = nil, notifiedAboutSecondaryId: String? = nil) {
+    init(message: String, url: String? = nil) {
         self.message = message
         self.profileImageURL = url
-        self.notificationType = notificationType
-        self.notificationAboutId = notificationAboutId
-        self.notificationById = notificationById
-        self.notifiedAboutSecondaryId = notifiedAboutSecondaryId
         super.init()
     }
     

@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    //TODO: Remove it after service implemented
+    var mockHabit = MockHabitGenerator().createMockHabits(1).first!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
@@ -34,6 +36,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func registerForPushNotifications(_ application: UIApplication) {
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("APNs device token: \(deviceTokenString)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        let dropdownNotification = DropdownMessageManager.shared.createDropdownNotification(from: userInfo)
+        showDropDownNotifications(dropdownNotification)
+    }
+    
+    func showDropDownNotifications(_ dropdownNotification: DropdownNotification?){
+        guard let dropdownNotification: DropdownNotification = dropdownNotification else {
+            return
+        }
+        DropdownMessageManager.shared.manageDropdown(dropdownNotification: dropdownNotification)
+        
+    }
+    
+    func handleNotification(_ dropdownNotification: DropdownNotification? = nil) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                if presentedViewController is UINavigationController {
+                    topController = presentedViewController
+                }
+            }
+            let userDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "UserDashboardViewController") as! UserDashboardViewController
+            let newUserHabitViewController: NewUserHabitViewController = storyBoard.instantiateViewController(withIdentifier: "NewUserHabitViewController") as! NewUserHabitViewController
+            
+            let tabBarController = topController
+            guard tabBarController is UITabBarController else {
+                return
+            }
+            
+            if let _: DropdownNotification = dropdownNotification{
+                        let firstController = (tabBarController as! UITabBarController).selectedViewController
+                        guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
+                            return
+                        }
+                newUserHabitViewController.habit = self.mockHabit
+                        navigationController.popToRootViewController(animated: false)
+                        navigationController.viewControllers = [userDashboardViewController, /*newUserHabitViewController*/]
+            }
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

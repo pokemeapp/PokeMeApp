@@ -1,6 +1,6 @@
 //
 //  DropdownMessageView.swift
-//  weedmagnet-ios
+//
 //
 //  Created by Zsolt Pete on 2017. 10. 16..
 //  Copyright © 2017. CodeYard. All rights reserved.
@@ -13,8 +13,9 @@ import RxCocoa
 typealias DropdownComplatitionBlock = (DropdownMessageView) -> Void
 
 class DropdownMessageView: UIView {
+
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var profileImageView: ProfileImageView!
-    @IBOutlet weak var messageLabel: CustomActiveLabel!
     
     let disposeBag = DisposeBag()
     var onTapCompletitionBlock: DropdownComplatitionBlock?
@@ -68,11 +69,11 @@ class DropdownMessageView: UIView {
         super.prepareForInterfaceBuilder()
         self.loadXib()
         contentView?.prepareForInterfaceBuilder()
-        self.profileImageView.imageView.layer.masksToBounds = true
-        self.profileImageView.imageView.layer.shadowColor = UIColor.black.cgColor
-        self.profileImageView.imageView.layer.shadowRadius = 5.0
-        self.profileImageView.imageView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        self.profileImageView.imageView.layer.shadowOpacity = 0.4
+        self.profileImageView.layer.masksToBounds = true
+        self.profileImageView.layer.shadowColor = UIColor.black.cgColor
+        self.profileImageView.layer.shadowRadius = 5.0
+        self.profileImageView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        self.profileImageView.layer.shadowOpacity = 0.4
     }
 }
 
