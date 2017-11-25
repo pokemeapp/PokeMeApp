@@ -139,7 +139,7 @@
         <!--New User Habit View Controller-->
         <scene sceneID="c0H-KA-rp6">
             <objects>
-                <viewController id="e7a-mz-ppM" customClass="NewUserHabitViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewUserHabitViewController" id="e7a-mz-ppM" customClass="NewUserHabitViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Yu-eM-XLn" customClass="NewUserHabitMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,7 +846,7 @@
         <!--User Dashboard View Controller-->
         <scene sceneID="pfw-R8-LYI">
             <objects>
-                <viewController id="Jdx-0Z-C4I" customClass="UserDashboardViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDashboardViewController" id="Jdx-0Z-C4I" customClass="UserDashboardViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n2v-1D-SGD" customClass="UserDashboardMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
