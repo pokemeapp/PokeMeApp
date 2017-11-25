@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import TBEmptyDataSet
 
 class UserDashboardViewController: UIViewController {
 
@@ -19,8 +20,10 @@ class UserDashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userDashboardMasterView.tableView.emptyDataSetDataSource = self
+        self.userDashboardMasterView.tableView.emptyDataSetDelegate = self
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
-        self.userHabits.value = mockHabitGenerator.createMockHabits(5)
+        self.userHabits.value = mockHabitGenerator.createMockHabits(0)
         self.initObservers()
     }
     
@@ -51,6 +54,26 @@ extension UserDashboardViewController {
         self.userDashboardMasterView.tableView.rx.modelSelected(MockHabit.self).subscribe(onNext: { [weak self]model in
             self?.performSegue(withIdentifier: Constants.Segues.ShowUserHabit, sender: model)
         }).addDisposableTo(disposeBag)
+    }
+    
+}
+
+
+extension UIViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
+    
+    public func customViewForEmptyDataSet(in scrollView: UIScrollView) -> UIView? {
+        let view = EmptyDataSet(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        //TOdo: Make it localized
+        view.title = "No content"
+        return view
+    }
+    
+    public func emptyDataSetTapEnabled(in scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    public func emptyDataSetDidTapEmptyView(in scrollView: UIScrollView) {
+        print("Tapped")
     }
     
 }

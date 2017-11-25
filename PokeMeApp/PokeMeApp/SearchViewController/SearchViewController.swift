@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import TBEmptyDataSet
 
 class SearchViewController: UIViewController {
 
@@ -18,9 +19,11 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchUserMasterView.tableView.emptyDataSetDataSource = self
+        self.searchUserMasterView.tableView.emptyDataSetDelegate = self
         self.searchUserMasterView.searchHeaderView.searchController.becomeFirstResponder()
         let mockUserGenerator = MockUserGenerator(options: [.imageURL, .firstName, .lastName, .fullName])
-        self.mockUsers.value = mockUserGenerator.createMockUsers(10)
+        self.mockUsers.value = mockUserGenerator.createMockUsers(0)
         self.initObservers()
     }
     @IBAction func close(_ sender: Any) {

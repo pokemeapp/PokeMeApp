@@ -19,11 +19,13 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
     @IBOutlet var masterView: FriendDashboardMasterView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.masterView.tableView.emptyDataSetDataSource = self
+        self.masterView.tableView.emptyDataSetDelegate = self
         let searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
         self.navigationItem.searchController?.delegate = self
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
-        self.userHabits.value = mockHabitGenerator.createMockHabits(5)
+        self.userHabits.value = mockHabitGenerator.createMockHabits(0)
         self.initObservers()
         self.testBase64()
     }
