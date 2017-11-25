@@ -25,6 +25,13 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
         self.userHabits.value = mockHabitGenerator.createMockHabits(5)
         self.initObservers()
+        self.testBase64()
+    }
+    
+    func testBase64(){
+        let encodedImageData = Constants.Base64.Test
+        let imageData = Data(base64Encoded: encodedImageData, options: .ignoreUnknownCharacters)
+        let image = UIImage(data: imageData!)
     }
     
     func willPresentSearchController(_ searchController: UISearchController) {

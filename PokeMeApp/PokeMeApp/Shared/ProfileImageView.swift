@@ -20,11 +20,12 @@ class ProfileImageView: UIImageView {
         self.addBorder(color: Constants.Colors.Green, width: 1.0)
         self.addShadow(color: Constants.Colors.ShadowGrey, radius: 1.0, opacity: 0.5, offset: CGSize(width: 1.0, height: 1.0))
         self.layer.cornerRadius = self.frame.size.height / 2.0
+        self.contentMode = .scaleAspectFill
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.layer.cornerRadius = self.frame.size.height / 2.0
+        self.layer.cornerRadius = self.frame.size.height / 2.2
     }
 
 }
