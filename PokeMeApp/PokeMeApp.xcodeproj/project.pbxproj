@@ -273,6 +273,7 @@
 		50C0919F1F77E3C800C1451D /* RegistrationItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationItemCell.swift; sourceTree = "<group>"; };
 		50C091B61F77F27700C1451D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50C091B71F77F4B200C1451D /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		50F38CF71FC9D5F000838CB4 /* PokeMeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PokeMeApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +487,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				50F38CF71FC9D5F000838CB4 /* PokeMeApp.entitlements */,
 				501799391FC239AF000A6D46 /* PushManager */,
 				5017992C1FC22456000A6D46 /* MessagingPopUp */,
 				505C14901FBB7DE30032FB59 /* SearchViewController */,
@@ -661,6 +663,11 @@
 					50C091311F76B2FF00C1451D = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					50C091451F76B2FF00C1451D = {
 						CreatedOnToolsVersion = 9.0;
@@ -1004,8 +1011,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PokeMeApp/PokeMeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSLJP987H9;
+				DEVELOPMENT_TEAM = CSD326H7VF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1024,8 +1032,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PokeMeApp/PokeMeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSLJP987H9;
+				DEVELOPMENT_TEAM = CSD326H7VF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
