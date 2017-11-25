@@ -105,6 +105,10 @@
 		50C091A01F77E3C800C1451D /* RegistrationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0919F1F77E3C800C1451D /* RegistrationItemCell.swift */; };
 		50C091B21F77F25C00C1451D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50C091B41F77F25C00C1451D /* Localizable.strings */; };
 		50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091B71F77F4B200C1451D /* UIViewController+Keyboard.swift */; };
+		50F38CFF1FC9F22B00838CB4 /* DropdownMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F38CFE1FC9F22A00838CB4 /* DropdownMessageView.xib */; };
+		50F38D011FC9F23A00838CB4 /* DropdownMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D001FC9F23A00838CB4 /* DropdownMessageView.swift */; };
+		50F38D031FC9F37E00838CB4 /* DropdownMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D021FC9F37E00838CB4 /* DropdownMessageManager.swift */; };
+		50F38D051FC9F3A200838CB4 /* DropdownNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D041FC9F3A200838CB4 /* DropdownNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +278,10 @@
 		50C091B61F77F27700C1451D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50C091B71F77F4B200C1451D /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		50F38CF71FC9D5F000838CB4 /* PokeMeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PokeMeApp.entitlements; sourceTree = "<group>"; };
+		50F38CFE1FC9F22A00838CB4 /* DropdownMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownMessageView.xib; sourceTree = "<group>"; };
+		50F38D001FC9F23A00838CB4 /* DropdownMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownMessageView.swift; sourceTree = "<group>"; };
+		50F38D021FC9F37E00838CB4 /* DropdownMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownMessageManager.swift; sourceTree = "<group>"; };
+		50F38D041FC9F3A200838CB4 /* DropdownNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +358,10 @@
 				505C14891FBA48820032FB59 /* HabitHelper.swift */,
 				501799211FC21942000A6D46 /* FriendHabitCell.xib */,
 				501799241FC2197B000A6D46 /* FriendHabitCellView.swift */,
+				50F38CFE1FC9F22A00838CB4 /* DropdownMessageView.xib */,
+				50F38D001FC9F23A00838CB4 /* DropdownMessageView.swift */,
+				50F38D021FC9F37E00838CB4 /* DropdownMessageManager.swift */,
+				50F38D041FC9F3A200838CB4 /* DropdownNotification.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -734,6 +746,7 @@
 				503736941F797473001C9C13 /* PMButton.xib in Resources */,
 				50C091B21F77F25C00C1451D /* Localizable.strings in Resources */,
 				50C0913D1F76B2FF00C1451D /* Assets.xcassets in Resources */,
+				50F38CFF1FC9F22B00838CB4 /* DropdownMessageView.xib in Resources */,
 				50C0913B1F76B2FF00C1451D /* Main.storyboard in Resources */,
 				501799221FC21942000A6D46 /* FriendHabitCell.xib in Resources */,
 			);
@@ -793,6 +806,7 @@
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
 				501799271FC21A96000A6D46 /* FriendDashboardMasterView.swift in Sources */,
+				50F38D011FC9F23A00838CB4 /* DropdownMessageView.swift in Sources */,
 				509031B01FAE5935001D234B /* NewUserHabitTimeCell.swift in Sources */,
 				50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */,
 				505C148F1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift in Sources */,
@@ -818,6 +832,7 @@
 				50434D6C1FAE14EB008B01F5 /* MockUserDatabase.swift in Sources */,
 				505C149A1FBB877F0032FB59 /* SearchHeaderView.swift in Sources */,
 				509031B41FAE5B5A001D234B /* NewUserHabitNameViewModel.swift in Sources */,
+				50F38D051FC9F3A200838CB4 /* DropdownNotification.swift in Sources */,
 				501799301FC226AF000A6D46 /* MessagingPopUpMasterView.swift in Sources */,
 				50C091831F77C2CF00C1451D /* Constants.swift in Sources */,
 				503736991F797F59001C9C13 /* CYTranslatedButton.swift in Sources */,
@@ -831,6 +846,7 @@
 				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
 				505C14881FBA39B40032FB59 /* NewHabitHeaderView.swift in Sources */,
 				509031AC1FAE5912001D234B /* NewUserHabitNameCell.swift in Sources */,
+				50F38D031FC9F37E00838CB4 /* DropdownMessageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
