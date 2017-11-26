@@ -7,7 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UserHistoryViewModel: NSObject {
 
+    var model: History? {
+        didSet {
+            guard let model = model else {
+                return
+            }
+            message.value = model.message!
+        }
+    }
+    
+    var message = Variable("")
+    
 }

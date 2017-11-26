@@ -10,4 +10,7 @@ import UIKit
 
 class History: NSObject {
 
+    var isUser: Bool? = [true, false].sample()
+    var message: String? = ["Mizu?", "ALma?", "Miért?"].sample()
+    
 }

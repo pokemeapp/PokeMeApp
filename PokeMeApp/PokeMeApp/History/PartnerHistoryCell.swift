@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class PartnerHistoryCell: UITableViewCell {
 
+    @IBOutlet weak var messageContainerView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
+    
+    let disposeBag = DisposeBag()
+    var viewModel = ParnerHistoryViewModel()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.messageContainerView.layer.cornerRadius = self.messageContainerView.frame.height / 2.0
+        self.messageContainerView.addBorder(color: .black, width: 1.0)
+        self.bindComponents()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        self.viewModel.message.asObservable().bind(to: self.messageLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bind(to model: History){
+        self.viewModel.model = model
     }
 
 }

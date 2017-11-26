@@ -7,19 +7,29 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class UserHistoryCell: UITableViewCell {
 
+    @IBOutlet weak var messageContainerView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
+    
+    let disposeBag = DisposeBag()
+    var viewModel = UserHistoryViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.messageContainerView.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: self.messageContainerView.frame.height / 2.0)
+        self.bindComponents()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func bindComponents(){
+        self.viewModel.message.asObservable().bind(to: self.messageLabel.rx.text).addDisposableTo(disposeBag)
     }
-
+    
+    func bind(to model: History){
+        self.viewModel.model = model
+    }
+    
 }

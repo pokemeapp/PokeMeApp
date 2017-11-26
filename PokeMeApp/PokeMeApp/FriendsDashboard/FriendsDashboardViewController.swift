@@ -27,7 +27,6 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
         self.userHabits.value = mockHabitGenerator.createMockHabits(2)
         self.initObservers()
-        self.testBase64()
         self.title = "FriendsrDashsboard.Title".localized
     }
     
@@ -63,6 +62,9 @@ extension FriendsDashboardViewController {
                 self!.performSegue(withIdentifier: Constants.Segues.ShowMessagingPopUp, sender: model)
             }
             cell.bind(to: model)
+        }).addDisposableTo(disposeBag)
+        self.masterView.tableView.rx.itemSelected.subscribe(onNext:{ _ in
+            self.performSegue(withIdentifier: Constants.Segues.ShowHistory, sender: nil)
         }).addDisposableTo(disposeBag)
     }
     

@@ -9,7 +9,8 @@
 import UIKit
 
 class HistoryMasterView: UIView {
-
+    @IBOutlet weak var tableView: UITableView!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
