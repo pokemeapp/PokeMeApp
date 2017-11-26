@@ -113,6 +113,14 @@
 		50F38D081FCA13BD00838CB4 /* TBEmptyDataSet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50F38D061FCA13B100838CB4 /* TBEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50F38D0B1FCA18DD00838CB4 /* EmptyDataSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F38D0A1FCA18DD00838CB4 /* EmptyDataSet.xib */; };
 		50F38D0D1FCA18F500838CB4 /* EmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D0C1FCA18F500838CB4 /* EmptyDataSet.swift */; };
+		50F38D101FCB3CCE00838CB4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D0F1FCB3CCE00838CB4 /* HistoryViewController.swift */; };
+		50F38D121FCB3CE400838CB4 /* HistoryMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D111FCB3CE400838CB4 /* HistoryMasterView.swift */; };
+		50F38D141FCB3D0100838CB4 /* PartnerHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D131FCB3D0100838CB4 /* PartnerHistoryCell.swift */; };
+		50F38D161FCB3D1000838CB4 /* UserHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D151FCB3D1000838CB4 /* UserHistoryCell.swift */; };
+		50F38D181FCB3D2400838CB4 /* ParnerHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D171FCB3D2400838CB4 /* ParnerHistoryViewModel.swift */; };
+		50F38D1A1FCB3D3600838CB4 /* UserHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D191FCB3D3600838CB4 /* UserHistoryViewModel.swift */; };
+		50F38D1C1FCB3F0900838CB4 /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D1B1FCB3F0900838CB4 /* HistorySection.swift */; };
+		50F38D1E1FCB400C00838CB4 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F38D1D1FCB400C00838CB4 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +298,14 @@
 		50F38D061FCA13B100838CB4 /* TBEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TBEmptyDataSet.framework; path = Carthage/Build/iOS/TBEmptyDataSet.framework; sourceTree = "<group>"; };
 		50F38D0A1FCA18DD00838CB4 /* EmptyDataSet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataSet.xib; sourceTree = "<group>"; };
 		50F38D0C1FCA18F500838CB4 /* EmptyDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataSet.swift; sourceTree = "<group>"; };
+		50F38D0F1FCB3CCE00838CB4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		50F38D111FCB3CE400838CB4 /* HistoryMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMasterView.swift; sourceTree = "<group>"; };
+		50F38D131FCB3D0100838CB4 /* PartnerHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerHistoryCell.swift; sourceTree = "<group>"; };
+		50F38D151FCB3D1000838CB4 /* UserHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoryCell.swift; sourceTree = "<group>"; };
+		50F38D171FCB3D2400838CB4 /* ParnerHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParnerHistoryViewModel.swift; sourceTree = "<group>"; };
+		50F38D191FCB3D3600838CB4 /* UserHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoryViewModel.swift; sourceTree = "<group>"; };
+		50F38D1B1FCB3F0900838CB4 /* HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySection.swift; sourceTree = "<group>"; };
+		50F38D1D1FCB400C00838CB4 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +525,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				50F38D0E1FCB3CB600838CB4 /* History */,
 				50F38CF71FC9D5F000838CB4 /* PokeMeApp.entitlements */,
 				501799391FC239AF000A6D46 /* PushManager */,
 				5017992C1FC22456000A6D46 /* MessagingPopUp */,
@@ -622,6 +639,21 @@
 				50F38D0C1FCA18F500838CB4 /* EmptyDataSet.swift */,
 			);
 			path = EmptyDataSet;
+			sourceTree = "<group>";
+		};
+		50F38D0E1FCB3CB600838CB4 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				50F38D0F1FCB3CCE00838CB4 /* HistoryViewController.swift */,
+				50F38D111FCB3CE400838CB4 /* HistoryMasterView.swift */,
+				50F38D131FCB3D0100838CB4 /* PartnerHistoryCell.swift */,
+				50F38D151FCB3D1000838CB4 /* UserHistoryCell.swift */,
+				50F38D171FCB3D2400838CB4 /* ParnerHistoryViewModel.swift */,
+				50F38D191FCB3D3600838CB4 /* UserHistoryViewModel.swift */,
+				50F38D1B1FCB3F0900838CB4 /* HistorySection.swift */,
+				50F38D1D1FCB400C00838CB4 /* History.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -799,12 +831,14 @@
 				5017992B1FC21ACB000A6D46 /* FriendHabitViewModel.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
 				5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */,
+				50F38D141FCB3D0100838CB4 /* PartnerHistoryCell.swift in Sources */,
 				509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */,
 				50ABEBC11FB753B20005EEA0 /* Date+ToHourMinute.swift in Sources */,
 				50434D681FAE1141008B01F5 /* MockUserGenerator.swift in Sources */,
 				503736A01F798803001C9C13 /* LoginMasterView.swift in Sources */,
 				505C148A1FBA48820032FB59 /* HabitHelper.swift in Sources */,
 				505C14981FBB87050032FB59 /* SearchUserMasterView.swift in Sources */,
+				50F38D1C1FCB3F0900838CB4 /* HistorySection.swift in Sources */,
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
 				509031AA1FAE58EB001D234B /* NewUserHabitViewController.swift in Sources */,
 				501799321FC226C7000A6D46 /* MessageOptionsView.swift in Sources */,
@@ -818,6 +852,7 @@
 				50C0917F1F77C20500C1451D /* RegistrationViewController.swift in Sources */,
 				5037369E1F7986C7001C9C13 /* LoginViewController.swift in Sources */,
 				50C091B81F77F4B200C1451D /* UIViewController+Keyboard.swift in Sources */,
+				50F38D121FCB3CE400838CB4 /* HistoryMasterView.swift in Sources */,
 				50434D591FAE0700008B01F5 /* ProfileViewController.swift in Sources */,
 				503EBECC1FAE3F700060CC42 /* MockHabit.swift in Sources */,
 				503796B01FACF85300988B54 /* UserDashboardViewController.swift in Sources */,
@@ -829,6 +864,7 @@
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
 				501799271FC21A96000A6D46 /* FriendDashboardMasterView.swift in Sources */,
 				50F38D011FC9F23A00838CB4 /* DropdownMessageView.swift in Sources */,
+				50F38D101FCB3CCE00838CB4 /* HistoryViewController.swift in Sources */,
 				509031B01FAE5935001D234B /* NewUserHabitTimeCell.swift in Sources */,
 				50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */,
 				505C148F1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift in Sources */,
@@ -836,6 +872,7 @@
 				509031AE1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift in Sources */,
 				503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */,
 				50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */,
+				50F38D181FCB3D2400838CB4 /* ParnerHistoryViewModel.swift in Sources */,
 				501799251FC2197B000A6D46 /* FriendHabitCellView.swift in Sources */,
 				503736A21F79884D001C9C13 /* LoginItemCell.swift in Sources */,
 				501799291FC21AAE000A6D46 /* FriendHabitCell.swift in Sources */,
@@ -849,7 +886,9 @@
 				503EBED01FAE40B60060CC42 /* MockHabitDatabase.swift in Sources */,
 				50C091A01F77E3C800C1451D /* RegistrationItemCell.swift in Sources */,
 				50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */,
+				50F38D1A1FCB3D3600838CB4 /* UserHistoryViewModel.swift in Sources */,
 				501799381FC23478000A6D46 /* UIView+Corner.swift in Sources */,
+				50F38D1E1FCB400C00838CB4 /* History.swift in Sources */,
 				50434D5F1FAE08BC008B01F5 /* UIView+Border.swift in Sources */,
 				50434D6C1FAE14EB008B01F5 /* MockUserDatabase.swift in Sources */,
 				505C149A1FBB877F0032FB59 /* SearchHeaderView.swift in Sources */,
@@ -864,6 +903,7 @@
 				5017993C1FC239D1000A6D46 /* LocalPushManager.swift in Sources */,
 				505C14921FBB7DF70032FB59 /* SearchViewController.swift in Sources */,
 				503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */,
+				50F38D161FCB3D1000838CB4 /* UserHistoryCell.swift in Sources */,
 				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
 				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
 				505C14881FBA39B40032FB59 /* NewHabitHeaderView.swift in Sources */,
