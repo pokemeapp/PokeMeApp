@@ -75,11 +75,8 @@ class MessagingPopUpViewController: UIViewController {
     }
     
     func setButtonsActions(){
-        self.masterView.messageOptionsView.option4Button.buttonTapped = { button in
-            self.animate(to: .custom)
-        }
         self.masterView.messageOptionsView.option3Button.buttonTapped = { button in
-            self.sendQuickMessage(button)
+            self.animate(to: .custom)
         }
         self.masterView.messageOptionsView.option2Button.buttonTapped = { button in
             self.sendQuickMessage(button)
