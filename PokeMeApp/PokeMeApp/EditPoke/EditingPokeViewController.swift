@@ -7,29 +7,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class EditingPokeViewController: UIViewController {
 
+    @IBOutlet var masterView: EditingPokeMasterView!
+    @IBOutlet weak var editiongPokeViewCenterYConstraint: NSLayoutConstraint!
+    
+    var userPoke: UserPoke?
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.hideKeyboardWhenTappedAround()
+        if let userPoke = userPoke {
+            
+        }else {
+            userPoke = UserPoke()
+        }
+        self.setButtons()
+        self.bindComponents()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setButtons(){
+        self.masterView.editingPokeView.saveButton.buttonTapped = { button in
+            self.dismiss(animated: true, completion: nil)
+        }
+        self.masterView.editingPokeView.deleteButton.buttonTapped = { button in
+            self.dismiss(animated: true, completion: nil)
+        }
+        self.masterView.editingPokeView.saveButton.title = "EditingPoke.SaveButton.Title".localized
+        self.masterView.editingPokeView.deleteButton.title = "EditingPoke.DeleteButton.Title".localized
     }
-    */
-
+    
+    func bindComponents(){
+        Observable.just(userPoke!.name!).bind(to: self.masterView.editingPokeView.textView.rx.text).addDisposableTo(disposeBag)
+        
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
