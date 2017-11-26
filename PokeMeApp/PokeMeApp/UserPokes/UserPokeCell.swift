@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UserPokeCell: UITableViewCell {
 
+    @IBOutlet weak var pokeLabel: UILabel!
+    
+    let disposeBag = DisposeBag()
+    var viewModel = UserPokeViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        self.viewModel.name.asObservable().bind(to: self.pokeLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bind(to model: UserPoke){
+        self.viewModel.model = model
     }
 
 }

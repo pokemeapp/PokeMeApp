@@ -29,7 +29,7 @@ class UserDashboardViewController: UIViewController {
     }
     
     @IBAction func showUserProfile(_ sender: Any) {
-        self.performSegue(withIdentifier: Constants.Segues.ShowUserProfile, sender: nil)
+        self.performSegue(withIdentifier: Constants.Segues.ShowUserPokes, sender: nil)
     }
     @IBAction func addNewHabit(_ sender: Any) {
         self.performSegue(withIdentifier: Constants.Segues.ShowUserHabit, sender: nil)

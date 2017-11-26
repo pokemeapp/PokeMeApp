@@ -9,5 +9,7 @@
 import UIKit
 
 class UserPoke: NSObject {
+    
+    var name: String? = ["Cigarette?", "Lunch?", "Gym time?"].sample()
 
 }
