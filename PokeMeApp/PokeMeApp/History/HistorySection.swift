@@ -7,7 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-class HistorySection: NSObject {
-
+struct HistorySection {
+    var header: String
+    var items: [History]
 }
+
+extension HistorySection : SectionModelType {
+    
+    var identity: String {
+        return header
+    }
+    
+    init(original: HistorySection, items: [History]) {
+        self = original
+        self.items = items
+    }
+}
+

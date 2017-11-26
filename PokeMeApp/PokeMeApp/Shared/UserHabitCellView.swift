@@ -26,6 +26,7 @@ class UserHabitCellView: UIView {
         self.layer.shadowOpacity = 0.8
         self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         self.layer.masksToBounds = true
+        self.imageView.contentMode = .center
     }
     
     override func draw(_ rect: CGRect) {

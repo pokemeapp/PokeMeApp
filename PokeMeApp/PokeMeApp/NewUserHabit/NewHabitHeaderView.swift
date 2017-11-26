@@ -33,6 +33,7 @@ class NewHabitHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.buttons = [healthButton, todayButton, notificationButton, warningButton]
+        imageView.contentMode = .center
     }
     
     func bindComponents(_ habit: MockHabit){

@@ -64,6 +64,7 @@ class DropdownMessageManager: NSObject{
     
     func createDropdownNotification(from userInfo: [AnyHashable : Any]) -> DropdownNotification?{
         var message: String?
+        print(userInfo)
         if let aps = userInfo["aps"] as? NSDictionary {
             if let _ = aps["alert"] as? NSDictionary {
             } else if let alert = aps["alert"] as? NSString, let imageUrl = aps["profile_image_url"] as? NSString {
@@ -71,6 +72,12 @@ class DropdownMessageManager: NSObject{
                 let url = String(imageUrl)
                 return DropdownNotification(message: message!, url: url)
             }
+        }
+        if let custom_id = userInfo["custom-id"] as? Int {
+            print(custom_id)
+        }
+        if let device_key = userInfo["device-key"] as? String {
+            print(device_key)
         }
         return nil
     }

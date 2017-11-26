@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
+
 class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var pickerViewBottomConstraint: NSLayoutConstraint!
@@ -26,7 +27,24 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         self.hideKeyboardWhenTappedAround()
         if habit != nil {
             self.newUserHabitMasterView.headerView.bindComponents(habit!)
+        }else{
+            habit = MockHabit()
         }
+        self.title = "UserHabit.Title".localized
+        self.initBarButtons()
+    }
+    
+    func initBarButtons(){
+        let rightButtonItem = UIBarButtonItem.init(
+            title: "UserHabit.SaveButton.Title".localized,
+            style: .done,
+            target: self,
+            action: #selector(saveButtonTapped)
+        )
+        self.navigationItem.rightBarButtonItem = rightButtonItem
+    }
+    
+    @objc func saveButtonTapped(){
         
     }
     
@@ -81,7 +99,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         habit?.date = date
         self.pickerViewBottomConstraint.constant = -200.0
         self.newUserHabitMasterView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        self.newUserHabitMasterView.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .none)
+        self.newUserHabitMasterView.tableView.reloadRows(at: [IndexPath(row: 1, section: 2)], with: .none)
     }
     
     

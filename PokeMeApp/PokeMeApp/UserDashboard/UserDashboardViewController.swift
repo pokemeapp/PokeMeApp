@@ -23,12 +23,16 @@ class UserDashboardViewController: UIViewController {
         self.userDashboardMasterView.tableView.emptyDataSetDataSource = self
         self.userDashboardMasterView.tableView.emptyDataSetDelegate = self
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
-        self.userHabits.value = mockHabitGenerator.createMockHabits(0)
+        self.userHabits.value = mockHabitGenerator.createMockHabits(1)
         self.initObservers()
+        self.title = "UserDashsboard.Title".localized
     }
     
     @IBAction func showUserProfile(_ sender: Any) {
         self.performSegue(withIdentifier: Constants.Segues.ShowUserProfile, sender: nil)
+    }
+    @IBAction func addNewHabit(_ sender: Any) {
+        self.performSegue(withIdentifier: Constants.Segues.ShowUserHabit, sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -25,9 +25,10 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
         self.navigationItem.searchController = searchController
         self.navigationItem.searchController?.delegate = self
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
-        self.userHabits.value = mockHabitGenerator.createMockHabits(0)
+        self.userHabits.value = mockHabitGenerator.createMockHabits(2)
         self.initObservers()
         self.testBase64()
+        self.title = "FriendsrDashsboard.Title".localized
     }
     
     func testBase64(){
