@@ -35,6 +35,7 @@ struct Constants {
         static let ShowUserHabit =  "ShowUserHabit"
         static let ShowSearch =  "ShowSearch"
         static let ShowMessagingPopUp =  "ShowMessagingPopUp"
+        static let ShowHistory = "ShowHistory"
     }
     
     struct Images {
