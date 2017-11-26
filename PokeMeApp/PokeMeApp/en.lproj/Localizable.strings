@@ -39,8 +39,7 @@
 
 "MesageOption1.Title" = "You can do it!";
 "MesageOption2.Title" = "Just do it!";
-"MesageOption3.Title" = "Do you need a hand?";
-"MesageOption4.Title" = "Custom...";
+"MesageOption3.Title" = "Custom...";
 "CustomMessage.Title" = "Send";
 "CustomMessage.BackButton.Title" = "Back";
 
@@ -50,3 +49,7 @@
 
 "UserDashsboard.Title" = "Dashboard";
 "FriendsrDashsboard.Title" = "Friends dashboard";
+
+"UserPokes.AddButton.Title" = "Add";
+"EditingPoke.DeleteButton.Title" = "Delete";
+"EditingPoke.SaveButton.Title" = "Save";
