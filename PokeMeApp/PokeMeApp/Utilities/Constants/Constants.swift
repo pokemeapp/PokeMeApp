@@ -25,6 +25,8 @@ struct Constants {
         static let NewUserHabitDayCell = "NewUserHabitDayCell"
         static let SearchedUserCell = "SearchedUserCell"
         static let FriendHabitCell = "FriendHabitCell"
+        static let UserHistoryCell = "UserHistoryCell"
+        static let PartnerHistoryCell = "PartnerHistoryCell"
     }
     
     struct Segues {
