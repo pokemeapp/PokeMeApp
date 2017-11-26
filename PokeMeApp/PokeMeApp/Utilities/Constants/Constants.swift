@@ -27,6 +27,7 @@ struct Constants {
         static let FriendHabitCell = "FriendHabitCell"
         static let UserHistoryCell = "UserHistoryCell"
         static let PartnerHistoryCell = "PartnerHistoryCell"
+        static let UserPokeCell = "UserPokeCell"
     }
     
     struct Segues {
@@ -36,6 +37,8 @@ struct Constants {
         static let ShowSearch =  "ShowSearch"
         static let ShowMessagingPopUp =  "ShowMessagingPopUp"
         static let ShowHistory = "ShowHistory"
+        static let ShowEditingPoke = "ShowEditingPoke"
+        static let ShowUserPokes = "ShowUserPokes"
     }
     
     struct Images {
