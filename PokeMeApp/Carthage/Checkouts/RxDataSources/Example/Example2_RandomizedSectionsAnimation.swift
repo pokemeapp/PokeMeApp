@@ -20,7 +20,7 @@ class NumberSectionView : UICollectionReusableView {
     @IBOutlet weak var value: UILabel?
 }
 
-class PartialUpdatesViewController: UIViewController {
+class ViewController: UIViewController {
 
     @IBOutlet weak var animatedTableView: UITableView!
     @IBOutlet weak var tableView: UITableView!
@@ -43,35 +43,27 @@ class PartialUpdatesViewController: UIViewController {
                 .map { a in
                     return a.sections
                 }
-            .share(replay: 1)
+                .shareReplay(1)
+        let tvAnimatedDataSource = RxTableViewSectionedAnimatedDataSource<NumberSection>()
+        let reloadDataSource = RxTableViewSectionedReloadDataSource<NumberSection>()
 
-        let (configureCell, titleForSection) = PartialUpdatesViewController.tableViewDataSourceUI()
-        let tvAnimatedDataSource = RxTableViewSectionedAnimatedDataSource<NumberSection>(
-            configureCell: configureCell,
-            titleForHeaderInSection: titleForSection
-        )
-        let reloadDataSource = RxTableViewSectionedReloadDataSource<NumberSection>(
-            configureCell: configureCell,
-            titleForHeaderInSection: titleForSection
-        )
+        skinTableViewDataSource(tvAnimatedDataSource)
+        skinTableViewDataSource(reloadDataSource)
 
         randomSections
             .bind(to: animatedTableView.rx.items(dataSource: tvAnimatedDataSource))
-            .disposed(by: disposeBag)
+            .addDisposableTo(disposeBag)
 
         randomSections
             .bind(to: tableView.rx.items(dataSource: reloadDataSource))
-            .disposed(by: disposeBag)
+            .addDisposableTo(disposeBag)
 
-        let (configureCollectionViewCell, configureSupplementaryView) =  PartialUpdatesViewController.collectionViewDataSourceUI()
-        let cvAnimatedDataSource = RxCollectionViewSectionedAnimatedDataSource(
-            configureCell: configureCollectionViewCell,
-            configureSupplementaryView: configureSupplementaryView
-        )
+        let cvAnimatedDataSource = RxCollectionViewSectionedAnimatedDataSource<NumberSection>()
+        skinCollectionViewDataSource(cvAnimatedDataSource)
 
         randomSections
             .bind(to: animatedCollectionView.rx.items(dataSource: cvAnimatedDataSource))
-            .disposed(by: disposeBag)
+            .addDisposableTo(disposeBag)
 
         // touches
 
@@ -84,46 +76,43 @@ class PartialUpdatesViewController: UIViewController {
             .subscribe(onNext: { item in
                 print("Let me guess, it's .... It's \(item), isn't it? Yeah, I've got it.")
             })
-            .disposed(by: disposeBag)
+            .addDisposableTo(disposeBag)
     }
 }
 
 // MARK: Skinning
-extension PartialUpdatesViewController {
+extension ViewController {
 
-    static func tableViewDataSourceUI() -> (
-        TableViewSectionedDataSource<NumberSection>.ConfigureCell,
-        TableViewSectionedDataSource<NumberSection>.TitleForHeaderInSection
-    ) {
-        return (
-            { (_, tv, ip, i) in
-                let cell = tv.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style:.default, reuseIdentifier: "Cell")
-                cell.textLabel!.text = "\(i)"
-                return cell
-            },
-            { (ds, section) -> String? in
-                return ds[section].header
-            }
-        )
+    func skinTableViewDataSource(_ dataSource: TableViewSectionedDataSource<NumberSection>) {
+        dataSource.configureCell = { (_, tv, ip, i) in
+            let cell = tv.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style:.default, reuseIdentifier: "Cell")
+
+            cell.textLabel!.text = "\(i)"
+
+            return cell
+        }
+
+        dataSource.titleForHeaderInSection = { (ds, section) -> String? in
+            return ds[section].header
+        }
     }
 
-    static func collectionViewDataSourceUI() -> (
-            CollectionViewSectionedDataSource<NumberSection>.ConfigureCell,
-            CollectionViewSectionedDataSource<NumberSection>.ConfigureSupplementaryView
-        ) {
-        return (
-             { (_, cv, ip, i) in
-                let cell = cv.dequeueReusableCell(withReuseIdentifier: "Cell", for: ip) as! NumberCell
-                cell.value!.text = "\(i)"
-                return cell
+    func skinCollectionViewDataSource(_ dataSource: CollectionViewSectionedDataSource<NumberSection>) {
+        dataSource.configureCell = { (_, cv, ip, i) in
+            let cell = cv.dequeueReusableCell(withReuseIdentifier: "Cell", for: ip) as! NumberCell
 
-            },
-             { (ds ,cv, kind, ip) in
-                let section = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Section", for: ip) as! NumberSectionView
-                section.value!.text = "\(ds[ip.section].header)"
-                return section
-            }
-        )
+            cell.value!.text = "\(i)"
+
+            return cell
+        }
+
+        dataSource.supplementaryViewFactory = { (ds ,cv, kind, ip) in
+            let section = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Section", for: ip) as! NumberSectionView
+
+            section.value!.text = "\(ds[ip.section].header)"
+            
+            return section
+        }
     }
 
     // MARK: Initial value
@@ -140,7 +129,7 @@ extension PartialUpdatesViewController {
             */
 
             return (0 ..< nSections).map { (i: Int) in
-                NumberSection(header: "Section \(i + 1)", numbers: `$`(Array(i * nItems ..< (i + 1) * nItems)), updated: Date())
+                NumberSection(header: "Section \(i + 1)", numbers: $(Array(i * nItems ..< (i + 1) * nItems)), updated: Date())
             }
         #else
             return _initialValue
@@ -151,19 +140,19 @@ extension PartialUpdatesViewController {
 }
 
 let _initialValue: [NumberSection] = [
-    NumberSection(header: "section 1", numbers: `$`([1, 2, 3]), updated: Date()),
-    NumberSection(header: "section 2", numbers: `$`([4, 5, 6]), updated: Date()),
-    NumberSection(header: "section 3", numbers: `$`([7, 8, 9]), updated: Date()),
-    NumberSection(header: "section 4", numbers: `$`([10, 11, 12]), updated: Date()),
-    NumberSection(header: "section 5", numbers: `$`([13, 14, 15]), updated: Date()),
-    NumberSection(header: "section 6", numbers: `$`([16, 17, 18]), updated: Date()),
-    NumberSection(header: "section 7", numbers: `$`([19, 20, 21]), updated: Date()),
-    NumberSection(header: "section 8", numbers: `$`([22, 23, 24]), updated: Date()),
-    NumberSection(header: "section 9", numbers: `$`([25, 26, 27]), updated: Date()),
-    NumberSection(header: "section 10", numbers: `$`([28, 29, 30]), updated: Date())
+    NumberSection(header: "section 1", numbers: $([1, 2, 3]), updated: Date()),
+    NumberSection(header: "section 2", numbers: $([4, 5, 6]), updated: Date()),
+    NumberSection(header: "section 3", numbers: $([7, 8, 9]), updated: Date()),
+    NumberSection(header: "section 4", numbers: $([10, 11, 12]), updated: Date()),
+    NumberSection(header: "section 5", numbers: $([13, 14, 15]), updated: Date()),
+    NumberSection(header: "section 6", numbers: $([16, 17, 18]), updated: Date()),
+    NumberSection(header: "section 7", numbers: $([19, 20, 21]), updated: Date()),
+    NumberSection(header: "section 8", numbers: $([22, 23, 24]), updated: Date()),
+    NumberSection(header: "section 9", numbers: $([25, 26, 27]), updated: Date()),
+    NumberSection(header: "section 10", numbers: $([28, 29, 30]), updated: Date())
 ]
 
-func `$`(_ numbers: [Int]) -> [IntItem] {
+func $(_ numbers: [Int]) -> [IntItem] {
     return numbers.map { IntItem(number: $0, date: Date()) }
 }
 

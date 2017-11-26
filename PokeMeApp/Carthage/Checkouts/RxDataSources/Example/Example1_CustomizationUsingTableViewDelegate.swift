@@ -11,7 +11,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-import Differentiator
 
 struct MySection {
     var header: String
@@ -43,19 +42,18 @@ class CustomizationUsingTableViewDelegate : UIViewController {
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        let dataSource = RxTableViewSectionedAnimatedDataSource<MySection>(
-            configureCell: { ds, tv, ip, item in
-                let cell = tv.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
-                cell.textLabel?.text = "Item \(item)"
+        let dataSource = RxTableViewSectionedAnimatedDataSource<MySection>()
 
-                return cell
-            },
-            titleForHeaderInSection: { ds, index in
-                return ds.sectionModels[index].header
-            }
-        )
+        dataSource.configureCell = { ds, tv, ip, item in
+            let cell = tv.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
+            cell.textLabel?.text = "Item \(item)"
 
-        self.dataSource = dataSource
+            return cell
+        }
+
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].header
+        }
 
         let sections = [
             MySection(header: "First section", items: [
@@ -70,10 +68,12 @@ class CustomizationUsingTableViewDelegate : UIViewController {
 
         Observable.just(sections)
             .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+            .addDisposableTo(disposeBag)
 
         tableView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
+            .addDisposableTo(disposeBag)
+
+        self.dataSource = dataSource
     }
 }
 
@@ -88,6 +88,6 @@ extension CustomizationUsingTableViewDelegate : UITableViewDelegate {
             return 0.0
         }
 
-        return CGFloat(40 + item * 10)
+        return CGFloat(40 + item)
     }
 }
