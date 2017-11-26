@@ -914,6 +914,7 @@
                         <outlet property="userDashboardMasterView" destination="n2v-1D-SGD" id="ghf-DK-dUZ"/>
                         <segue destination="fPy-By-rYu" kind="show" identifier="ShowUserProfile" id="i4A-zl-Ixa"/>
                         <segue destination="e7a-mz-ppM" kind="show" identifier="ShowUserHabit" id="a0d-yq-lBu"/>
+                        <segue destination="f9m-au-59Y" kind="show" identifier="ShowUserPokes" id="HWu-sz-B1I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUR-ri-wIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1235,15 +1236,8 @@
                                             <constraint firstAttribute="height" constant="45" id="M2A-ue-rEF"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyW-Uk-X1d" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="89" width="175.5" height="45"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="KWf-xt-j5d"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypa-62-isq" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="187.5" y="89" width="175.5" height="45"/>
+                                        <rect key="frame" x="4" y="89" width="359" height="45"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="kPJ-aQ-k7u"/>
@@ -1255,26 +1249,21 @@
                                     <constraint firstItem="pZV-XR-FE5" firstAttribute="width" secondItem="Q4O-1c-xll" secondAttribute="width" id="2C3-dE-yoQ"/>
                                     <constraint firstItem="Q4O-1c-xll" firstAttribute="width" secondItem="7U7-dd-8iU" secondAttribute="width" multiplier="0.5" constant="-8" id="5Oy-gy-PFT"/>
                                     <constraint firstItem="KUk-PK-aNO" firstAttribute="centerX" secondItem="7U7-dd-8iU" secondAttribute="centerX" id="9C1-Nm-HDS"/>
-                                    <constraint firstItem="ypa-62-isq" firstAttribute="centerX" secondItem="pZV-XR-FE5" secondAttribute="centerX" id="Cwv-xG-vvh"/>
                                     <constraint firstItem="KUk-PK-aNO" firstAttribute="top" secondItem="7U7-dd-8iU" secondAttribute="top" constant="8" id="Ely-cD-915"/>
-                                    <constraint firstItem="ypa-62-isq" firstAttribute="width" secondItem="Q4O-1c-xll" secondAttribute="width" id="Lrc-kr-8IA"/>
-                                    <constraint firstItem="xyW-Uk-X1d" firstAttribute="centerX" secondItem="Q4O-1c-xll" secondAttribute="centerX" id="NZ4-70-LTr"/>
+                                    <constraint firstItem="ypa-62-isq" firstAttribute="top" secondItem="pZV-XR-FE5" secondAttribute="bottom" constant="8" id="FA6-RP-JMY"/>
+                                    <constraint firstItem="ypa-62-isq" firstAttribute="centerX" secondItem="7U7-dd-8iU" secondAttribute="centerX" id="LyE-J8-3YE"/>
                                     <constraint firstItem="pZV-XR-FE5" firstAttribute="centerY" secondItem="Q4O-1c-xll" secondAttribute="centerY" id="OZy-kt-H1L"/>
+                                    <constraint firstItem="ypa-62-isq" firstAttribute="leading" secondItem="Q4O-1c-xll" secondAttribute="leading" id="cMh-83-Dft"/>
                                     <constraint firstAttribute="trailing" secondItem="pZV-XR-FE5" secondAttribute="trailing" constant="4" id="fPz-cI-Wy1"/>
-                                    <constraint firstItem="xyW-Uk-X1d" firstAttribute="top" secondItem="Q4O-1c-xll" secondAttribute="bottom" constant="8" id="iJq-Ot-K0B"/>
                                     <constraint firstAttribute="height" constant="150" id="iNh-Oy-f8A"/>
-                                    <constraint firstItem="ypa-62-isq" firstAttribute="centerY" secondItem="xyW-Uk-X1d" secondAttribute="centerY" id="jQa-kK-uiz"/>
                                     <constraint firstItem="pZV-XR-FE5" firstAttribute="top" secondItem="Q4O-1c-xll" secondAttribute="top" id="k95-v4-YqB"/>
-                                    <constraint firstItem="xyW-Uk-X1d" firstAttribute="width" secondItem="Q4O-1c-xll" secondAttribute="width" id="tQ4-Pr-r8K"/>
                                     <constraint firstItem="Q4O-1c-xll" firstAttribute="top" secondItem="KUk-PK-aNO" secondAttribute="bottom" constant="8" id="tQk-K2-Csc"/>
                                     <constraint firstItem="Q4O-1c-xll" firstAttribute="leading" secondItem="7U7-dd-8iU" secondAttribute="leading" constant="4" id="wsB-Ca-kQ5"/>
-                                    <constraint firstItem="xyW-Uk-X1d" firstAttribute="leading" secondItem="Q4O-1c-xll" secondAttribute="leading" id="xlk-Y0-qRG"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="option1Button" destination="Q4O-1c-xll" id="hfz-8Z-h1z"/>
                                     <outlet property="option2Button" destination="pZV-XR-FE5" id="8Oy-2Z-wv3"/>
-                                    <outlet property="option3Button" destination="xyW-Uk-X1d" id="nqi-BY-BHW"/>
-                                    <outlet property="option4Button" destination="ypa-62-isq" id="ub2-8b-hgJ"/>
+                                    <outlet property="option3Button" destination="ypa-62-isq" id="dDT-ZW-o9L"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="te1-lp-1qD" customClass="CustomMessageView" customModule="PokeMeApp" customModuleProvider="target">
@@ -1483,6 +1472,176 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRK-19-PMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2105" y="3273"/>
+        </scene>
+        <!--User Pokes View Controller-->
+        <scene sceneID="05J-mC-TNh">
+            <objects>
+                <viewController storyboardIdentifier="UserPokesViewController" id="f9m-au-59Y" customClass="UserPokesViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h6a-XA-EFD" customClass="UserPokesMasterView" customModule="PokeMeApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fyc-X2-NmD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserPokeCell" id="S6C-pZ-7RY" customClass="UserPokeCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6C-pZ-7RY" id="TPE-XV-PPI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4s-zg-kdG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTQ-FV-PQO">
+                                                            <rect key="frame" x="16" y="11" width="343" height="20"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="WTQ-FV-PQO" secondAttribute="trailing" constant="16" id="9zD-BE-gsE"/>
+                                                        <constraint firstItem="WTQ-FV-PQO" firstAttribute="centerY" secondItem="A4s-zg-kdG" secondAttribute="centerY" id="vYg-25-KUA"/>
+                                                        <constraint firstItem="WTQ-FV-PQO" firstAttribute="leading" secondItem="A4s-zg-kdG" secondAttribute="leading" constant="16" id="y6v-0W-JqI"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="A4s-zg-kdG" firstAttribute="leading" secondItem="TPE-XV-PPI" secondAttribute="leading" id="396-V3-2nE"/>
+                                                <constraint firstItem="A4s-zg-kdG" firstAttribute="top" secondItem="TPE-XV-PPI" secondAttribute="top" id="5LO-oQ-Sih"/>
+                                                <constraint firstAttribute="trailing" secondItem="A4s-zg-kdG" secondAttribute="trailing" id="DVu-iC-7NS"/>
+                                                <constraint firstAttribute="bottom" secondItem="A4s-zg-kdG" secondAttribute="bottom" id="trj-YR-ftT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pokeLabel" destination="WTQ-FV-PQO" id="XP8-Sg-5z5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fyc-X2-NmD" firstAttribute="leading" secondItem="fbz-CM-Fxb" secondAttribute="leading" id="3rw-FP-lmk"/>
+                            <constraint firstItem="fbz-CM-Fxb" firstAttribute="trailing" secondItem="fyc-X2-NmD" secondAttribute="trailing" id="eBN-mL-eOp"/>
+                            <constraint firstItem="fyc-X2-NmD" firstAttribute="top" secondItem="fbz-CM-Fxb" secondAttribute="top" id="qqd-Np-Xtl"/>
+                            <constraint firstItem="fbz-CM-Fxb" firstAttribute="bottom" secondItem="fyc-X2-NmD" secondAttribute="bottom" id="raP-DL-4rd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fbz-CM-Fxb"/>
+                        <connections>
+                            <outlet property="tableView" destination="fyc-X2-NmD" id="kMI-V2-D9m"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="masterView" destination="h6a-XA-EFD" id="rIw-1C-4Of"/>
+                        <segue destination="Wgt-QE-gTR" kind="presentation" identifier="ShowEditingPoke" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="E1l-iS-AwZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xR-Qh-c00" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="3272"/>
+        </scene>
+        <!--Editing Poke View Controller-->
+        <scene sceneID="N0e-NP-CS1">
+            <objects>
+                <viewController id="Wgt-QE-gTR" customClass="EditingPokeViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7kq-Ks-BGa" customClass="EditingPokeMasterView" customModule="PokeMeApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qp-nI-VxF" customClass="EditingPokeView" customModule="PokeMeApp" customModuleProvider="target">
+                                <rect key="frame" x="81" y="219" width="213" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETg-0K-0n6" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="8" width="105" height="20"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.050980392159999999" green="0.72941176470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QK-Rr-BSH" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="4" y="147" width="98.5" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="aQF-z5-VTX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ath-ig-NrQ" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="110.5" y="147" width="98.5" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Zmu-zL-16a"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qa8-hc-Hmo">
+                                        <rect key="frame" x="4" y="32" width="205" height="111"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-9x-Crf" customClass="CYTranslatedButton" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="3" width="42" height="30"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.050980392159999999" green="0.72941176470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="CustomMessage.BackButton.Title"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="back:" destination="J0S-OD-oyG" eventType="touchUpInside" id="1lA-gk-ycD"/>
+                                            <action selector="back:" destination="Wgt-QE-gTR" eventType="touchUpInside" id="uQ2-Gf-val"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qa8-hc-Hmo" secondAttribute="trailing" constant="4" id="1Sy-Vm-vHW"/>
+                                    <constraint firstItem="3QK-Rr-BSH" firstAttribute="top" secondItem="qa8-hc-Hmo" secondAttribute="bottom" constant="4" id="1Uy-vq-ktF"/>
+                                    <constraint firstItem="3QK-Rr-BSH" firstAttribute="centerX" secondItem="5qp-nI-VxF" secondAttribute="centerX" multiplier="0.5" id="2gR-sc-0No"/>
+                                    <constraint firstItem="Ath-ig-NrQ" firstAttribute="centerX" secondItem="5qp-nI-VxF" secondAttribute="centerX" multiplier="1.5" id="5Gd-Pa-bV2"/>
+                                    <constraint firstItem="ETg-0K-0n6" firstAttribute="leading" secondItem="qBA-9x-Crf" secondAttribute="trailing" constant="4" id="5T2-a0-1oc"/>
+                                    <constraint firstItem="qBA-9x-Crf" firstAttribute="centerY" secondItem="ETg-0K-0n6" secondAttribute="centerY" id="AGL-5r-cDz"/>
+                                    <constraint firstItem="Ath-ig-NrQ" firstAttribute="centerY" secondItem="3QK-Rr-BSH" secondAttribute="centerY" id="Btv-36-wfO"/>
+                                    <constraint firstItem="ETg-0K-0n6" firstAttribute="centerX" secondItem="5qp-nI-VxF" secondAttribute="centerX" id="Cga-Cy-O7d"/>
+                                    <constraint firstItem="qa8-hc-Hmo" firstAttribute="centerX" secondItem="5qp-nI-VxF" secondAttribute="centerX" id="LcN-8s-gzK"/>
+                                    <constraint firstItem="Ath-ig-NrQ" firstAttribute="width" secondItem="3QK-Rr-BSH" secondAttribute="width" id="V8d-kQ-Kkg"/>
+                                    <constraint firstItem="qBA-9x-Crf" firstAttribute="leading" secondItem="5qp-nI-VxF" secondAttribute="leading" constant="8" id="WGg-vo-R2e"/>
+                                    <constraint firstItem="qa8-hc-Hmo" firstAttribute="top" secondItem="ETg-0K-0n6" secondAttribute="bottom" constant="4" id="bm1-5j-NgO"/>
+                                    <constraint firstItem="3QK-Rr-BSH" firstAttribute="width" secondItem="5qp-nI-VxF" secondAttribute="width" multiplier="0.5" constant="-8" id="dge-Sm-hUC"/>
+                                    <constraint firstItem="ETg-0K-0n6" firstAttribute="top" secondItem="5qp-nI-VxF" secondAttribute="top" constant="8" id="lXn-bY-YIp"/>
+                                    <constraint firstItem="qa8-hc-Hmo" firstAttribute="leading" secondItem="5qp-nI-VxF" secondAttribute="leading" constant="4" id="qT9-0e-Rvv"/>
+                                    <constraint firstAttribute="height" constant="200" id="rLd-uN-8Va"/>
+                                    <constraint firstAttribute="bottom" secondItem="3QK-Rr-BSH" secondAttribute="bottom" constant="8" id="zeQ-6E-pTA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="deleteButton" destination="Ath-ig-NrQ" id="N86-fw-kCf"/>
+                                    <outlet property="saveButton" destination="3QK-Rr-BSH" id="1TF-uy-SbA"/>
+                                    <outlet property="textView" destination="qa8-hc-Hmo" id="JYx-gb-jNR"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.75" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5qp-nI-VxF" firstAttribute="centerX" secondItem="ZZN-y9-ZLV" secondAttribute="centerX" id="bRe-3a-pCp"/>
+                            <constraint firstItem="5qp-nI-VxF" firstAttribute="centerY" secondItem="ZZN-y9-ZLV" secondAttribute="centerY" id="h8F-Ia-dyq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZZN-y9-ZLV"/>
+                        <connections>
+                            <outlet property="editingPokeView" destination="5qp-nI-VxF" id="tPh-If-o6I"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="editiongPokeViewCenterYConstraint" destination="h8F-Ia-dyq" id="cG5-S1-4Eu"/>
+                        <outlet property="masterView" destination="7kq-Ks-BGa" id="7F4-Ti-gqA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfa-SH-Xdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3542" y="3274"/>
         </scene>
     </scenes>
     <resources>
