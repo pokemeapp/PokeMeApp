@@ -98,8 +98,6 @@
 		50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091891F77C8BF00C1451D /* UILabel+Locale.swift */; };
 		50C0918C1F77C8EC00C1451D /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0918B1F77C8EC00C1451D /* String+Locale.swift */; };
 		50C091901F77C96800C1451D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C0918D1F77C96800C1451D /* RxBlocking.framework */; };
-		50C091911F77C96800C1451D /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C0918E1F77C96800C1451D /* Differentiator.framework */; };
-		50C091961F77C96F00C1451D /* Differentiator.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091931F77C96E00C1451D /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50C091971F77C96F00C1451D /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50C091941F77C96E00C1451D /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50C0919A1F77CBED00C1451D /* RegistrationMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C091991F77CBED00C1451D /* RegistrationMasterView.swift */; };
 		50C0919C1F77CC2900C1451D /* RegistrationItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0919B1F77CC2900C1451D /* RegistrationItemViewModel.swift */; };
@@ -182,7 +180,6 @@
 				50C091771F77C17F00C1451D /* SDWebImage.framework in CopyFiles */,
 				50C091781F77C17F00C1451D /* NSObject_Rx.framework in CopyFiles */,
 				50C091791F77C17F00C1451D /* RxDataSources.framework in CopyFiles */,
-				50C091961F77C96F00C1451D /* Differentiator.framework in CopyFiles */,
 				50C091971F77C96F00C1451D /* RxBlocking.framework in CopyFiles */,
 				50C0917A1F77C17F00C1451D /* RxGesture.framework in CopyFiles */,
 				505C14841FBA2D060032FB59 /* M13Checkbox.framework in CopyFiles */,
@@ -293,7 +290,6 @@
 		50C0918D1F77C96800C1451D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		50C0918E1F77C96800C1451D /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		50C0918F1F77C96800C1451D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		50C091931F77C96E00C1451D /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		50C091941F77C96E00C1451D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		50C091951F77C96F00C1451D /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		50C091991F77CBED00C1451D /* RegistrationMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationMasterView.swift; sourceTree = "<group>"; };
@@ -337,7 +333,6 @@
 				50C0916C1F77C16600C1451D /* SDWebImage.framework in Frameworks */,
 				50C091901F77C96800C1451D /* RxBlocking.framework in Frameworks */,
 				50F38D071FCA13B200838CB4 /* TBEmptyDataSet.framework in Frameworks */,
-				50C091911F77C96800C1451D /* Differentiator.framework in Frameworks */,
 				50C0916D1F77C16600C1451D /* RxDataSources.framework in Frameworks */,
 				50C0916E1F77C16600C1451D /* RxGesture.framework in Frameworks */,
 				505C14821FBA2CFB0032FB59 /* M13Checkbox.framework in Frameworks */,
@@ -514,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */,
-				50C091931F77C96E00C1451D /* Differentiator.framework */,
 				50C091941F77C96E00C1451D /* RxBlocking.framework */,
 				50C091951F77C96F00C1451D /* RxTest.framework */,
 				50C091721F77C17F00C1451D /* NSObject_Rx.framework */,
