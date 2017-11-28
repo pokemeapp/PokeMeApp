@@ -1,7 +1,7 @@
-github "ReactiveX/RxSwift"
-github "RxSwiftCommunity/RxDataSources" "1.0.4"
+github "ReactiveX/RxSwift" ~> 4.0 
+github "RxSwiftCommunity/RxDataSources" ~> 1.0.4
 github "RxSwiftCommunity/RxGesture"
 github "RxSwiftCommunity/NSObject-Rx"
-github "rs/SDWebImage"
+github "rs/SDWebImage" ~> 4.2.2
 github "Marxon13/M13Checkbox"
-github "teambition/TBEmptyDataSet"
+github "teambition/TBEmptyDataSet" ~> 2.6

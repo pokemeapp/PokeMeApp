@@ -16,9 +16,12 @@ class LoginItemViewModel: NSObject {
     var model: LoginItem = LoginItem() {
         didSet {
             self.key.value = model.key
+            self.value.asObservable().bind { value in
+                self.model.value = value
+            }.disposed(by: rx.disposeBag)
         }
     }
 
     var key: Variable<String> = Variable("")
-    
+    var value: Variable<String> = Variable("")
 }

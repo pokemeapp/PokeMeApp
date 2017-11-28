@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
         self.searchUserMasterView.tableView.emptyDataSetDelegate = self
         self.searchUserMasterView.searchHeaderView.searchController.becomeFirstResponder()
         let mockUserGenerator = MockUserGenerator(options: [.imageURL, .firstName, .lastName, .fullName])
-        self.mockUsers.value = mockUserGenerator.createMockUsers(0)
+        self.mockUsers.value = mockUserGenerator.createMockUsers(2)
         self.initObservers()
     }
     @IBAction func close(_ sender: Any) {

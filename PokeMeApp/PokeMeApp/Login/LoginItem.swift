@@ -11,6 +11,7 @@ import UIKit
 class LoginItem: NSObject {
     
     var key: String = ""
+    var value: String = ""
     
     init(key: String = "") {
         self.key = key

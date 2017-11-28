@@ -15,9 +15,12 @@ class RegistrationItemViewModel: NSObject {
     var model: RegistrationItem = RegistrationItem(){
         didSet {
             self.key.value = model.key
+            self.value.asObservable().bind() { value in
+                self.model.value = value
+            }.disposed(by: rx.disposeBag)
         }
     }
     
     var key: Variable<String> = Variable("")
-    
+    var value: Variable<String> = Variable("")
 }

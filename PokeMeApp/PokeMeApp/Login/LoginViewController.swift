@@ -10,13 +10,16 @@ import UIKit
 import RxCocoa
 import RxSwift
 import NSObject_Rx
+import PokeMeKit
 
 class LoginViewController: UIViewController {
 
+    var api: PMAPI!
+  
     var masterView: LoginMasterView?
     var loginItems: Variable<[LoginItem]> = Variable([
-        LoginItem(key: "Registration.Username".localized),
         LoginItem(key: "Registration.Email".localized),
+        LoginItem(key: "Registration.Password".localized),
         ])
     
     override func viewDidLoad() {
@@ -44,8 +47,23 @@ class LoginViewController: UIViewController {
     
     func initLoginButton(){
         self.masterView!.loginButton.title = "Login.Login".localized
-         self.masterView!.loginButton.buttonTapped = { button in
-            print("tapped")
+        
+        self.masterView!.loginButton.buttonTapped = { button in
+            self.startActivityIndicator()
+            
+            let email = self.loginItems.value[0].value
+            let password = self.loginItems.value[1].value
+        
+            self.api.login(with: email, and: password) { error in
+                self.stopActivityIndicator()
+                
+                guard error == nil else {
+                    return self.displayAlert(title: "Login failed!".localized, message: error!.localizedDescription)
+                }
+                
+                self.dismiss(animated: true, completion: nil)
+            }
+          
         }
     }
     
@@ -61,6 +79,16 @@ extension LoginViewController {
         self.loginItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.LoginItemCell))({(_, model, cell: LoginItemCell) in
             cell.bind(to: model)
         }).addDisposableTo(rx.disposeBag)
+    }
+    
+}
+
+extension LoginViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segues.ShowRegistration {
+            (segue.destination as? RegistrationViewController)?.api = self.api
+        }
     }
     
 }

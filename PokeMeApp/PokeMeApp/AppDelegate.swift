@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import PokeMeKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:Constants.Colors.Green]
         registerForPushNotifications(application)
+      
+        let apiURL = Constants.API.baseURL
+        let httpService = PMAlamofireHTTPService()
+        let authenticationManager = PMOAuth2AuthenticationManager(baseURL: apiURL, clientId: Constants.API.clientId, clientSecret: Constants.API.clientSecret, httpService: httpService)
+        let api = PMAPI(authService: authenticationManager, httpService: httpService, requestFactory: PMAPIRequestFactory(), baseURL: apiURL)
+      
+        if !api.isLoggedIn {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let authenticationController = mainStoryboard.instantiateViewController(withIdentifier: "authenticationController")
+            let loginController = authenticationController.childViewControllers[0] as! LoginViewController
+            loginController.api = api
+          
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(authenticationController, animated: false, completion: nil)
+        }
+      
         return true
     }
     

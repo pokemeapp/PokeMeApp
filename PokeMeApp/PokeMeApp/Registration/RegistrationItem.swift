@@ -11,6 +11,7 @@ import UIKit
 class RegistrationItem: NSObject {
     
     var key: String = ""
+    var value: String = ""
     
     init(key: String) {
         self.key = key

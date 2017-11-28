@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 struct Constants {
+    struct API {
+        static let baseURL = URL(string: "http://localhost:8080/")!
+        static let clientId = "5"
+        static let clientSecret = "AP9k9Fbg9m7uFVgq9NbhrJdw1LY3nJsReWdu45F5"
+    }
+    
     struct Colors {
         static let Green = UIColor(rgb: 0x00ab00)
         static let ShadowGrey = UIColor(rgb: 0xa8a8a8)

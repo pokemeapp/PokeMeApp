@@ -1,6 +1,6 @@
 github "Marxon13/M13Checkbox" "3.2.1"
-github "ReactiveX/RxSwift" "4.0.0"
-github "RxSwiftCommunity/NSObject-Rx" "4.0.0-alpha.1"
+github "ReactiveX/RxSwift" "4.0.0-rc.0"
+github "RxSwiftCommunity/NSObject-Rx" "4.2.0"
 github "RxSwiftCommunity/RxDataSources" "1.0.4"
 github "RxSwiftCommunity/RxGesture" "1.2.1"
 github "rs/SDWebImage" "4.2.2"

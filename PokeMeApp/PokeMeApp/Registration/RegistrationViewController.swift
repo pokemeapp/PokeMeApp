@@ -10,12 +10,14 @@ import UIKit
 import RxCocoa
 import RxSwift
 import NSObject_Rx
+import PokeMeKit
 
 class RegistrationViewController: UIViewController {
 
+    var api: PMAPI!
+    
     var masterView: RegistrationMasterView?
     var registrationItems: Variable<[RegistrationItem]> = Variable([
-        RegistrationItem(key: "Registration.Username".localized),
         RegistrationItem(key: "Registration.Email".localized),
         RegistrationItem(key: "Registration.Password".localized),
         RegistrationItem(key: "Registration.PasswordAgain".localized),
@@ -41,9 +43,34 @@ class RegistrationViewController: UIViewController {
     func initRegistrateButton(){
         self.masterView!.registrateButton.title = "Registration.Registrate".localized
         self.masterView!.registrateButton.buttonTapped = { button in
-            print("tapped")
+            self.startActivityIndicator()
+            
+            let email = self.registrationItems.value[0].value
+            let firstName = self.registrationItems.value[3].value
+            let lastName = self.registrationItems.value[4].value
+            let password = self.registrationItems.value[1].value
+            let passwordAgain = self.registrationItems.value[2].value
+            
+            guard password == passwordAgain else {
+                return self.displayAlert(title: "Registration failed!".localized, message: "Passwords don't match!".localized)
+            }
+            
+            let user = PMUser(email: email, firstname: firstName, lastname: lastName)
+            user.password = password
+            
+            self.api.register(user) { error in
+                self.stopActivityIndicator()
+                
+                guard error == nil else {
+                    return self.displayAlert(title: "Registration failed!".localized, message: error!.localizedDescription)
+                }
+                
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
+    
+
 
 }
 

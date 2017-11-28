@@ -29,6 +29,8 @@ class RegistrationItemCell: UITableViewCell {
         self.viewModel.key.asObservable().map{$0.localized.lowercased()}.subscribe(onNext: { [weak self]placeholder in
             self?.inputTextField.placeholder = placeholder
         }).addDisposableTo(rx.disposeBag)
+        
+        self.inputTextField.rx.text.orEmpty.bind(to: viewModel.value).disposed(by: rx.disposeBag)
     }
     
     func bind(to model: RegistrationItem){

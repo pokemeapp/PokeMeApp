@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B11C471FCDD83600C38C24 /* UIViewController+activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B11C461FCDD83600C38C24 /* UIViewController+activityIndicator.swift */; };
+		28B11C4A1FCDDB2B00C38C24 /* UIViewController+displayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B11C491FCDDB2B00C38C24 /* UIViewController+displayMessage.swift */; };
 		501799221FC21942000A6D46 /* FriendHabitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501799211FC21942000A6D46 /* FriendHabitCell.xib */; };
 		501799251FC2197B000A6D46 /* FriendHabitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799241FC2197B000A6D46 /* FriendHabitCellView.swift */; };
 		501799271FC21A96000A6D46 /* FriendDashboardMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799261FC21A96000A6D46 /* FriendDashboardMasterView.swift */; };
@@ -192,6 +194,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28B11C461FCDD83600C38C24 /* UIViewController+activityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+activityIndicator.swift"; sourceTree = "<group>"; };
+		28B11C491FCDDB2B00C38C24 /* UIViewController+displayMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+displayMessage.swift"; sourceTree = "<group>"; };
 		28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PokeMeKit.xcodeproj; path = ../PokeMeKit/PokeMeKit.xcodeproj; sourceTree = "<group>"; };
 		501799211FC21942000A6D46 /* FriendHabitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendHabitCell.xib; sourceTree = "<group>"; };
 		501799241FC2197B000A6D46 /* FriendHabitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHabitCellView.swift; sourceTree = "<group>"; };
@@ -646,6 +650,8 @@
 				50ABEBC01FB753B20005EEA0 /* Date+ToHourMinute.swift */,
 				501799371FC23478000A6D46 /* UIView+Corner.swift */,
 				5017993D1FC23F8B000A6D46 /* UIView+ParentController.swift */,
+				28B11C461FCDD83600C38C24 /* UIViewController+activityIndicator.swift */,
+				28B11C491FCDDB2B00C38C24 /* UIViewController+displayMessage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -871,6 +877,7 @@
 				5017992B1FC21ACB000A6D46 /* FriendHabitViewModel.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
 				5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */,
+				28B11C4A1FCDDB2B00C38C24 /* UIViewController+displayMessage.swift in Sources */,
 				50F38D321FCB64DC00838CB4 /* UserPoke.swift in Sources */,
 				50F38D141FCB3D0100838CB4 /* PartnerHistoryCell.swift in Sources */,
 				509031C01FAE60A3001D234B /* UserHabitDay.swift in Sources */,
@@ -903,6 +910,7 @@
 				50C091361F76B2FF00C1451D /* AppDelegate.swift in Sources */,
 				505C14961FBB82A80032FB59 /* SearchedUserViewModel.swift in Sources */,
 				50F38D0D1FCA18F500838CB4 /* EmptyDataSet.swift in Sources */,
+				28B11C471FCDD83600C38C24 /* UIViewController+activityIndicator.swift in Sources */,
 				503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
