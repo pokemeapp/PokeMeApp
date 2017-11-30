@@ -10,11 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 import TBEmptyDataSet
+import PokeMeKit
 
 class UserDashboardViewController: UIViewController {
 
     @IBOutlet var userDashboardMasterView: UserDashboardMasterView!
     
+    var api: PMAPI!
     let disposeBag = DisposeBag()
     var userHabits: Variable<[MockHabit]> = Variable([])
     

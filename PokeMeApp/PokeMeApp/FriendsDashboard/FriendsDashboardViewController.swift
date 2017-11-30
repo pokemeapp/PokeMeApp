@@ -10,13 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import PokeMeKit
 
 class FriendsDashboardViewController: UIViewController, UISearchControllerDelegate {
 
+    var api: PMAPI!
     let disposeBag = DisposeBag()
-    var userHabits: Variable<[MockHabit]> = Variable([])
+    var friends: Variable<[PMUser]> = Variable([])
     
-    @IBOutlet var masterView: FriendDashboardMasterView!
+    @IBOutlet var masterView: FriendsDashboardMasterView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.masterView.tableView.emptyDataSetDataSource = self
@@ -24,10 +26,22 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
         let searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
         self.navigationItem.searchController?.delegate = self
-        let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
-        self.userHabits.value = mockHabitGenerator.createMockHabits(2)
+//        let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
+//        self.userHabits.value = mockHabitGenerator.createMockHabits(2)
         self.initObservers()
         self.title = "FriendsrDashsboard.Title".localized
+        
+        self.api.get("api/user/friends") { (error, friends: [PMFriend]?) in
+            guard error == nil else {
+                return self.displayAlert(title: "Error retrieving data", message: error!.localizedDescription)
+            }
+            
+            guard let friends = friends else {
+                return
+            }
+            
+            self.friends.value = friends.map { $0.owner }.flatMap { $0 }
+        }
     }
     
     func testBase64(){
@@ -42,13 +56,13 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.Segues.ShowMessagingPopUp {
-            guard let habit = sender as? MockHabit else {
+            guard let habit = sender as? PMUser else {
                 return
             }
             guard let viewControlletr = segue.destination as? MessagingPopUpViewController else {
                 return
             }
-            viewControlletr.mockHabit = habit
+            //viewControlletr.mockHabit = habit
         }
     }
     
@@ -57,7 +71,7 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
 extension FriendsDashboardViewController {
     
     func initObservers(){
-        self.userHabits.asObservable().bind(to: self.masterView.tableView.rx.items(cellIdentifier: Constants.Cells.FriendHabitCell))({ (_, model: MockHabit, cell: FriendHabitCell) in
+        self.friends.asObservable().bind(to: self.masterView.tableView.rx.items(cellIdentifier: Constants.Cells.FriendCell))({ (_, model: PMUser, cell: FriendCell) in
             cell.buttonTapped = { [weak self] button in
                 self!.performSegue(withIdentifier: Constants.Segues.ShowMessagingPopUp, sender: model)
             }

@@ -30,7 +30,7 @@ struct Constants {
         static let NewUserHabitTimeCell = "NewUserHabitTimeCell"
         static let NewUserHabitDayCell = "NewUserHabitDayCell"
         static let SearchedUserCell = "SearchedUserCell"
-        static let FriendHabitCell = "FriendHabitCell"
+        static let FriendCell = "FriendCell"
         static let UserHistoryCell = "UserHistoryCell"
         static let PartnerHistoryCell = "PartnerHistoryCell"
         static let UserPokeCell = "UserPokeCell"

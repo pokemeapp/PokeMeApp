@@ -27,7 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let httpService = PMAlamofireHTTPService()
         let authenticationManager = PMOAuth2AuthenticationManager(baseURL: apiURL, clientId: Constants.API.clientId, clientSecret: Constants.API.clientSecret, httpService: httpService)
         let api = PMAPI(authService: authenticationManager, httpService: httpService, requestFactory: PMAPIRequestFactory(), baseURL: apiURL)
-      
+        
+        let userDashboardNavigationController = ((window?.rootViewController as? UITabBarController)?.childViewControllers[0] as? UINavigationController)
+        let friendsDashboardNavigationController = ((window?.rootViewController as? UITabBarController)?.childViewControllers[1] as? UINavigationController)
+        
+        let userDashboardController = userDashboardNavigationController?.childViewControllers[0] as? UserDashboardViewController
+        let friendsDashboardController = friendsDashboardNavigationController?.childViewControllers[0] as? FriendsDashboardViewController
+        
+        userDashboardController?.api = api
+        friendsDashboardController?.api = api
+        
         if !api.isLoggedIn {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let authenticationController = mainStoryboard.instantiateViewController(withIdentifier: "authenticationController")

@@ -11,9 +11,9 @@
 		28B11C4A1FCDDB2B00C38C24 /* UIViewController+displayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B11C491FCDDB2B00C38C24 /* UIViewController+displayMessage.swift */; };
 		501799221FC21942000A6D46 /* FriendHabitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501799211FC21942000A6D46 /* FriendHabitCell.xib */; };
 		501799251FC2197B000A6D46 /* FriendHabitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799241FC2197B000A6D46 /* FriendHabitCellView.swift */; };
-		501799271FC21A96000A6D46 /* FriendDashboardMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799261FC21A96000A6D46 /* FriendDashboardMasterView.swift */; };
-		501799291FC21AAE000A6D46 /* FriendHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799281FC21AAE000A6D46 /* FriendHabitCell.swift */; };
-		5017992B1FC21ACB000A6D46 /* FriendHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992A1FC21ACB000A6D46 /* FriendHabitViewModel.swift */; };
+		501799271FC21A96000A6D46 /* FriendsDashboardMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799261FC21A96000A6D46 /* FriendsDashboardMasterView.swift */; };
+		501799291FC21AAE000A6D46 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799281FC21AAE000A6D46 /* FriendCell.swift */; };
+		5017992B1FC21ACB000A6D46 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992A1FC21ACB000A6D46 /* FriendViewModel.swift */; };
 		5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992D1FC22483000A6D46 /* MessagingPopUpViewController.swift */; };
 		501799301FC226AF000A6D46 /* MessagingPopUpMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017992F1FC226AF000A6D46 /* MessagingPopUpMasterView.swift */; };
 		501799321FC226C7000A6D46 /* MessageOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501799311FC226C7000A6D46 /* MessageOptionsView.swift */; };
@@ -196,9 +196,9 @@
 		28BF6EF01FAA4BD300F07129 /* PokeMeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PokeMeKit.xcodeproj; path = ../PokeMeKit/PokeMeKit.xcodeproj; sourceTree = "<group>"; };
 		501799211FC21942000A6D46 /* FriendHabitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendHabitCell.xib; sourceTree = "<group>"; };
 		501799241FC2197B000A6D46 /* FriendHabitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHabitCellView.swift; sourceTree = "<group>"; };
-		501799261FC21A96000A6D46 /* FriendDashboardMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDashboardMasterView.swift; sourceTree = "<group>"; };
-		501799281FC21AAE000A6D46 /* FriendHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHabitCell.swift; sourceTree = "<group>"; };
-		5017992A1FC21ACB000A6D46 /* FriendHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHabitViewModel.swift; sourceTree = "<group>"; };
+		501799261FC21A96000A6D46 /* FriendsDashboardMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDashboardMasterView.swift; sourceTree = "<group>"; };
+		501799281FC21AAE000A6D46 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		5017992A1FC21ACB000A6D46 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		5017992D1FC22483000A6D46 /* MessagingPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPopUpViewController.swift; sourceTree = "<group>"; };
 		5017992F1FC226AF000A6D46 /* MessagingPopUpMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPopUpMasterView.swift; sourceTree = "<group>"; };
 		501799311FC226C7000A6D46 /* MessageOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageOptionsView.swift; sourceTree = "<group>"; };
@@ -465,9 +465,9 @@
 			isa = PBXGroup;
 			children = (
 				505C148E1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift */,
-				501799261FC21A96000A6D46 /* FriendDashboardMasterView.swift */,
-				501799281FC21AAE000A6D46 /* FriendHabitCell.swift */,
-				5017992A1FC21ACB000A6D46 /* FriendHabitViewModel.swift */,
+				501799261FC21A96000A6D46 /* FriendsDashboardMasterView.swift */,
+				501799281FC21AAE000A6D46 /* FriendCell.swift */,
+				5017992A1FC21ACB000A6D46 /* FriendViewModel.swift */,
 			);
 			path = FriendsDashboard;
 			sourceTree = "<group>";
@@ -868,7 +868,7 @@
 			files = (
 				50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */,
 				501799341FC22922000A6D46 /* CustomMessageView.swift in Sources */,
-				5017992B1FC21ACB000A6D46 /* FriendHabitViewModel.swift in Sources */,
+				5017992B1FC21ACB000A6D46 /* FriendViewModel.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
 				5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */,
 				28B11C4A1FCDDB2B00C38C24 /* UIViewController+displayMessage.swift in Sources */,
@@ -908,7 +908,7 @@
 				503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */,
 				50C0919E1F77CC7200C1451D /* RegistrationItem.swift in Sources */,
 				503736A61F798876001C9C13 /* LoginItem.swift in Sources */,
-				501799271FC21A96000A6D46 /* FriendDashboardMasterView.swift in Sources */,
+				501799271FC21A96000A6D46 /* FriendsDashboardMasterView.swift in Sources */,
 				50F38D011FC9F23A00838CB4 /* DropdownMessageView.swift in Sources */,
 				50F38D101FCB3CCE00838CB4 /* HistoryViewController.swift in Sources */,
 				509031B01FAE5935001D234B /* NewUserHabitTimeCell.swift in Sources */,
@@ -921,7 +921,7 @@
 				50F38D181FCB3D2400838CB4 /* ParnerHistoryViewModel.swift in Sources */,
 				501799251FC2197B000A6D46 /* FriendHabitCellView.swift in Sources */,
 				503736A21F79884D001C9C13 /* LoginItemCell.swift in Sources */,
-				501799291FC21AAE000A6D46 /* FriendHabitCell.swift in Sources */,
+				501799291FC21AAE000A6D46 /* FriendCell.swift in Sources */,
 				509031A81FAE58D5001D234B /* NewUserHabitMasterView.swift in Sources */,
 				505C14941FBB82800032FB59 /* SearchedUserCell.swift in Sources */,
 				503736961F79761C001C9C13 /* PMButton.swift in Sources */,
