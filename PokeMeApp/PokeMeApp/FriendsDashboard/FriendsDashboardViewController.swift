@@ -30,10 +30,13 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
 //        self.userHabits.value = mockHabitGenerator.createMockHabits(2)
         self.initObservers()
         self.title = "FriendsrDashsboard.Title".localized
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.api.get("api/user/friends") { (error, friends: [PMFriend]?) in
+            
             guard error == nil else {
-                return self.displayAlert(title: "Error retrieving data", message: error!.localizedDescription)
+                return self.displayAlert(title: "Error retrieving data", message: "\(error)")
             }
             
             guard let friends = friends else {

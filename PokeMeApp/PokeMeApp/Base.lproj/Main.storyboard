@@ -28,11 +28,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GRf-RN-FIT">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="D3V-eb-sye">
-                                            <rect key="frame" x="230" y="16" width="140" height="140"/>
+                                            <rect key="frame" x="117.5" y="16" width="140" height="140"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="D3V-eb-sye" secondAttribute="height" multiplier="1:1" id="3Sh-jG-VQG"/>
                                             </constraints>
@@ -46,11 +46,11 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="OJc-Eg-PWH">
-                                    <rect key="frame" x="0.0" y="317" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="317" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYm-Be-PF0" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                            <rect key="frame" x="150" y="4" width="300" height="75"/>
+                                            <rect key="frame" x="94" y="4" width="187.5" height="47"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="fYm-Be-PF0" secondAttribute="height" multiplier="16:4" id="pqG-Xl-bMm"/>
@@ -66,14 +66,14 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RegistrationItemCell" id="cHL-FZ-W1h" customClass="RegistrationItemCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="255.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHL-FZ-W1h" id="GZd-xK-IDe">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-uP-TgF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiU-2W-erU" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="11" width="36" height="20"/>
@@ -85,7 +85,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S0F-cD-aSs">
-                                                            <rect key="frame" x="292" y="12.5" width="300" height="17"/>
+                                                            <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
                                                             <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -148,38 +148,38 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="lfq-s1-NIe" customClass="NewHabitHeaderView" customModule="PokeMeApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-Ad-6Rj" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
-                                            <rect key="frame" x="260" y="60" width="80" height="80"/>
+                                            <rect key="frame" x="147.5" y="60" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="QoM-Ad-6Rj" secondAttribute="height" multiplier="1:1" id="PXb-CD-sj9"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH7-mC-7qj">
-                                            <rect key="frame" x="219" y="60" width="25" height="25"/>
+                                            <rect key="frame" x="106.5" y="60" width="25" height="25"/>
                                             <state key="normal" image="health"/>
                                             <connections>
                                                 <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="vDB-0A-ZOf"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-sY-2jY">
-                                            <rect key="frame" x="221.5" y="118" width="20" height="22"/>
+                                            <rect key="frame" x="109" y="118" width="20" height="22"/>
                                             <state key="normal" image="today"/>
                                             <connections>
                                                 <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="ZtH-O6-itR"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-UZ-sBK">
-                                            <rect key="frame" x="356" y="60" width="20" height="22"/>
+                                            <rect key="frame" x="243.5" y="60" width="20" height="22"/>
                                             <state key="normal" image="noti"/>
                                             <connections>
                                                 <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="l9J-Al-isJ"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8k-l2-ujp">
-                                            <rect key="frame" x="356" y="118" width="20" height="22"/>
+                                            <rect key="frame" x="243.5" y="118" width="20" height="22"/>
                                             <state key="normal" image="warning"/>
                                             <connections>
                                                 <action selector="typeSelected:" destination="lfq-s1-NIe" eventType="touchUpInside" id="Z7V-cm-Vxo"/>
@@ -210,17 +210,17 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewUserHabitNameCell" id="k98-ce-I2e" customClass="NewUserHabitNameCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="255.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k98-ce-I2e" id="vW3-DI-OdB">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbo-Wy-xSn">
-                                                    <rect key="frame" x="16" y="0.0" width="568" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTO-No-YQf">
-                                                            <rect key="frame" x="0.0" y="8" width="560" height="28"/>
+                                                            <rect key="frame" x="0.0" y="8" width="335" height="28"/>
                                                             <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -249,17 +249,17 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewUserHabitDescriptionsCell" id="RuR-h5-pfB" customClass="NewUserHabitDescriptionsCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="299.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RuR-h5-pfB" id="cEn-zm-vxN">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prw-Z3-TcN">
-                                                    <rect key="frame" x="4" y="0.0" width="592" height="44"/>
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="44"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cW9-t4-F8Z">
-                                                            <rect key="frame" x="8" y="0.0" width="576" height="44"/>
+                                                            <rect key="frame" x="8" y="0.0" width="351" height="44"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -288,17 +288,17 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewUserHabitTimeCell" id="nbW-js-jNJ" customClass="NewUserHabitTimeCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="343.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nbW-js-jNJ" id="UGO-g9-xa3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-Cp-Eyf">
-                                                    <rect key="frame" x="4" y="0.0" width="592" height="44"/>
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-Ag-cjE">
-                                                            <rect key="frame" x="0.0" y="11" width="592" height="21"/>
+                                                            <rect key="frame" x="0.0" y="11" width="367" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -326,20 +326,20 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewUserHabitDayCell" id="jhD-Z7-Ry4" customClass="NewUserHabitDayCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="387.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jhD-Z7-Ry4" id="VQW-a9-eoT">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92U-nc-bBk">
-                                                    <rect key="frame" x="4" y="0.0" width="592" height="44"/>
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="44"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xg7-Lx-BhJ">
-                                                            <rect key="frame" x="0.0" y="-0.5" width="84.5" height="44"/>
+                                                            <rect key="frame" x="0.0" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikl-ZF-Zp4" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -348,7 +348,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QZ-y8-eXF" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="37.5" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="1QZ-y8-eXF" secondAttribute="height" multiplier="1:1" id="MmF-kv-0eM"/>
@@ -365,10 +365,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-KD-tRL">
-                                                            <rect key="frame" x="84.5" y="-0.5" width="85" height="44"/>
+                                                            <rect key="frame" x="52.5" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZL-XG-K0v" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -377,7 +377,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZm-mE-oYN" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="37.5" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="VZm-mE-oYN" secondAttribute="height" multiplier="1:1" id="X7X-2z-g5F"/>
@@ -394,10 +394,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHr-fm-LkV">
-                                                            <rect key="frame" x="169.5" y="-0.5" width="84.5" height="44"/>
+                                                            <rect key="frame" x="105" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBA-Eq-wFn" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -406,7 +406,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-7k-wlw" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="37.5" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="VdK-7k-wlw" secondAttribute="height" multiplier="1:1" id="W4u-2u-eiA"/>
@@ -423,10 +423,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dam-Eg-DGK">
-                                                            <rect key="frame" x="253.5" y="-0.5" width="84.5" height="44"/>
+                                                            <rect key="frame" x="157" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ri-YS-dlN" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -435,7 +435,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMD-kP-xA3" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="37.5" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="tMD-kP-xA3" secondAttribute="height" multiplier="1:1" id="uI4-TT-Tr3"/>
@@ -452,10 +452,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vce-eB-X9S">
-                                                            <rect key="frame" x="338" y="-0.5" width="84.5" height="44"/>
+                                                            <rect key="frame" x="209.5" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n17-b2-eo2" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -464,7 +464,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjz-ko-GAn" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="37.5" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="bjz-ko-GAn" secondAttribute="height" multiplier="1:1" id="QMn-G9-aTk"/>
@@ -481,10 +481,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-LM-7nS">
-                                                            <rect key="frame" x="422.5" y="-0.5" width="85" height="44"/>
+                                                            <rect key="frame" x="262" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZL-q6-z5z" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19.5" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -493,7 +493,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C4-eJ-5C3" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="38" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="7C4-eJ-5C3" secondAttribute="height" multiplier="1:1" id="WlB-1Y-xAJ"/>
@@ -510,10 +510,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5g-bj-LMG">
-                                                            <rect key="frame" x="507.5" y="-0.5" width="84.5" height="44"/>
+                                                            <rect key="frame" x="314.5" y="-0.5" width="52.5" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-5o-HgX" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="19" y="11.5" width="14.5" height="21"/>
+                                                                    <rect key="frame" x="3" y="11.5" width="14.5" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -522,7 +522,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWf-I0-6h6" customClass="PMCheckBox" customModule="PokeMeApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="37.5" y="12.5" width="18" height="18"/>
+                                                                    <rect key="frame" x="21.5" y="12.5" width="18" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="oWf-I0-6h6" secondAttribute="height" multiplier="1:1" id="8cz-DY-3ts"/>
@@ -761,14 +761,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchedUserCell" id="Lee-ZR-rnA" customClass="SearchedUserCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lee-ZR-rnA" id="rHY-nR-veN">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-I2-PIn">
-                                                    <rect key="frame" x="4" y="0.0" width="592" height="59.5"/>
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="59.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icL-Cq-EOT" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
                                                             <rect key="frame" x="4" y="8" width="41.5" height="42"/>
@@ -777,13 +777,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57u-Md-oMS">
-                                                            <rect key="frame" x="61.5" y="19.5" width="412.5" height="20"/>
+                                                            <rect key="frame" x="61.5" y="19.5" width="187.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.050980392159999999" green="0.72941176470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoM-Mg-wJx" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                                            <rect key="frame" x="476" y="11" width="108" height="36"/>
+                                                            <rect key="frame" x="251" y="11" width="108" height="36"/>
                                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="CoM-Mg-wJx" secondAttribute="height" multiplier="3:1" id="cp7-vd-eLv"/>
@@ -857,14 +857,14 @@
                                 <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserHabitCell" id="Jgk-oV-f53" customClass="UserHabitCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jgk-oV-f53" id="UNc-3j-u47">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqr-Xw-C5q" customClass="UserHabitCellView" customModule="PokeMeApp" customModuleProvider="target">
-                                                    <rect key="frame" x="4" y="0.0" width="592" height="55.5"/>
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="55.5"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                             </subviews>
@@ -1008,11 +1008,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="K7E-3P-RIi">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3m7-2B-Muk">
-                                            <rect key="frame" x="230" y="16" width="140" height="140"/>
+                                            <rect key="frame" x="117.5" y="16" width="140" height="140"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="3m7-2B-Muk" secondAttribute="height" multiplier="1:1" id="SkV-tE-Eng"/>
                                             </constraints>
@@ -1026,18 +1026,18 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="eWt-NH-IGN">
-                                    <rect key="frame" x="0.0" y="317" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="317" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dlc-l1-aDI" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                            <rect key="frame" x="30" y="4" width="240" height="60"/>
+                                            <rect key="frame" x="19" y="4" width="150" height="37.5"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Dlc-l1-aDI" secondAttribute="height" multiplier="16:4" id="UZi-7F-Ixd"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vq-nX-OJ4" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                            <rect key="frame" x="330" y="4" width="240" height="60"/>
+                                            <rect key="frame" x="206.5" y="4" width="150" height="37.5"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="0Vq-nX-OJ4" secondAttribute="height" multiplier="16:4" id="jQZ-JB-4Mr"/>
@@ -1073,14 +1073,14 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoginItemCell" id="xpp-dv-6pD" customClass="LoginItemCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="255.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpp-dv-6pD" id="mIx-1e-otX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY5-cH-ctH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f2-ed-UCm" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="11" width="36" height="20"/>
@@ -1092,7 +1092,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sJ-Bo-Goi">
-                                                            <rect key="frame" x="292" y="12.5" width="300" height="17"/>
+                                                            <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
                                                             <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -1362,21 +1362,21 @@
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserHistoryCell" id="vBA-BP-MK8" customClass="UserHistoryCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vBA-BP-MK8" id="YM3-V6-4gt">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6A-10-Xrl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcv-PT-Y4H">
-                                                            <rect key="frame" x="546" y="6.5" width="42" height="30"/>
+                                                            <rect key="frame" x="321" y="6.5" width="42" height="30"/>
                                                             <color key="backgroundColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs6-aW-Et6">
-                                                            <rect key="frame" x="550" y="12.5" width="34" height="18.5"/>
+                                                            <rect key="frame" x="325" y="12.5" width="34" height="18.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1407,14 +1407,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PartnerHistoryCell" id="JL7-bL-eJq" customClass="PartnerHistoryCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JL7-bL-eJq" id="6I0-yU-uIq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oP8-IU-ndz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKn-kJ-rxo">
                                                             <rect key="frame" x="12" y="6.5" width="42" height="30"/>
@@ -1486,17 +1486,17 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserPokeCell" id="S6C-pZ-7RY" customClass="UserPokeCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S6C-pZ-7RY" id="TPE-XV-PPI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4s-zg-kdG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTQ-FV-PQO">
-                                                            <rect key="frame" x="16" y="11" width="568" height="20"/>
+                                                            <rect key="frame" x="16" y="11" width="343" height="20"/>
                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
