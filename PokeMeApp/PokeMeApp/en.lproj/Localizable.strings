@@ -53,3 +53,8 @@
 "UserPokes.AddButton.Title" = "Add";
 "EditingPoke.DeleteButton.Title" = "Delete";
 "EditingPoke.SaveButton.Title" = "Save";
+
+"Profile.FirstName" = "First name:";
+"Profile.LastName" = "Last name:";
+"Profile.Email" = "Email:";
+"Profile.LogoutButton.Title" = "Logout";
