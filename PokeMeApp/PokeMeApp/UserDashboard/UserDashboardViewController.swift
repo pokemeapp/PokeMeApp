@@ -22,12 +22,25 @@ class UserDashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.userDashboardMasterView.tableView.emptyDataSetDataSource = self
         self.userDashboardMasterView.tableView.emptyDataSetDelegate = self
         let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
         self.userHabits.value = mockHabitGenerator.createMockHabits(1)
         self.initObservers()
         self.title = "UserDashsboard.Title".localized
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard api.isLoggedIn else {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let authenticationController = mainStoryboard.instantiateViewController(withIdentifier: "authenticationController")
+            let loginController = authenticationController.childViewControllers[0] as! LoginViewController
+            loginController.api = api
+            
+            present(authenticationController, animated: false, completion: nil)
+            return
+        }
     }
     
     @IBAction func showUserProfile(_ sender: Any) {

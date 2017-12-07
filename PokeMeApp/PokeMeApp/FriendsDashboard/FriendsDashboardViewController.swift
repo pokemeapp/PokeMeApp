@@ -33,6 +33,16 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        guard api.isLoggedIn else {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let authenticationController = mainStoryboard.instantiateViewController(withIdentifier: "authenticationController")
+            let loginController = authenticationController.childViewControllers[0] as! LoginViewController
+            loginController.api = api
+            
+            present(authenticationController, animated: false, completion: nil)
+            return
+        }
+        
         self.api.get("api/user/friends") { (error, friends: [PMFriend]?) in
             
             guard error == nil else {

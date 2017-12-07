@@ -30,22 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let userDashboardNavigationController = ((window?.rootViewController as? UITabBarController)?.childViewControllers[0] as? UINavigationController)
         let friendsDashboardNavigationController = ((window?.rootViewController as? UITabBarController)?.childViewControllers[1] as? UINavigationController)
+        let profileNavigationController = ((window?.rootViewController as? UITabBarController)?.childViewControllers[2] as? UINavigationController)
         
         let userDashboardController = userDashboardNavigationController?.childViewControllers[0] as? UserDashboardViewController
         let friendsDashboardController = friendsDashboardNavigationController?.childViewControllers[0] as? FriendsDashboardViewController
+        let profileController = profileNavigationController?.childViewControllers[0] as? ProfileViewController
         
         userDashboardController?.api = api
         friendsDashboardController?.api = api
-        
-        if !api.isLoggedIn {
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let authenticationController = mainStoryboard.instantiateViewController(withIdentifier: "authenticationController")
-            let loginController = authenticationController.childViewControllers[0] as! LoginViewController
-            loginController.api = api
-          
-            window?.makeKeyAndVisible()
-            window?.rootViewController?.present(authenticationController, animated: false, completion: nil)
-        }
+        profileController?.api = api
       
         return true
     }

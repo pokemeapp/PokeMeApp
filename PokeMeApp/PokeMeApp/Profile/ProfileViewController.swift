@@ -14,21 +14,44 @@ import PokeMeKit
 
 class ProfileViewController: UIViewController {
     
+    var api: PMAPI!
+    
     let disposeBag = DisposeBag()
     var user = PMUser(email: "petezetep@gmail.com", firstname: "Zsolt", lastname: "Pete")
     
     @IBOutlet var profileMasterView: ProfileMasterView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindComponents()
         self.hideKeyboardWhenTappedAround()
-        self.profileMasterView.logoutButton.buttonTapped = { [weak self]utton in
+        self.profileMasterView.logoutButton.buttonTapped = { [weak self] button in
             self!.logout()
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        guard api.isLoggedIn else {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let authenticationController = mainStoryboard.instantiateViewController(withIdentifier: "authenticationController")
+            let loginController = authenticationController.childViewControllers[0] as! LoginViewController
+            loginController.api = api
+            
+            present(authenticationController, animated: false, completion: nil)
+            return
+        }
+        
+        startActivityIndicator()
+        
+        api.get("api/user") { (error, user: PMUser?) in
+            self.stopActivityIndicator()
+            self.user = user!
+            self.bindComponents()
+        }
+    }
+    
     func logout(){
-        //TODO: Implement logout
+        api.logout()
+        
+        tabBarController?.selectedIndex = 0
     }
     
 }
