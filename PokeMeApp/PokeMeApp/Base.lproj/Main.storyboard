@@ -1019,21 +1019,29 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Sy-vO-20q" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
-                                <rect key="frame" x="93.5" y="218.5" width="187.5" height="47"/>
+                                <rect key="frame" x="94" y="289.5" width="187.5" height="47"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Sy-vO-20q" secondAttribute="height" multiplier="16:4" id="lxW-hc-iyJ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ht-F6-O6v" userLabel="Save Button" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                <rect key="frame" x="94.5" y="218.5" width="187.5" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0Sy-vO-20q" firstAttribute="top" secondItem="GuI-4z-8I6" secondAttribute="bottom" constant="24" id="1PR-tZ-DY7"/>
                             <constraint firstItem="8hZ-lc-9uD" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="5tJ-33-62b"/>
                             <constraint firstItem="gdP-5d-HMK" firstAttribute="top" secondItem="8hZ-lc-9uD" secondAttribute="bottom" id="8Yc-qo-w6Q"/>
+                            <constraint firstItem="8ht-F6-O6v" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="Oz6-aQ-cfu"/>
+                            <constraint firstItem="8ht-F6-O6v" firstAttribute="top" secondItem="GuI-4z-8I6" secondAttribute="bottom" constant="24" id="RPR-vl-HAw"/>
                             <constraint firstItem="GuI-4z-8I6" firstAttribute="width" secondItem="gdP-5d-HMK" secondAttribute="width" id="WRx-6L-WIb"/>
                             <constraint firstItem="gdP-5d-HMK" firstAttribute="bottom" secondItem="GuI-4z-8I6" secondAttribute="top" id="eaG-hU-d96"/>
                             <constraint firstItem="gdP-5d-HMK" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="err-UY-5cx"/>
+                            <constraint firstItem="0Sy-vO-20q" firstAttribute="top" secondItem="8ht-F6-O6v" secondAttribute="bottom" constant="24" id="gyP-BT-66E"/>
+                            <constraint firstItem="8ht-F6-O6v" firstAttribute="width" secondItem="8ht-F6-O6v" secondAttribute="height" multiplier="16:4" id="itq-lE-jkK"/>
+                            <constraint firstItem="8ht-F6-O6v" firstAttribute="width" secondItem="mnB-WK-Faf" secondAttribute="width" multiplier="1:2" id="kzH-6h-lp7"/>
                             <constraint firstItem="0Sy-vO-20q" firstAttribute="width" secondItem="mnB-WK-Faf" secondAttribute="width" multiplier="0.5" id="maY-2d-rkr"/>
                             <constraint firstItem="0Sy-vO-20q" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="pTQ-0z-QXK"/>
                             <constraint firstItem="GuI-4z-8I6" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="qPi-er-ptg"/>
@@ -1047,6 +1055,7 @@
                             <outlet property="firstNameTextFiled" destination="QQn-Qw-huS" id="vAj-5Q-TIR"/>
                             <outlet property="lastNameTextField" destination="1kd-F3-Qx4" id="p5q-7C-XKE"/>
                             <outlet property="logoutButton" destination="0Sy-vO-20q" id="Pnn-4v-Ux3"/>
+                            <outlet property="saveButton" destination="8ht-F6-O6v" id="Ibt-Bv-4yP"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Sjy-Am-nCZ"/>
@@ -1247,11 +1256,11 @@
             </objects>
             <point key="canvasLocation" x="-422" y="30"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Dashboard-->
         <scene sceneID="dxn-VK-FFt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GFh-OY-GpS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user_tabbar" id="gqZ-x5-3U9">
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="user_tabbar" id="gqZ-x5-3U9">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1268,11 +1277,11 @@
             </objects>
             <point key="canvasLocation" x="1249.5999999999999" y="1414.992503748126"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Friends Dashboard-->
         <scene sceneID="Yz4-Ii-4Y3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Awg-tZ-fP1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="friends" id="lEY-5U-YMv"/>
+                    <tabBarItem key="tabBarItem" title="Friends Dashboard" image="friends" id="lEY-5U-YMv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GOu-80-srO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1725,11 +1734,11 @@
             </objects>
             <point key="canvasLocation" x="3542" y="3274"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="Zri-pI-ELP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SVA-o9-hfq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user" id="ce3-do-jq9"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="ce3-do-jq9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K85-iC-6AR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

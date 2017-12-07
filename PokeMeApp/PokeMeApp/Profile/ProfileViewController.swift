@@ -26,6 +26,10 @@ class ProfileViewController: UIViewController {
         self.profileMasterView.logoutButton.buttonTapped = { [weak self] button in
             self!.logout()
         }
+        
+        self.profileMasterView.saveButton.buttonTapped = { [weak self] button in
+            self!.save()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,7 +47,32 @@ class ProfileViewController: UIViewController {
         
         api.get("api/user") { (error, user: PMUser?) in
             self.stopActivityIndicator()
+            
+            guard error == nil else {
+                self.displayAlert(title: "Error", message: error!.localizedDescription)
+                return
+            }
+            
             self.user = user!
+            self.bindComponents()
+        }
+    }
+    
+    func save() {
+        
+        user.firstname = profileMasterView.firstNameTextFiled.text ?? ""
+        user.lastname = profileMasterView.lastNameTextField.text ?? ""
+        user.email = profileMasterView.emailTextField.text ?? ""
+        
+        startActivityIndicator()
+        api.put("api/user", entity: user) { (error, updatedUser: PMUser?) in
+            self.stopActivityIndicator()
+            guard error == nil else {
+                self.displayAlert(title: "Error", message: error!.localizedDescription)
+                return
+            }
+            
+            self.user = updatedUser!
             self.bindComponents()
         }
     }

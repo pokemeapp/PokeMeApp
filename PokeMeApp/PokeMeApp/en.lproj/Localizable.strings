@@ -57,4 +57,5 @@
 "Profile.FirstName" = "First name:";
 "Profile.LastName" = "Last name:";
 "Profile.Email" = "Email:";
+"Profile.SaveButton.Title" = "Save";
 "Profile.LogoutButton.Title" = "Logout";
