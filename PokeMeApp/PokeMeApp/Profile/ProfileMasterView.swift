@@ -10,18 +10,13 @@ import UIKit
 import SDWebImage
 
 class ProfileMasterView: UIView {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImageView: ProfileImageView!
     
+    @IBOutlet weak var logoutButton: PMButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextFiled: UITextField!
     override func awakeFromNib() {
-        let mockUserGenerator = MockUserGenerator(options: [.firstName, .lastName, .fullName, .imageURL])
-        let mockUsers = mockUserGenerator.createMockUsers(1)
-        let mockUser = mockUsers.first!
-        self.nameLabel.text = mockUser.fullName
-        SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: mockUser.imageURL!), options: .useNSURLCache, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
-            if maybeImage != nil || finished == true, error == nil{
-                self?.profileImageView.image = maybeImage!
-            }
-        }
+        super.awakeFromNib()
+        self.logoutButton.title = "Profile.LogoutButton.Title".localized
     }
 }
