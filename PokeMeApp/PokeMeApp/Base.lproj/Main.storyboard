@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wMg-tD-wxV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wMg-tD-wxV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -716,7 +716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaN-Nd-Gog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="2079"/>
+            <point key="canvasLocation" x="2444" y="2078.4107946026988"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="U5c-Ze-03u">
@@ -842,7 +842,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08Q-kx-bOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="2073"/>
+            <point key="canvasLocation" x="3199.1999999999998" y="2072.1139430284861"/>
         </scene>
         <!--User Dashboard View Controller-->
         <scene sceneID="pfw-R8-LYI">
@@ -912,7 +912,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userDashboardMasterView" destination="n2v-1D-SGD" id="ghf-DK-dUZ"/>
-                        <segue destination="fPy-By-rYu" kind="show" identifier="ShowUserProfile" id="i4A-zl-Ixa"/>
                         <segue destination="e7a-mz-ppM" kind="show" identifier="ShowUserHabit" id="a0d-yq-lBu"/>
                         <segue destination="f9m-au-59Y" kind="show" identifier="ShowUserPokes" id="HWu-sz-B1I"/>
                     </connections>
@@ -929,53 +928,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="557-Kc-L6d">
-                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-lc-9uD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="43.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="L6D-kD-zCG" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="15" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="L6D-kD-zCG" secondAttribute="height" multiplier="1:1" id="bWZ-Vt-x98"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEd-Ol-Q2W">
-                                        <rect key="frame" x="118" y="40.5" width="249" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpe-RG-6vV" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="11" width="36" height="20"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Profile.FirstName"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQn-Qw-huS">
+                                        <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
+                                        <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jpe-RG-6vV" firstAttribute="centerY" secondItem="8hZ-lc-9uD" secondAttribute="centerY" id="6rC-KJ-Ikh"/>
+                                    <constraint firstItem="QQn-Qw-huS" firstAttribute="centerY" secondItem="8hZ-lc-9uD" secondAttribute="centerY" id="Cff-RC-OGX"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQn-Qw-huS" secondAttribute="trailing" constant="8" id="CoE-cb-kux"/>
+                                    <constraint firstAttribute="height" constant="43.5" id="FBa-iy-WW4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jpe-RG-6vV" secondAttribute="trailing" constant="20" symbolic="YES" id="Inx-lw-lou"/>
+                                    <constraint firstItem="QQn-Qw-huS" firstAttribute="width" secondItem="8hZ-lc-9uD" secondAttribute="width" multiplier="0.5" id="YYJ-fh-L3M"/>
+                                    <constraint firstItem="jpe-RG-6vV" firstAttribute="leading" secondItem="8hZ-lc-9uD" secondAttribute="leading" constant="8" id="yji-5n-nfB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdP-5d-HMK">
+                                <rect key="frame" x="0.0" y="107.5" width="375" height="43.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyM-vl-ayj" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="11" width="36" height="20"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Profile.LastName"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kd-F3-Qx4">
+                                        <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
+                                        <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1kd-F3-Qx4" firstAttribute="width" secondItem="gdP-5d-HMK" secondAttribute="width" multiplier="0.5" id="5cf-h1-YZQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="1kd-F3-Qx4" secondAttribute="trailing" constant="8" id="7tp-dc-Fkj"/>
+                                    <constraint firstItem="CyM-vl-ayj" firstAttribute="leading" secondItem="gdP-5d-HMK" secondAttribute="leading" constant="8" id="Nhy-fK-h2M"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CyM-vl-ayj" secondAttribute="trailing" constant="20" symbolic="YES" id="aPG-EZ-pNz"/>
+                                    <constraint firstAttribute="height" constant="43.5" id="hsr-jG-HOa"/>
+                                    <constraint firstItem="1kd-F3-Qx4" firstAttribute="centerY" secondItem="gdP-5d-HMK" secondAttribute="centerY" id="vfE-Wo-FFU"/>
+                                    <constraint firstItem="CyM-vl-ayj" firstAttribute="centerY" secondItem="gdP-5d-HMK" secondAttribute="centerY" id="w9F-K9-daq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuI-4z-8I6">
+                                <rect key="frame" x="0.0" y="151" width="375" height="43.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y61-Am-YwN" customClass="CYTranslatedLabel" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="11" width="36" height="20"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="translationKey" value="Profile.Email"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx7-UL-dqM">
+                                        <rect key="frame" x="179.5" y="12.5" width="187.5" height="17"/>
+                                        <color key="textColor" red="0.0" green="0.6705882353" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43.5" id="3uW-Sx-EBG"/>
+                                    <constraint firstItem="Y61-Am-YwN" firstAttribute="leading" secondItem="GuI-4z-8I6" secondAttribute="leading" constant="8" id="D2D-2u-WTh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hx7-UL-dqM" secondAttribute="trailing" constant="8" id="RNj-Ki-5iM"/>
+                                    <constraint firstItem="Y61-Am-YwN" firstAttribute="centerY" secondItem="GuI-4z-8I6" secondAttribute="centerY" id="TSg-7B-Q4k"/>
+                                    <constraint firstItem="Hx7-UL-dqM" firstAttribute="centerY" secondItem="GuI-4z-8I6" secondAttribute="centerY" id="nJV-XL-Tb6"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y61-Am-YwN" secondAttribute="trailing" constant="20" symbolic="YES" id="rV7-J9-i4y"/>
+                                    <constraint firstItem="Hx7-UL-dqM" firstAttribute="width" secondItem="GuI-4z-8I6" secondAttribute="width" multiplier="0.5" id="uex-nR-GsU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Sy-vO-20q" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                <rect key="frame" x="93.5" y="218.5" width="187.5" height="47"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="L6D-kD-zCG" firstAttribute="height" secondItem="557-Kc-L6d" secondAttribute="height" multiplier="0.7" id="1pf-UA-Sg0"/>
-                                    <constraint firstAttribute="height" constant="100" id="4it-4i-K3z"/>
-                                    <constraint firstItem="L6D-kD-zCG" firstAttribute="centerY" secondItem="557-Kc-L6d" secondAttribute="centerY" id="BYW-Ro-KeE"/>
-                                    <constraint firstItem="NEd-Ol-Q2W" firstAttribute="leading" secondItem="L6D-kD-zCG" secondAttribute="trailing" constant="16" id="PJh-IJ-NC2"/>
-                                    <constraint firstItem="NEd-Ol-Q2W" firstAttribute="centerY" secondItem="557-Kc-L6d" secondAttribute="centerY" id="UTV-lg-8iK"/>
-                                    <constraint firstAttribute="trailing" secondItem="NEd-Ol-Q2W" secondAttribute="trailing" constant="8" id="Ykf-na-nEz"/>
-                                    <constraint firstItem="L6D-kD-zCG" firstAttribute="leading" secondItem="557-Kc-L6d" secondAttribute="leading" constant="32" id="r5W-3b-rm7"/>
+                                    <constraint firstAttribute="width" secondItem="0Sy-vO-20q" secondAttribute="height" multiplier="16:4" id="lxW-hc-iyJ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="557-Kc-L6d" firstAttribute="top" secondItem="ZGy-nf-41f" secondAttribute="top" id="00s-8N-s0A"/>
-                            <constraint firstItem="557-Kc-L6d" firstAttribute="width" secondItem="mnB-WK-Faf" secondAttribute="width" id="Mt4-l0-dlK"/>
-                            <constraint firstItem="557-Kc-L6d" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="ORR-lv-KEt"/>
+                            <constraint firstItem="0Sy-vO-20q" firstAttribute="top" secondItem="GuI-4z-8I6" secondAttribute="bottom" constant="24" id="1PR-tZ-DY7"/>
+                            <constraint firstItem="8hZ-lc-9uD" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="5tJ-33-62b"/>
+                            <constraint firstItem="gdP-5d-HMK" firstAttribute="top" secondItem="8hZ-lc-9uD" secondAttribute="bottom" id="8Yc-qo-w6Q"/>
+                            <constraint firstItem="GuI-4z-8I6" firstAttribute="width" secondItem="gdP-5d-HMK" secondAttribute="width" id="WRx-6L-WIb"/>
+                            <constraint firstItem="gdP-5d-HMK" firstAttribute="bottom" secondItem="GuI-4z-8I6" secondAttribute="top" id="eaG-hU-d96"/>
+                            <constraint firstItem="gdP-5d-HMK" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="err-UY-5cx"/>
+                            <constraint firstItem="0Sy-vO-20q" firstAttribute="width" secondItem="mnB-WK-Faf" secondAttribute="width" multiplier="0.5" id="maY-2d-rkr"/>
+                            <constraint firstItem="0Sy-vO-20q" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="pTQ-0z-QXK"/>
+                            <constraint firstItem="GuI-4z-8I6" firstAttribute="centerX" secondItem="ZGy-nf-41f" secondAttribute="centerX" id="qPi-er-ptg"/>
+                            <constraint firstItem="8hZ-lc-9uD" firstAttribute="top" secondItem="ZGy-nf-41f" secondAttribute="top" id="t1p-gf-ZkH"/>
+                            <constraint firstItem="8hZ-lc-9uD" firstAttribute="width" secondItem="mnB-WK-Faf" secondAttribute="width" id="tHF-kq-SPI"/>
+                            <constraint firstItem="gdP-5d-HMK" firstAttribute="width" secondItem="8hZ-lc-9uD" secondAttribute="width" id="tQS-x8-XbG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZGy-nf-41f"/>
                         <connections>
-                            <outlet property="nameLabel" destination="NEd-Ol-Q2W" id="jS2-aR-f4s"/>
-                            <outlet property="profileImageView" destination="L6D-kD-zCG" id="4bY-9A-Rhl"/>
+                            <outlet property="emailTextField" destination="Hx7-UL-dqM" id="xYz-U2-3ja"/>
+                            <outlet property="firstNameTextFiled" destination="QQn-Qw-huS" id="vAj-5Q-TIR"/>
+                            <outlet property="lastNameTextField" destination="1kd-F3-Qx4" id="p5q-7C-XKE"/>
+                            <outlet property="logoutButton" destination="0Sy-vO-20q" id="Pnn-4v-Ux3"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Sjy-Am-nCZ"/>
                     <connections>
                         <outlet property="profileMasterView" destination="mnB-WK-Faf" id="Ifz-Uz-1Uj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIc-a8-fhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="1409"/>
+            <point key="canvasLocation" x="297" y="3288"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="i7S-BF-WzW">
@@ -990,6 +1071,7 @@
                     <connections>
                         <segue destination="GFh-OY-GpS" kind="relationship" relationship="viewControllers" id="S5H-5x-rfx"/>
                         <segue destination="Awg-tZ-fP1" kind="relationship" relationship="viewControllers" id="LmP-v6-fpm"/>
+                        <segue destination="SVA-o9-hfq" kind="relationship" relationship="viewControllers" id="XGv-CC-fHL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGS-gx-Lzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1203,7 +1285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8L-8X-6QD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249.5999999999999" y="2079.7601199400301"/>
+            <point key="canvasLocation" x="1588" y="2079.3103448275865"/>
         </scene>
         <!--Messaging Pop Up View Controller-->
         <scene sceneID="jjd-lz-QGK">
@@ -1347,7 +1429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysD-tH-6Et" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="2807"/>
+            <point key="canvasLocation" x="1552.8" y="2806.1469265367318"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="rl8-r5-SxC">
@@ -1643,10 +1725,28 @@
             </objects>
             <point key="canvasLocation" x="3542" y="3274"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zri-pI-ELP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SVA-o9-hfq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="user" id="ce3-do-jq9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K85-iC-6AR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fPy-By-rYu" kind="relationship" relationship="rootViewController" id="V28-Fk-45C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9sE-PX-vp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="2512"/>
+        </scene>
     </scenes>
     <resources>
         <image name="close" width="32" height="32"/>
-        <image name="default_profile_image" width="25" height="25"/>
         <image name="friends" width="32" height="32"/>
         <image name="health" width="25" height="25"/>
         <image name="logo" width="116" height="116"/>
