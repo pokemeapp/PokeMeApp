@@ -81,8 +81,11 @@ extension RegistrationViewController {
     }
     
     func initBinding(){
-        self.registrationItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.RegistrationItemCell))({(_, model, cell: RegistrationItemCell) in
+        self.registrationItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.RegistrationItemCell))({(indexPath, model, cell: RegistrationItemCell) in
             cell.bind(to: model)
+            if indexPath == 1 || indexPath == 2 {
+                cell.inputTextField.isSecureTextEntry = true
+            }
         }).addDisposableTo(rx.disposeBag)
     }
     
