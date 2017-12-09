@@ -76,8 +76,11 @@ extension LoginViewController {
     }
     
     func initBinding(){
-        self.loginItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.LoginItemCell))({(_, model, cell: LoginItemCell) in
+        self.loginItems.asObservable().bind(to: self.masterView!.tableView.rx.items(cellIdentifier: Constants.Cells.LoginItemCell))({(indexPath, model, cell: LoginItemCell) in
             cell.bind(to: model)
+            if indexPath == 1 {
+                cell.inputTextField.isSecureTextEntry = true
+            }
         }).addDisposableTo(rx.disposeBag)
     }
     
