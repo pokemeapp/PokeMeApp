@@ -49,6 +49,10 @@
 		50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D6D1FAE1809008B01F5 /* Array+Sample.swift */; };
 		50434D741FAE2E54008B01F5 /* UserHabitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */; };
 		50434D761FAE2EC0008B01F5 /* UserHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */; };
+		504E29F31FDC3C5100FD2305 /* FriendRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F21FDC3C5100FD2305 /* FriendRequestViewModel.swift */; };
+		504E29F61FDC3C6B00FD2305 /* FriendRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F51FDC3C6B00FD2305 /* FriendRequestCell.swift */; };
+		504E29F81FDC3F6C00FD2305 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F71FDC3F6C00FD2305 /* SearchSection.swift */; };
+		504E29FA1FDC404700FD2305 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F91FDC404700FD2305 /* Searchable.swift */; };
 		505C14821FBA2CFB0032FB59 /* M13Checkbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505C14801FBA2CFB0032FB59 /* M13Checkbox.framework */; };
 		505C14841FBA2D060032FB59 /* M13Checkbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 505C14831FBA2D050032FB59 /* M13Checkbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		505C14861FBA2DBB0032FB59 /* PMCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */; };
@@ -233,6 +237,10 @@
 		50434D6D1FAE1809008B01F5 /* Array+Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
 		50434D731FAE2E54008B01F5 /* UserHabitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitCellView.swift; sourceTree = "<group>"; };
 		50434D751FAE2EC0008B01F5 /* UserHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitCell.swift; sourceTree = "<group>"; };
+		504E29F21FDC3C5100FD2305 /* FriendRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestViewModel.swift; sourceTree = "<group>"; };
+		504E29F51FDC3C6B00FD2305 /* FriendRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestCell.swift; sourceTree = "<group>"; };
+		504E29F71FDC3F6C00FD2305 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
+		504E29F91FDC404700FD2305 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
 		505C14801FBA2CFB0032FB59 /* M13Checkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M13Checkbox.framework; path = Carthage/Build/iOS/M13Checkbox.framework; sourceTree = "<group>"; };
 		505C14831FBA2D050032FB59 /* M13Checkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M13Checkbox.framework; path = Carthage/Build/iOS/M13Checkbox.framework; sourceTree = "<group>"; };
 		505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMCheckBox.swift; sourceTree = "<group>"; };
@@ -480,6 +488,10 @@
 				505C14951FBB82A80032FB59 /* SearchedUserViewModel.swift */,
 				505C14971FBB87050032FB59 /* SearchUserMasterView.swift */,
 				505C14991FBB877F0032FB59 /* SearchHeaderView.swift */,
+				504E29F21FDC3C5100FD2305 /* FriendRequestViewModel.swift */,
+				504E29F51FDC3C6B00FD2305 /* FriendRequestCell.swift */,
+				504E29F71FDC3F6C00FD2305 /* SearchSection.swift */,
+				504E29F91FDC404700FD2305 /* Searchable.swift */,
 			);
 			path = SearchViewController;
 			sourceTree = "<group>";
@@ -891,6 +903,7 @@
 				503736971F797B6F001C9C13 /* PMButton.xib in Sources */,
 				50434D6A1FAE1161008B01F5 /* MockUser.swift in Sources */,
 				50F38D301FCB627A00838CB4 /* EditingPokeView.swift in Sources */,
+				504E29F61FDC3C6B00FD2305 /* FriendRequestCell.swift in Sources */,
 				50C0919C1F77CC2900C1451D /* RegistrationItemViewModel.swift in Sources */,
 				509031BC1FAE5EE7001D234B /* NewUserHabitSection.swift in Sources */,
 				509031B81FAE5B8E001D234B /* NewUserHabitTimeViewModel.swift in Sources */,
@@ -916,6 +929,7 @@
 				505C148F1FBB7DAF0032FB59 /* FriendsDashboardViewController.swift in Sources */,
 				509031B61FAE5B72001D234B /* NewUserHabitDescriptionsViewModel.swift in Sources */,
 				509031AE1FAE5925001D234B /* NewUserHabitDescriptionsCell.swift in Sources */,
+				504E29FA1FDC404700FD2305 /* Searchable.swift in Sources */,
 				503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */,
 				50434D6E1FAE1809008B01F5 /* Array+Sample.swift in Sources */,
 				50F38D181FCB3D2400838CB4 /* ParnerHistoryViewModel.swift in Sources */,
@@ -948,11 +962,13 @@
 				50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */,
 				509031BA1FAE5BA3001D234B /* NewUserHabitDayViewModel.swift in Sources */,
 				50F38D2A1FCB5E5500838CB4 /* EditingPokeViewController.swift in Sources */,
+				504E29F31FDC3C5100FD2305 /* FriendRequestViewModel.swift in Sources */,
 				509031C21FAF59C0001D234B /* UserHabitWrapper.swift in Sources */,
 				5017993C1FC239D1000A6D46 /* LocalPushManager.swift in Sources */,
 				505C14921FBB7DF70032FB59 /* SearchViewController.swift in Sources */,
 				50F38D251FCB5C9E00838CB4 /* UserPokesMasterView.swift in Sources */,
 				503796B21FACF88100988B54 /* UserDashboardMasterView.swift in Sources */,
+				504E29F81FDC3F6C00FD2305 /* SearchSection.swift in Sources */,
 				50F38D161FCB3D1000838CB4 /* UserHistoryCell.swift in Sources */,
 				50C0918A1F77C8BF00C1451D /* UILabel+Locale.swift in Sources */,
 				50C091861F77C36B00C1451D /* UIColor+Hexa.swift in Sources */,
