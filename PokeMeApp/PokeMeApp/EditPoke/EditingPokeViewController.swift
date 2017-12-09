@@ -24,7 +24,6 @@ protocol EditingPokeViewControllerDelegate: class {
 class EditingPokeViewController: UIViewController {
 
     var api: PMAPI!
-
     @IBOutlet var masterView: EditingPokeMasterView!
     @IBOutlet weak var editiongPokeViewCenterYConstraint: NSLayoutConstraint!
     

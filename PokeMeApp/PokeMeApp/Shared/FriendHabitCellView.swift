@@ -13,14 +13,11 @@ class FriendHabitCellView: UIView {
     @IBOutlet weak var profileImageView: ProfileImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var sendButton: PMButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.loadXib()
         self.style()
-        self.sendButton.title = "FriendHabitCell.Send".localized
     }
     
     func style(){

@@ -26,8 +26,6 @@ class FriendCell: UITableViewCell {
     
     func bindComponents(){
         self.viewModel.name.asObservable().bind(to: self.friendCellView.nameLabel.rx.text).disposed(by: disposeBag)
-//        self.viewModel.image.asObservable().bind(to: self.friendCellView.profileImageView.rx.image).disposed(by: disposeBag)
-        self.friendCellView.sendButton.buttonTapped = self.buttonTapped
     }
     
     func bind(to model: PMUser){
