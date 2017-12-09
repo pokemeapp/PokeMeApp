@@ -59,6 +59,12 @@ class UserDashboardViewController: UIViewController {
                 return
             }
             newUserHabitViewController.habit = habit
+        } else if segue.identifier == Constants.Segues.ShowUserPokes {
+            guard let userPokesController = segue.destination as? UserPokesViewController else {
+                return
+            }
+
+            userPokesController.api = api
         }
     }
     

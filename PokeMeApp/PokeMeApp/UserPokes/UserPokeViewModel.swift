@@ -9,17 +9,20 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PokeMeKit
 
 class UserPokeViewModel: NSObject {
     
-    var model: UserPoke? {
+    var model: PMPokePrototype? {
         didSet {
             guard let model = model else {
                 return
             }
-            self.name.value = model.name!
+            self.name.value = model.name
+            self.message.value = model.message
         }
     }
 
     var name = Variable("")
+    var message = Variable("")
 }

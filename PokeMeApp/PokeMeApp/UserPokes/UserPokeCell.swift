@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PokeMeKit
 
 class UserPokeCell: UITableViewCell {
 
@@ -26,7 +27,7 @@ class UserPokeCell: UITableViewCell {
         self.viewModel.name.asObservable().bind(to: self.pokeLabel.rx.text).addDisposableTo(disposeBag)
     }
     
-    func bind(to model: UserPoke){
+    func bind(to model: PMPokePrototype){
         self.viewModel.model = model
     }
 
