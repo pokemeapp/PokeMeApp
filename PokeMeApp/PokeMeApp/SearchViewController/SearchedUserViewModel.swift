@@ -10,22 +10,19 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SDWebImage
+import PokeMeKit
 
 class SearchedUserViewModel: NSObject {
     
-    var model: MockUser = MockUser(){
+    var model: PMUser?{
         didSet {
-            self.name.value = model.fullName ?? ""
-            SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: model.imageURL!), options: .useNSURLCache, progress:nil) {  [ weak self] (maybeImage, data, error, finished) in
-                if maybeImage != nil || finished == true, error == nil{
-                    self?.image.value = maybeImage!
-                }
+            guard let model = model else {
+                return
             }
+            self.name.value = model.firstname + " " + model.lastname
         }
     }
     
-    var imageURL: Variable<String> = Variable("")
     var name: Variable<String> = Variable("")
-    var image: Variable<UIImage> = Variable(UIImage())
 
 }

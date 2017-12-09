@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PokeMeKit
 
 class SearchedUserCell: UITableViewCell {
 
@@ -17,7 +18,6 @@ class SearchedUserCell: UITableViewCell {
     
     @IBOutlet weak var addButton: PMButton!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImageView: ProfileImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.bindComponents()
@@ -25,11 +25,10 @@ class SearchedUserCell: UITableViewCell {
     }
     
     func bindComponents(){
-        self.viewModel.image.asObservable().bind(to: self.profileImageView.rx.image).addDisposableTo(disposeBag)
         self.viewModel.name.asObservable().bind(to: self.nameLabel.rx.text).addDisposableTo(disposeBag)
     }
 
-    func bind(to user: MockUser){
+    func bind(to user: PMUser){
         self.viewModel.model = user
     }
     

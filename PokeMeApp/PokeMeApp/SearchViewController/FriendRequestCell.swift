@@ -7,18 +7,40 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import PokeMeKit
 
 class FriendRequestCell: UITableViewCell {
 
+    let disposeBag = DisposeBag()
+    let viewModel = SearchedUserViewModel()
+    
+    @IBOutlet weak var declineButton: PMButton!
+    @IBOutlet weak var acceptButton: PMButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
+        self.acceptButton.title = "SearchedUser.AcceptButton.Title".localized
+        self.declineButton.title = "SearchedUser.DeclineButton.Title".localized
+        self.acceptButton.buttonTapped = { button in
+            
+        }
+        
+        self.declineButton.buttonTapped = { button in
+            
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        
+        self.viewModel.name.asObservable().bind(to: self.nameLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bind(to user: PMUser){
+        self.viewModel.model = user
     }
 
 }

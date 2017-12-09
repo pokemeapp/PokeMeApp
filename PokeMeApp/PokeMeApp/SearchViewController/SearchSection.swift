@@ -7,7 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
+import PokeMeKit
 
-class SearchSection: NSObject {
+struct SearchSection {
+    var header: String
+    var items: [Searchable]
+}
 
+extension SearchSection : SectionModelType {
+    
+    var identity: String {
+        return header
+    }
+    
+    init(original: SearchSection, items: [Searchable]) {
+        self = original
+        self.items = items
+    }
+}
+
+extension PMUser: Searchable {
+    
+}
+
+extension PMFriendRequest: Searchable {
+    
 }

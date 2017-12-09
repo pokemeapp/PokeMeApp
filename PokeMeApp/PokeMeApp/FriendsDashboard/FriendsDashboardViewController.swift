@@ -54,12 +54,6 @@ class FriendsDashboardViewController: UIViewController {
         }
     }
     
-    func testBase64(){
-        let encodedImageData = Constants.Base64.Test
-        let imageData = Data(base64Encoded: encodedImageData, options: .ignoreUnknownCharacters)
-        let image = UIImage(data: imageData!)
-    }
-    
     func willPresentSearchController(_ searchController: UISearchController) {
         self.performSegue(withIdentifier: Constants.Segues.ShowSearch, sender: nil)
     }
