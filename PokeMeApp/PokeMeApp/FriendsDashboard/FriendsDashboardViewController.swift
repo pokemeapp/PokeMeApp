@@ -12,7 +12,7 @@ import RxCocoa
 import RxGesture
 import PokeMeKit
 
-class FriendsDashboardViewController: UIViewController, UISearchControllerDelegate {
+class FriendsDashboardViewController: UIViewController {
 
     var api: PMAPI!
     let disposeBag = DisposeBag()
@@ -23,9 +23,6 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
         super.viewDidLoad()
         self.masterView.tableView.emptyDataSetDataSource = self
         self.masterView.tableView.emptyDataSetDelegate = self
-        let searchController = UISearchController(searchResultsController: nil)
-        self.navigationItem.searchController = searchController
-        self.navigationItem.searchController?.delegate = self
 //        let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
 //        self.userHabits.value = mockHabitGenerator.createMockHabits(2)
         self.initObservers()
@@ -78,7 +75,12 @@ class FriendsDashboardViewController: UIViewController, UISearchControllerDelega
             //viewControlletr.mockHabit = habit
         }
     }
-    
+
+    @IBAction func addFriend(sender: Any?) {
+
+        performSegue(withIdentifier: Constants.Segues.ShowSearch, sender: self)
+
+    }
 }
 
 extension FriendsDashboardViewController {

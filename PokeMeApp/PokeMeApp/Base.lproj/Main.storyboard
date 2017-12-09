@@ -706,7 +706,14 @@
                             <outlet property="tableView" destination="YXZ-QB-0OA" id="P3U-Ey-Q2w"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="zEe-Se-ZsZ"/>
+                    <navigationItem key="navigationItem" id="zEe-Se-ZsZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ly7-xo-8FZ">
+                            <color key="tintColor" red="0.28114068508148193" green="0.71260124444961548" blue="0.084379278123378754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addFriendWithSender:" destination="So6-na-497" id="Sys-Ar-X1B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="masterView" destination="CA9-i7-cFp" id="Eo3-LY-Dhc"/>
                         <segue destination="lQ4-v3-R6v" kind="presentation" identifier="ShowSearch" id="bhq-iG-ckM"/>
