@@ -763,12 +763,12 @@
                                     <outlet property="searchController" destination="hvb-fp-zPW" id="eg3-Qs-eV8"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W0S-ZK-FRC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="W0S-ZK-FRC">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchedUserCell" id="Lee-ZR-rnA" customClass="SearchedUserCell" customModule="PokeMeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lee-ZR-rnA" id="rHY-nR-veN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -777,14 +777,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-I2-PIn">
                                                     <rect key="frame" x="4" y="0.0" width="367" height="59.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icL-Cq-EOT" customClass="ProfileImageView" customModule="PokeMeApp" customModuleProvider="target">
-                                                            <rect key="frame" x="4" y="8" width="41.5" height="42"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="icL-Cq-EOT" secondAttribute="height" multiplier="1:1" id="pqt-8j-Im2"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57u-Md-oMS">
-                                                            <rect key="frame" x="61.5" y="19.5" width="187.5" height="20"/>
+                                                            <rect key="frame" x="16" y="19.5" width="233" height="20"/>
                                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.050980392159999999" green="0.72941176470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -799,15 +793,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="icL-Cq-EOT" firstAttribute="centerY" secondItem="DaW-I2-PIn" secondAttribute="centerY" id="0zO-qe-CDj"/>
                                                         <constraint firstItem="CoM-Mg-wJx" firstAttribute="height" secondItem="DaW-I2-PIn" secondAttribute="height" multiplier="0.6" id="9q7-aG-Pcl"/>
                                                         <constraint firstItem="CoM-Mg-wJx" firstAttribute="leading" secondItem="57u-Md-oMS" secondAttribute="trailing" constant="2" id="GhI-nv-Vzu"/>
-                                                        <constraint firstItem="icL-Cq-EOT" firstAttribute="leading" secondItem="DaW-I2-PIn" secondAttribute="leading" constant="4" id="L4H-XA-2tt"/>
-                                                        <constraint firstItem="icL-Cq-EOT" firstAttribute="height" secondItem="DaW-I2-PIn" secondAttribute="height" multiplier="0.7" id="M8L-3D-SOM"/>
                                                         <constraint firstAttribute="trailing" secondItem="CoM-Mg-wJx" secondAttribute="trailing" constant="8" id="Ywm-d5-EqW"/>
                                                         <constraint firstItem="CoM-Mg-wJx" firstAttribute="centerY" secondItem="DaW-I2-PIn" secondAttribute="centerY" id="dCx-cK-9sS"/>
-                                                        <constraint firstItem="57u-Md-oMS" firstAttribute="leading" secondItem="icL-Cq-EOT" secondAttribute="trailing" constant="16" id="dOo-CU-NSp"/>
                                                         <constraint firstItem="57u-Md-oMS" firstAttribute="centerY" secondItem="DaW-I2-PIn" secondAttribute="centerY" id="htJ-xE-xWe"/>
+                                                        <constraint firstItem="57u-Md-oMS" firstAttribute="leading" secondItem="DaW-I2-PIn" secondAttribute="leading" constant="16" id="o51-x7-9CF"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -821,7 +812,64 @@
                                         <connections>
                                             <outlet property="addButton" destination="CoM-Mg-wJx" id="YrB-a1-6rp"/>
                                             <outlet property="nameLabel" destination="57u-Md-oMS" id="ef1-vy-tH0"/>
-                                            <outlet property="profileImageView" destination="icL-Cq-EOT" id="5Do-ld-xJF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendRequestCell" id="tPO-Kc-YqN" customClass="FriendRequestCell" customModule="PokeMeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="115.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tPO-Kc-YqN" id="Lnb-sW-8dl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYE-n4-9Cb">
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="59.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbP-YI-Lpl">
+                                                            <rect key="frame" x="16" y="19.5" width="251" height="20"/>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                            <color key="textColor" red="0.050980392159999999" green="0.72941176470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB7-IY-Y7g" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                                            <rect key="frame" x="269" y="14" width="90" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="BB7-IY-Y7g" secondAttribute="height" multiplier="3:1" id="nwr-rz-GXJ"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttC-mS-ajQ" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                                                            <rect key="frame" x="163.5" y="15" width="89.5" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ttC-mS-ajQ" secondAttribute="height" multiplier="3:1" id="4dJ-IM-g32"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="BB7-IY-Y7g" firstAttribute="leading" secondItem="dbP-YI-Lpl" secondAttribute="trailing" constant="2" id="DAM-Vl-PRG"/>
+                                                        <constraint firstItem="ttC-mS-ajQ" firstAttribute="height" secondItem="BB7-IY-Y7g" secondAttribute="height" id="F07-Og-rhe"/>
+                                                        <constraint firstItem="BB7-IY-Y7g" firstAttribute="centerY" secondItem="SYE-n4-9Cb" secondAttribute="centerY" id="HxA-bk-bCI"/>
+                                                        <constraint firstItem="BB7-IY-Y7g" firstAttribute="height" secondItem="SYE-n4-9Cb" secondAttribute="height" multiplier="0.5" id="KxJ-fC-4ds"/>
+                                                        <constraint firstItem="dbP-YI-Lpl" firstAttribute="leading" secondItem="SYE-n4-9Cb" secondAttribute="leading" constant="16" id="fT3-dh-W9s"/>
+                                                        <constraint firstItem="ttC-mS-ajQ" firstAttribute="trailing" secondItem="BB7-IY-Y7g" secondAttribute="leading" constant="-16" id="kbe-gl-uyl"/>
+                                                        <constraint firstItem="dbP-YI-Lpl" firstAttribute="centerY" secondItem="SYE-n4-9Cb" secondAttribute="centerY" id="uG4-61-oe4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BB7-IY-Y7g" secondAttribute="trailing" constant="8" id="vDI-PW-1H0"/>
+                                                        <constraint firstItem="ttC-mS-ajQ" firstAttribute="centerY" secondItem="SYE-n4-9Cb" secondAttribute="centerY" id="x4G-22-WQl"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SYE-n4-9Cb" secondAttribute="bottom" id="7fY-Am-2ea"/>
+                                                <constraint firstAttribute="trailing" secondItem="SYE-n4-9Cb" secondAttribute="trailing" constant="4" id="IB2-zt-w72"/>
+                                                <constraint firstItem="SYE-n4-9Cb" firstAttribute="leading" secondItem="Lnb-sW-8dl" secondAttribute="leading" constant="4" id="QL2-W8-KHz"/>
+                                                <constraint firstItem="SYE-n4-9Cb" firstAttribute="top" secondItem="Lnb-sW-8dl" secondAttribute="top" id="unn-xM-gQZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acceptButton" destination="ttC-mS-ajQ" id="Dlv-c4-zbV"/>
+                                            <outlet property="declineButton" destination="BB7-IY-Y7g" id="9ai-AM-vfn"/>
+                                            <outlet property="nameLabel" destination="dbP-YI-Lpl" id="Xt0-9h-5WS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
