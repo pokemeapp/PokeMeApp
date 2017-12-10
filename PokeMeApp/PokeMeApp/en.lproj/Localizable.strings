@@ -61,3 +61,6 @@
 "Profile.Email" = "Email:";
 "Profile.SaveButton.Title" = "Save";
 "Profile.LogoutButton.Title" = "Logout";
+
+"History.YesButton.Title" = "Yes";
+"History.NoButton.Title" = "No";
