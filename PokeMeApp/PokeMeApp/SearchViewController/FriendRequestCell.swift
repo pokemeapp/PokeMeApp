@@ -15,6 +15,8 @@ class FriendRequestCell: UITableViewCell {
 
     let disposeBag = DisposeBag()
     let viewModel = FriendRequestViewModel()
+    var accept: ((PMFriendRequest) -> Void)?
+    var decline: ((PMFriendRequest) -> Void)?
     
     @IBOutlet weak var declineButton: PMButton!
     @IBOutlet weak var acceptButton: PMButton!
@@ -26,11 +28,11 @@ class FriendRequestCell: UITableViewCell {
         self.acceptButton.title = "SearchedUser.AcceptButton.Title".localized
         self.declineButton.title = "SearchedUser.DeclineButton.Title".localized
         self.acceptButton.buttonTapped = { button in
-            
+            self.accept?(self.viewModel.model!)
         }
         
         self.declineButton.buttonTapped = { button in
-            
+            self.decline?(self.viewModel.model!)
         }
     }
     

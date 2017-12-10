@@ -52,7 +52,7 @@ class FriendsDashboardViewController: UIViewController {
                 return
             }
             
-            self.friends.value = friends.map { $0.owner }.flatMap { $0 }
+            self.friends.value = friends.map { $0.friend }.flatMap { $0 }
         }
     }
     

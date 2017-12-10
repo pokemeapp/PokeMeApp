@@ -90,12 +90,30 @@ class SearchViewController: UIViewController {
         }
     }
 
-    func accept(friendReuquest request: PMFriendRequest) {
+    func accept(friendRequest request: PMFriendRequest) {
+        startActivityIndicator()
+        api.post("api/user/friend_requests/\(request.id!)/accept", entity: "") { (error, friendRequestResult: String?) in
+            self.stopActivityIndicator()
 
+            guard error == nil else {
+                self.displayAlert(title: "Error accepting friend request", message: error!.localizedDescription)
+                return
+            }
+
+        }
     }
 
-    func decline(friendRequest friendRequest: PMFriendRequest) {
+    func decline(friendRequest request: PMFriendRequest) {
+        startActivityIndicator()
+        api.post("api/user/friend_requests/\(request.id!)/decline", entity: "") { (error, friendRequestResult: String?) in
+            self.stopActivityIndicator()
 
+            guard error == nil else {
+                self.displayAlert(title: "Error declining friend request", message: error!.localizedDescription)
+                return
+            }
+
+        }
     }
 
 }
@@ -127,6 +145,8 @@ extension SearchViewController {
             }else {
                 let cell: FriendRequestCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.FriendRequestCell) as! FriendRequestCell
                 cell.bind(to: item as! PMFriendRequest)
+                cell.accept = self.accept(friendRequest:)
+                cell.decline = self.decline(friendRequest:)
                 return cell
             }
         }
