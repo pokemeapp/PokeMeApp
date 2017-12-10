@@ -35,6 +35,7 @@ struct Constants {
         static let PartnerHistoryCell = "PartnerHistoryCell"
         static let UserPokeCell = "UserPokeCell"
         static let FriendRequestCell = "FriendRequestCell"
+        static let PokeHistoryCell = "PokeHistoryCell"
     }
     
     struct Segues {
