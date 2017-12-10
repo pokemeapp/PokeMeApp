@@ -53,6 +53,7 @@ class SearchViewController: UIViewController {
             }
 
             self.friendRequest = friendRequests!
+            self.initSection()
         }
     }
 
@@ -73,6 +74,28 @@ class SearchViewController: UIViewController {
             self.users = users!
             self.initSection()
         }
+    }
+
+    func add(friend: PMUser) {
+        startActivityIndicator()
+        api.post("api/users/\(friend.id!)/send_request", entity: "") { (error, friendRequestResult: String?) in
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error sending friend request", message: error!.localizedDescription)
+                return
+            }
+
+            self.displayAlert(title: "Friend request sent!", message: "")
+        }
+    }
+
+    func accept(friendReuquest request: PMFriendRequest) {
+
+    }
+
+    func decline(friendRequest friendRequest: PMFriendRequest) {
+
     }
 
 }
@@ -99,6 +122,7 @@ extension SearchViewController {
             if indexPath.section == 1 {
                 let cell: SearchedUserCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.SearchedUserCell) as! SearchedUserCell
                 cell.bind(to: (item as! PMUser))
+                cell.addFriend = self.add(friend:)
                 return cell
             }else {
                 let cell: FriendRequestCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.FriendRequestCell) as! FriendRequestCell

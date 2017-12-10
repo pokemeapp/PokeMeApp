@@ -15,6 +15,8 @@ class SearchedUserCell: UITableViewCell {
 
     let disposeBag = DisposeBag()
     let viewModel = SearchedUserViewModel()
+
+    var addFriend: ((PMUser) -> Void)?
     
     @IBOutlet weak var addButton: PMButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,6 +24,9 @@ class SearchedUserCell: UITableViewCell {
         super.awakeFromNib()
         self.bindComponents()
         self.addButton.title = "SearchedUser.AddButton.Title".localized
+        self.addButton.buttonTapped = { button in
+            self.addFriend?(self.viewModel.model!)
+        }
     }
     
     func bindComponents(){
@@ -31,5 +36,5 @@ class SearchedUserCell: UITableViewCell {
     func bind(to user: PMUser){
         self.viewModel.model = user
     }
-    
+
 }
