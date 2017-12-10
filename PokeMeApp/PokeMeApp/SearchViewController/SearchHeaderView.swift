@@ -10,5 +10,5 @@ import UIKit
 
 class SearchHeaderView: UIView {
     
-    @IBOutlet weak var searchController: UISearchController!
+    @IBOutlet weak var searchBar: UISearchBar!
 }

@@ -30,7 +30,7 @@ class UserPokesViewController: UIViewController {
         super.viewDidAppear(animated)
 
         startActivityIndicator()
-        api.get("api/pokes/prototypes") { (error, pokePrototypes: [PMPokePrototype]?) in
+        api.get("api/pokes/prototypes", query: nil) { (error, pokePrototypes: [PMPokePrototype]?) in
             self.stopActivityIndicator()
 
             guard error == nil else {

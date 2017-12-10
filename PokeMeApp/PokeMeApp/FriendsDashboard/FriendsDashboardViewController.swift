@@ -39,8 +39,10 @@ class FriendsDashboardViewController: UIViewController {
             present(authenticationController, animated: false, completion: nil)
             return
         }
-        
-        self.api.get("api/user/friends") { (error, friends: [PMFriend]?) in
+
+        startActivityIndicator()
+        self.api.get("api/user/friends", query: nil) { (error, friends: [PMFriend]?) in
+            self.stopActivityIndicator()
             
             guard error == nil else {
                 return self.displayAlert(title: "Error retrieving data", message: "\(error)")
@@ -67,6 +69,12 @@ class FriendsDashboardViewController: UIViewController {
                 return
             }
             //viewControlletr.mockHabit = habit
+        } else if segue.identifier == Constants.Segues.ShowSearch {
+            guard let viewControlletr = segue.destination as? SearchViewController else {
+                return
+            }
+
+            viewControlletr.api = api
         }
     }
 

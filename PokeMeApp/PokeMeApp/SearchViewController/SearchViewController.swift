@@ -15,11 +15,13 @@ import PokeMeKit
 
 class SearchViewController: UIViewController {
 
+    var api: PMAPI!
+
     @IBOutlet var searchUserMasterView: SearchUserMasterView!
     let disposeBag = DisposeBag()
-    var users: [PMUser] = [PMUser(email: "", firstname: "Zsolt", lastname: "Pete"),
-                           PMUser(email: "", firstname: "Zsolt", lastname: "Pete"),
-                           PMUser(email: "", firstname: "Zsolt", lastname: "Pete")]
+    var users: [PMUser] = []//[PMUser(email: "", firstname: "Zsolt", lastname: "Pete"),
+                          //PMUser(email: "", firstname: "Zsolt", lastname: "Pete"),
+                          //PMUser(email: "", firstname: "Zsolt", lastname: "Pete")]
     
     var friendRequest: [PMFriendRequest] = []
     var friendRequestUsers: [PMUser] = [PMUser(email: "", firstname: "Viktor", lastname: "Simko"),]
@@ -32,13 +34,47 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.searchUserMasterView.tableView.emptyDataSetDataSource = self
         self.searchUserMasterView.tableView.emptyDataSetDelegate = self
-        self.searchUserMasterView.searchHeaderView.searchController.becomeFirstResponder()
+        self.searchUserMasterView.searchHeaderView.searchBar.becomeFirstResponder()
         self.initObservers()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        startActivityIndicator()
+
+        api.get("api/user/friend_requests", query: nil) { (error, friendRequests: [PMFriendRequest]?) in
+
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error getting friend requests!", message: error!.localizedDescription)
+                return
+            }
+
+            self.friendRequest = friendRequests!
+        }
+    }
+
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
+    func searchUsers(query: String) {
+        startActivityIndicator()
+        api.get("api/users/search", query: ["query": query]) { (error, users: [PMUser]?) in
+
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                return self.displayAlert(title: "Error fetching results!", message: error!.localizedDescription)
+            }
+
+            self.users = users!
+            self.initSection()
+        }
+    }
+
 }
 
 extension SearchViewController {
@@ -47,12 +83,12 @@ extension SearchViewController {
         self.initSection()
         self.bindSections()
         self.configureCell()
+        self.initUserSearch()
     }
     
     func initSection(){
         self.sections.value = [
-            //TODO: @aqviktor: Use friendRequest array not friendRequestUsers
-            SearchSection(header: "Friend request", items: friendRequestUsers),
+            SearchSection(header: "Friend request", items: friendRequest),
             SearchSection(header: "Users", items: users),
         ]
     }
@@ -66,9 +102,7 @@ extension SearchViewController {
                 return cell
             }else {
                 let cell: FriendRequestCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.FriendRequestCell) as! FriendRequestCell
-                //TODO: @aqviktor: Swap comment in the next two lines
-                cell.bind(to: (item as! PMUser))
-                //cell.bind(to: (item as! PMFriendRequest).owner!)
+                cell.bind(to: item as! PMFriendRequest)
                 return cell
             }
         }
@@ -79,5 +113,15 @@ extension SearchViewController {
             .bind(to: self.searchUserMasterView.tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
     }
-    
+
+    func initUserSearch() {
+        searchUserMasterView.searchHeaderView.searchBar.rx.text.orEmpty
+            .asDriver()
+            .debounce(1)
+            .distinctUntilChanged()
+            .filter { !$0.isEmpty }
+            .drive(onNext: { [unowned self] query in
+                self.searchUsers(query: query)
+            }).disposed(by: disposeBag)
+    }
 }

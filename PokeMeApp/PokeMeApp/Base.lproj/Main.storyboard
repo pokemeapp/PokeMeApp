@@ -760,7 +760,7 @@
                                     <constraint firstItem="bSC-Ga-qX3" firstAttribute="leading" secondItem="Oz3-W8-VMP" secondAttribute="leading" constant="8" id="xjs-pb-ks0"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="searchController" destination="hvb-fp-zPW" id="eg3-Qs-eV8"/>
+                                    <outlet property="searchBar" destination="hvb-fp-zPW" id="BlR-7B-19n"/>
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="W0S-ZK-FRC">

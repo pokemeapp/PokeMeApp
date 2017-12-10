@@ -14,7 +14,7 @@ import PokeMeKit
 class FriendRequestCell: UITableViewCell {
 
     let disposeBag = DisposeBag()
-    let viewModel = SearchedUserViewModel()
+    let viewModel = FriendRequestViewModel()
     
     @IBOutlet weak var declineButton: PMButton!
     @IBOutlet weak var acceptButton: PMButton!
@@ -39,8 +39,8 @@ class FriendRequestCell: UITableViewCell {
         self.viewModel.name.asObservable().bind(to: self.nameLabel.rx.text).addDisposableTo(disposeBag)
     }
     
-    func bind(to user: PMUser){
-        self.viewModel.model = user
+    func bind(to friendRequest: PMFriendRequest){
+        self.viewModel.model = friendRequest
     }
 
 }
