@@ -53,6 +53,8 @@
 		504E29F61FDC3C6B00FD2305 /* FriendRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F51FDC3C6B00FD2305 /* FriendRequestCell.swift */; };
 		504E29F81FDC3F6C00FD2305 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F71FDC3F6C00FD2305 /* SearchSection.swift */; };
 		504E29FA1FDC404700FD2305 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F91FDC404700FD2305 /* Searchable.swift */; };
+		504E29FC1FDD937000FD2305 /* PokeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29FB1FDD937000FD2305 /* PokeHistoryCell.swift */; };
+		504E29FE1FDD93A000FD2305 /* PokeHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29FD1FDD93A000FD2305 /* PokeHistoryViewModel.swift */; };
 		505C14821FBA2CFB0032FB59 /* M13Checkbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505C14801FBA2CFB0032FB59 /* M13Checkbox.framework */; };
 		505C14841FBA2D060032FB59 /* M13Checkbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 505C14831FBA2D050032FB59 /* M13Checkbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		505C14861FBA2DBB0032FB59 /* PMCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */; };
@@ -241,6 +243,8 @@
 		504E29F51FDC3C6B00FD2305 /* FriendRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestCell.swift; sourceTree = "<group>"; };
 		504E29F71FDC3F6C00FD2305 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
 		504E29F91FDC404700FD2305 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		504E29FB1FDD937000FD2305 /* PokeHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeHistoryCell.swift; sourceTree = "<group>"; };
+		504E29FD1FDD93A000FD2305 /* PokeHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeHistoryViewModel.swift; sourceTree = "<group>"; };
 		505C14801FBA2CFB0032FB59 /* M13Checkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M13Checkbox.framework; path = Carthage/Build/iOS/M13Checkbox.framework; sourceTree = "<group>"; };
 		505C14831FBA2D050032FB59 /* M13Checkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M13Checkbox.framework; path = Carthage/Build/iOS/M13Checkbox.framework; sourceTree = "<group>"; };
 		505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMCheckBox.swift; sourceTree = "<group>"; };
@@ -682,6 +686,8 @@
 				50F38D191FCB3D3600838CB4 /* UserHistoryViewModel.swift */,
 				50F38D1B1FCB3F0900838CB4 /* HistorySection.swift */,
 				50F38D1D1FCB400C00838CB4 /* History.swift */,
+				504E29FB1FDD937000FD2305 /* PokeHistoryCell.swift */,
+				504E29FD1FDD93A000FD2305 /* PokeHistoryViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -881,6 +887,7 @@
 				50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */,
 				501799341FC22922000A6D46 /* CustomMessageView.swift in Sources */,
 				5017992B1FC21ACB000A6D46 /* FriendViewModel.swift in Sources */,
+				504E29FC1FDD937000FD2305 /* PokeHistoryCell.swift in Sources */,
 				50434D661FAE0FB6008B01F5 /* MockUserOptions.swift in Sources */,
 				5017992E1FC22483000A6D46 /* MessagingPopUpViewController.swift in Sources */,
 				28B11C4A1FCDDB2B00C38C24 /* UIViewController+displayMessage.swift in Sources */,
@@ -892,6 +899,7 @@
 				50434D681FAE1141008B01F5 /* MockUserGenerator.swift in Sources */,
 				503736A01F798803001C9C13 /* LoginMasterView.swift in Sources */,
 				505C148A1FBA48820032FB59 /* HabitHelper.swift in Sources */,
+				504E29FE1FDD93A000FD2305 /* PokeHistoryViewModel.swift in Sources */,
 				505C14981FBB87050032FB59 /* SearchUserMasterView.swift in Sources */,
 				50F38D1C1FCB3F0900838CB4 /* HistorySection.swift in Sources */,
 				50434D611FAE0965008B01F5 /* UIView+Shadow.swift in Sources */,
