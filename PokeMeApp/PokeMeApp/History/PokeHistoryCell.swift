@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import PokeMeKit
 
-class PokeHistoryCell: UITableViewCell {
+class PokeHistoryCell: UICollectionViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    let disposeBag = DisposeBag()
+    var viewModel = PokeHistoryViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bindComponents()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func bindComponents(){
+        self.viewModel.name.asObservable().bind(to: self.nameLabel.rx.text).addDisposableTo(disposeBag)
+    }
+    
+    func bind(to model: PMPokePrototype){
+        self.viewModel.model = model
     }
 
 }

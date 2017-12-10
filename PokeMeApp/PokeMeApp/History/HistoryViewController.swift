@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxDataSources
+import PokeMeKit
 
 class HistoryViewController: UIViewController {
 
@@ -20,7 +21,8 @@ class HistoryViewController: UIViewController {
     var dataSource: RxTableViewSectionedReloadDataSource<HistorySection> = RxTableViewSectionedReloadDataSource<HistorySection>()
     
     var histories: [History] = [History(), History(), History(), History()]
-    
+    var api: PMAPI!
+    var pokes = Variable([PMPokePrototype]())
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,26 @@ class HistoryViewController: UIViewController {
         initTableView()
         configureCell()
         bindSections()
+        initCollectionView()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        startActivityIndicator()
+        api.get("api/pokes/prototypes", query: nil) { (error, pokePrototypes: [PMPokePrototype]?) in
+            self.stopActivityIndicator()
+            
+            guard error == nil else {
+                self.displayAlert(title: "Error getting pokes!", message: error!.localizedDescription)
+                return
+            }
+            
+            self.pokes.value = pokePrototypes!
+        }
     }
 
-    
-    
     func initHistory(){
         self.sections.value = [
             HistorySection(header: "History", items: histories),
@@ -61,6 +79,30 @@ class HistoryViewController: UIViewController {
         sections.asObservable()
             .bind(to: self.masterView.tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
+    }
+    
+    func initCollectionView(){
+        self.pokes.asObservable().bind(to: self.masterView.collectionView.rx.items(cellIdentifier: Constants.Cells.PokeHistoryCell)){ (index, model: PMPokePrototype, cell: PokeHistoryCell) in
+            cell.bind(to: model)
+        }.addDisposableTo(disposeBag)
+        self.masterView.collectionView.rx.itemSelected.subscribe(onNext: { pokePrototype in
+            //TODO: send poke
+        }).addDisposableTo(disposeBag)
+    }
+    @IBAction func yesButtonTapped(_ sender: Any) {
+        //TODO: Server calling
+        guard let button = sender as? UIButton else {
+            return
+        }
+        button.setTitleColor(Constants.Colors.Green, for: .normal)
+    }
+    
+    @IBAction func noButtonTapped(_ sender: Any) {
+        //TODO: Server calling
+        guard let button = sender as? UIButton else {
+            return
+        }
+        button.setTitleColor(Constants.Colors.Green, for: .normal)
     }
     
 }

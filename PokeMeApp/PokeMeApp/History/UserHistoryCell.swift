@@ -12,6 +12,8 @@ import RxSwift
 
 class UserHistoryCell: UITableViewCell {
 
+    @IBOutlet weak var yesButton: CYTranslatedButton!
+    @IBOutlet weak var noButton: CYTranslatedButton!
     @IBOutlet weak var messageContainerView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     

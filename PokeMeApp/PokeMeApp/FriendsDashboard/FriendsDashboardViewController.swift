@@ -75,6 +75,12 @@ class FriendsDashboardViewController: UIViewController {
             }
 
             viewControlletr.api = api
+        }else if segue.identifier == Constants.Segues.ShowHistory {
+            guard let viewControlletr = segue.destination as? HistoryViewController else {
+                return
+            }
+            
+            viewControlletr.api = api
         }
     }
 

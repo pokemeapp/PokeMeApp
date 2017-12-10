@@ -19,12 +19,9 @@ class SearchViewController: UIViewController {
 
     @IBOutlet var searchUserMasterView: SearchUserMasterView!
     let disposeBag = DisposeBag()
-    var users: [PMUser] = []//[PMUser(email: "", firstname: "Zsolt", lastname: "Pete"),
-                          //PMUser(email: "", firstname: "Zsolt", lastname: "Pete"),
-                          //PMUser(email: "", firstname: "Zsolt", lastname: "Pete")]
+    var users: [PMUser] = []
     
     var friendRequest: [PMFriendRequest] = []
-    var friendRequestUsers: [PMUser] = [PMUser(email: "", firstname: "Viktor", lastname: "Simko"),]
     
     var sections: Variable<[SearchSection]> = Variable([])
     

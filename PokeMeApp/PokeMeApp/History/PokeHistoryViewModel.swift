@@ -7,7 +7,21 @@
 //
 
 import UIKit
+import PokeMeKit
+import RxSwift
+import RxCocoa
 
 class PokeHistoryViewModel: NSObject {
 
+    var model: PMPokePrototype? {
+        didSet {
+            guard let model = model else {
+                return
+            }
+            self.name.value = model.name
+        }
+    }
+    
+    var name = Variable("")
+    
 }
