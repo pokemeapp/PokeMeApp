@@ -74,7 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }else if (notificationType == "snoozehabit"){
                 showDashboard()
             }else if(notificationType == "poke"){
-                
+                if let userId = userInfo["user_id"] as? Int{
+                    self.showHistory(userId)
+                }
             }
             
         }
@@ -160,12 +162,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             let firstController = (tabBarController as! UITabBarController).selectedViewController
-            friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
             guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
                 return
             }
             navigationController.popToRootViewController(animated: false)
             navigationController.viewControllers = [userDashboardViewController]
+            
+        }
+    }
+    
+    func showHistory(_ userId: Int){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                if presentedViewController is UINavigationController {
+                    topController = presentedViewController
+                }
+            }
+            let friendsDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "FriendsDashboardViewController") as! FriendsDashboardViewController
+            let historyViewController: HistoryViewController = storyBoard.instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
+            //TODO: Handle user server calling
+            let tabBarController = topController
+            guard tabBarController is UITabBarController else {
+                return
+            }
+            let firstController = (tabBarController as! UITabBarController).selectedViewController
+            guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
+                return
+            }
+            navigationController.popToRootViewController(animated: false)
+            navigationController.viewControllers = [friendsDashboardViewController, historyViewController]
             
         }
     }
