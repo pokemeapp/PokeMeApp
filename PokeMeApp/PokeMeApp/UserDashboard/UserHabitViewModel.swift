@@ -10,14 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NSObject_Rx
-import SDWebImage
+import PokeMeKit
 
 class UserHabitViewModel: NSObject {
 
-    var model: MockHabit = MockHabit(){
+    var model: PMHabit = PMHabit(){
         didSet {
             self.name.value = model.name ?? ""
-            self.habitDescription.value = model.habitDescription ?? ""
+            self.habitDescription.value = model.description ?? ""
             if model.type != nil {
                 self.setType(model.type)
             }
@@ -29,7 +29,7 @@ class UserHabitViewModel: NSObject {
     var habitDescription: Variable<String> = Variable("")
     var image: Variable<UIImage> = Variable(UIImage())
     
-    func setType(_ type: HabitType?){
+    func setType(_ type: String?){
         guard let type = type else {
             return
         }

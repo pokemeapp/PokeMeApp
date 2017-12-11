@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import PokeMeKit
 
 class UserHabitCell: UITableViewCell {
     
@@ -27,7 +28,7 @@ class UserHabitCell: UITableViewCell {
         self.viewModel.image.asObservable().bind(to: self.userHabitCellView.imageView.rx.image).disposed(by: disposeBag)
     }
     
-    func bind(to model: MockHabit){
+    func bind(to model: PMHabit){
         self.viewModel.model = model
         bindComponents()
     }

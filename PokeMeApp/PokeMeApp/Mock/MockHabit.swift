@@ -11,7 +11,7 @@ import Foundation
 struct MockHabit{
     
     var user: MockUser?
-    var type: HabitType?
+    var type: String?
     var name: String?
     var habitDescription: String?
     var date: Date?

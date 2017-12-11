@@ -9,24 +9,18 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
-enum HabitType{
-    case health
-    case today
-    case notification
-    case warning
-}
+import PokeMeKit
 
 class NewHabitHeaderView: UIView {
 
-    var habit = Variable(MockHabit())
+    var habit = Variable(PMHabit())
     let disposeBag = DisposeBag()
     @IBOutlet var imageView: ProfileImageView!
     @IBOutlet var healthButton: UIButton!
     @IBOutlet var todayButton: UIButton!
     @IBOutlet var notificationButton: UIButton!
     @IBOutlet var warningButton: UIButton!
-    var selectedType: HabitType?
+    var selectedType: String?
     var lastButton: UIButton?
     var buttons: [UIButton] = []
     
@@ -36,10 +30,10 @@ class NewHabitHeaderView: UIView {
         imageView.contentMode = .center
     }
     
-    func bindComponents(_ habit: MockHabit){
+    func bindComponents(_ habit: PMHabit){
         self.habit.value = habit
-        self.habit.asObservable().map { (mockHabit) -> UIImage in
-            HabitHelper.shared.convertImage(from: mockHabit.type!)
+        self.habit.asObservable().map { (habit) -> UIImage in
+            HabitHelper.shared.convertImage(from: habit.type!)
             }.bind(to: self.imageView.rx.image).addDisposableTo(disposeBag)
         self.lastButton = buttons.filter { (button) -> Bool in
             guard let image = button.imageView?.image else {

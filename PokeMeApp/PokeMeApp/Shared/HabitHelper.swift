@@ -12,32 +12,34 @@ class HabitHelper {
 
     static var shared = HabitHelper()
     
-    func convertImage(from type: HabitType?) -> UIImage{
+    func convertImage(from type: String?) -> UIImage{
         guard let type = type else {
             return UIImage()
         }
         switch type {
-        case .health:
+        case "health":
             return #imageLiteral(resourceName: "health")
-        case .warning:
+        case "warning":
             return #imageLiteral(resourceName: "warning")
-        case .notification:
+        case "notification":
             return#imageLiteral(resourceName: "noti")
-        case .today:
+        case "calendar":
             return #imageLiteral(resourceName: "today")
+        default:
+            return UIImage()
         }
     }
     
-    func convertType(from image: UIImage) -> HabitType?{
+    func convertType(from image: UIImage) -> String?{
         switch image {
         case Constants.Images.Health:
-            return .health
+            return "health"
         case Constants.Images.Today:
-            return .today
+            return "calendar"
         case Constants.Images.Notification:
-            return .notification
+            return "notification"
         case Constants.Images.Warning:
-            return .warning
+            return "warning"
         default:
             return nil
         }

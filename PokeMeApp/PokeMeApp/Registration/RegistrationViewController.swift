@@ -12,8 +12,9 @@ import RxSwift
 import NSObject_Rx
 import PokeMeKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var tableViewCenterYConstraint: NSLayoutConstraint!
     var api: PMAPI!
     
     var masterView: RegistrationMasterView?
@@ -76,6 +77,18 @@ class RegistrationViewController: UIViewController {
 
 extension RegistrationViewController {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.tableViewCenterYConstraint.constant = -200
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.tableViewCenterYConstraint.constant = 0
+    }
+    
+}
+
+extension RegistrationViewController {
+    
     func initObservers(){
         self.initBinding()
     }
@@ -86,6 +99,7 @@ extension RegistrationViewController {
             if indexPath == 1 || indexPath == 2 {
                 cell.inputTextField.isSecureTextEntry = true
             }
+            cell.inputTextField.delegate = self
         }).addDisposableTo(rx.disposeBag)
     }
     

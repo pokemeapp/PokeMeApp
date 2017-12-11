@@ -10,14 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-
+import PokeMeKit
 
 class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var pickerViewBottomConstraint: NSLayoutConstraint!
     let disposeBag = DisposeBag()
     @IBOutlet var newUserHabitMasterView: NewUserHabitMasterView!
-    var habit: MockHabit?
+    var habit: PMHabit?
     var headerTitles: [String] = ["UserHabitSectionName".localized, "UserHabitSectionDescription".localized, "UserHabitSectionDate".localized]
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         if habit != nil {
             self.newUserHabitMasterView.headerView.bindComponents(habit!)
         }else{
-            habit = MockHabit()
+            habit = PMHabit()
         }
         self.title = "UserHabit.Title".localized
         self.initBarButtons()
@@ -66,7 +66,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }else if indexPath.section == 1 {
             let cell: NewUserHabitDescriptionsCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitDescriptionsCell, for: indexPath) as! NewUserHabitDescriptionsCell
-            cell.descriptionLabel.text = habit?.habitDescription ?? ""
+            cell.descriptionLabel.text = habit?.description ?? ""
             return cell
         }else if indexPath.section == 2 && indexPath.row == 0 {
             let cell: NewUserHabitDayCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitDayCell, for: indexPath) as! NewUserHabitDayCell
@@ -74,7 +74,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }else if indexPath.section == 2 && indexPath.row == 1{
             let cell: NewUserHabitTimeCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitTimeCell, for: indexPath) as! NewUserHabitTimeCell
-            cell.timeLabel.text = habit?.date == nil ? Constants.Strings.DefaultHabitTime : habit!.date?.toHourMinute() 
+            cell.timeLabel.text = habit?.hour == nil ? Constants.Strings.DefaultHabitTime : habit!.hour
             return cell
         }
         return UITableViewCell()
@@ -96,7 +96,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func closePickerView(_ sender: Any) {
         let date = self.newUserHabitMasterView.pickerView.date
-        habit?.date = date
+        habit?.hour = date.toHourMinute()
         self.pickerViewBottomConstraint.constant = -200.0
         self.newUserHabitMasterView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.newUserHabitMasterView.tableView.reloadRows(at: [IndexPath(row: 1, section: 2)], with: .none)

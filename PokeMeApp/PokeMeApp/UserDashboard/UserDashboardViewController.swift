@@ -18,15 +18,13 @@ class UserDashboardViewController: UIViewController {
     
     var api: PMAPI!
     let disposeBag = DisposeBag()
-    var userHabits: Variable<[MockHabit]> = Variable([])
+    var userHabits: Variable<[PMHabit]> = Variable([])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.userDashboardMasterView.tableView.emptyDataSetDataSource = self
         self.userDashboardMasterView.tableView.emptyDataSetDelegate = self
-        let mockHabitGenerator: MockHabitGenerator = MockHabitGenerator()
-        self.userHabits.value = mockHabitGenerator.createMockHabits(1)
         self.initObservers()
         self.title = "UserDashsboard.Title".localized
     }
@@ -52,7 +50,7 @@ class UserDashboardViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.Segues.ShowUserHabit {
-            guard let habit: MockHabit = sender as? MockHabit else {
+            guard let habit: PMHabit = sender as? PMHabit else {
                 return
             }
             guard let newUserHabitViewController: NewUserHabitViewController = segue.destination as? NewUserHabitViewController else {
@@ -73,7 +71,7 @@ class UserDashboardViewController: UIViewController {
 extension UserDashboardViewController {
     
     func initObservers(){
-        self.userHabits.asObservable().bind(to: self.userDashboardMasterView.tableView.rx.items(cellIdentifier: Constants.Cells.UserHabitCell))({ (_, model: MockHabit, cell: UserHabitCell) in
+        self.userHabits.asObservable().bind(to: self.userDashboardMasterView.tableView.rx.items(cellIdentifier: Constants.Cells.UserHabitCell))({ (_, model: PMHabit, cell: UserHabitCell) in
             cell.bind(to: model)
         }).addDisposableTo(disposeBag)
         self.userDashboardMasterView.tableView.rx.modelSelected(MockHabit.self).subscribe(onNext: { [weak self]model in

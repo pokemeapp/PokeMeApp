@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     //TODO: Remove it after service implemented
-    var mockHabit = MockHabitGenerator().createMockHabits(1).first!
+    var habit = PMHabit()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
@@ -112,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
                             return
                         }
-                newUserHabitViewController.habit = self.mockHabit
+                newUserHabitViewController.habit = self.habit
                         navigationController.popToRootViewController(animated: false)
                         navigationController.viewControllers = [userDashboardViewController, /*newUserHabitViewController*/]
             }
