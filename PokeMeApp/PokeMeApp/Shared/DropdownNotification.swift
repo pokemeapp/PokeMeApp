@@ -11,11 +11,9 @@ import UIKit
 class DropdownNotification: NSObject {
 
     var message: String
-    var profileImageURL: String?
     
     init(message: String, url: String? = nil) {
         self.message = message
-        self.profileImageURL = url
         super.init()
     }
     

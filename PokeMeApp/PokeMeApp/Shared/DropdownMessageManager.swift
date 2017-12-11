@@ -17,7 +17,6 @@ class DropdownMessageManager: NSObject{
     
     func manageDropdown(dropdownNotification: DropdownNotification){
         self.dropdownNotification = dropdownNotification
-        self.showDropdownMessage(title: dropdownNotification.message, url: dropdownNotification.profileImageURL)
         
     }
     
@@ -73,12 +72,7 @@ class DropdownMessageManager: NSObject{
                 return DropdownNotification(message: message!, url: url)
             }
         }
-        if let custom_id = userInfo["custom-id"] as? Int {
-            print(custom_id)
-        }
-        if let device_key = userInfo["device-key"] as? String {
-            print(device_key)
-        }
+        
         return nil
     }
     

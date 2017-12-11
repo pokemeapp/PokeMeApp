@@ -67,6 +67,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         showDropDownNotifications(dropdownNotification)
     }
     
+    func handleNotification(userInfo: [AnyHashable : Any]){
+        if let notificationType = userInfo["notification_type"] as? String {
+            if(notificationType == "notification"){
+                showSearchSreen()
+            }else if (notificationType == "snoozehabit"){
+                showDashboard()
+            }else if(notificationType == "poke"){
+                
+            }
+            
+        }
+    }
+    
     func showDropDownNotifications(_ dropdownNotification: DropdownNotification?){
         guard let dropdownNotification: DropdownNotification = dropdownNotification else {
             return
@@ -101,6 +114,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         navigationController.popToRootViewController(animated: false)
                         navigationController.viewControllers = [userDashboardViewController, /*newUserHabitViewController*/]
             }
+        }
+    }
+    
+    func showSearchSreen() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                if presentedViewController is UINavigationController {
+                    topController = presentedViewController
+                }
+            }
+            let friendsDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "FriendsDashboardViewController") as! FriendsDashboardViewController
+            let searchViewController: SearchViewController = storyBoard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+            
+            let tabBarController = topController
+            guard tabBarController is UITabBarController else {
+                return
+            }
+                let firstController = (tabBarController as! UITabBarController).selectedViewController
+                friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
+                guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
+                    return
+                }
+                navigationController.popToRootViewController(animated: false)
+                navigationController.viewControllers = [friendsDashboardViewController]
+            
+        }
+    }
+    
+    func showDashboard(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                if presentedViewController is UINavigationController {
+                    topController = presentedViewController
+                }
+            }
+            let userDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "UserDashboardViewController") as! UserDashboardViewController
+            
+            let tabBarController = topController
+            guard tabBarController is UITabBarController else {
+                return
+            }
+            let firstController = (tabBarController as! UITabBarController).selectedViewController
+            friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
+            guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
+                return
+            }
+            navigationController.popToRootViewController(animated: false)
+            navigationController.viewControllers = [userDashboardViewController]
+            
         }
     }
     

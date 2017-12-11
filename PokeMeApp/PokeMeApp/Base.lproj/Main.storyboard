@@ -728,7 +728,7 @@
         <!--Search View Controller-->
         <scene sceneID="U5c-Ze-03u">
             <objects>
-                <viewController id="lQ4-v3-R6v" customClass="SearchViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="lQ4-v3-R6v" customClass="SearchViewController" customModule="PokeMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WuL-Vd-NUF" customClass="SearchUserMasterView" customModule="PokeMeApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
