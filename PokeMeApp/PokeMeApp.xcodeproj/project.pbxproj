@@ -58,7 +58,6 @@
 		504E29FA1FDC404700FD2305 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29F91FDC404700FD2305 /* Searchable.swift */; };
 		504E29FC1FDD937000FD2305 /* PokeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29FB1FDD937000FD2305 /* PokeHistoryCell.swift */; };
 		504E29FE1FDD93A000FD2305 /* PokeHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E29FD1FDD93A000FD2305 /* PokeHistoryViewModel.swift */; };
-		504E2A1B1FDF28B500FD2305 /* PokeMeKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28BF6EF61FAA4BD400F07129 /* PokeMeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		505C14821FBA2CFB0032FB59 /* M13Checkbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505C14801FBA2CFB0032FB59 /* M13Checkbox.framework */; };
 		505C14841FBA2D060032FB59 /* M13Checkbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 505C14831FBA2D050032FB59 /* M13Checkbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		505C14861FBA2DBB0032FB59 /* PMCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C14851FBA2DBB0032FB59 /* PMCheckBox.swift */; };
@@ -1175,7 +1174,7 @@
 				CODE_SIGN_ENTITLEMENTS = PokeMeApp/PokeMeApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CSD326H7VF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1199,7 +1198,7 @@
 				CODE_SIGN_ENTITLEMENTS = PokeMeApp/PokeMeApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CSD326H7VF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
