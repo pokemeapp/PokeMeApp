@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -25,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="13i-3J-oax">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="32" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="GRf-RN-FIT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -119,10 +120,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="13i-3J-oax" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3if-He-xdt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="13i-3J-oax" secondAttribute="trailing" id="5OK-q0-cbB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="13i-3J-oax" secondAttribute="bottom" id="Sze-3q-ifx"/>
                             <constraint firstItem="13i-3J-oax" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eQe-lO-h5H"/>
-                            <constraint firstItem="13i-3J-oax" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="evo-kb-Bjz"/>
+                            <constraint firstItem="13i-3J-oax" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gA1-3i-R7I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -131,6 +132,9 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="apW-pe-xdU"/>
+                    <connections>
+                        <outlet property="tableViewCenterYConstraint" destination="3if-He-xdt" id="lXb-0w-rsd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
