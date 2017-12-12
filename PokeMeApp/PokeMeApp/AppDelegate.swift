@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //TODO: Remove it after service implemented
     var habit = PMHabit()
     var userInfo: [AnyHashable : Any]?
+    var api: PMAPI?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userDashboardController?.api = api
         friendsDashboardController?.api = api
         profileController?.api = api
-        
+        self.api = api
         return true
     }
     
@@ -138,43 +139,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             let friendsDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "FriendsDashboardViewController") as! FriendsDashboardViewController
             let searchViewController: SearchViewController = storyBoard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-            
+            searchViewController.api = self.api!
             let tabBarController = topController
             guard tabBarController is UITabBarController else {
                 return
             }
             let firstController = (tabBarController as! UITabBarController).selectedViewController
-            friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
+            friendsDashboardViewController.api = self.api!
+            
             guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
                 return
             }
             navigationController.popToRootViewController(animated: false)
             navigationController.viewControllers = [friendsDashboardViewController]
-            
-        }
-    }
-    
-    func showDashboard(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                if presentedViewController is UINavigationController {
-                    topController = presentedViewController
-                }
-            }
-            let userDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "UserDashboardViewController") as! UserDashboardViewController
-            
-            let tabBarController = topController
-            guard tabBarController is UITabBarController else {
-                return
-            }
-            let firstController = (tabBarController as! UITabBarController).selectedViewController
-            guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
-                return
-            }
-            navigationController.popToRootViewController(animated: false)
-            navigationController.viewControllers = [userDashboardViewController]
+            friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
             
         }
     }

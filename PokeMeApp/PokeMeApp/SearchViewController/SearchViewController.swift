@@ -96,7 +96,7 @@ class SearchViewController: UIViewController {
                 self.displayAlert(title: "Error accepting friend request", message: error!.localizedDescription)
                 return
             }
-
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
