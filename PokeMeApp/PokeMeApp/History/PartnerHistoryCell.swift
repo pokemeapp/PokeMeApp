@@ -34,6 +34,8 @@ class PartnerHistoryCell: UITableViewCell {
     }
     
     func bind(to model: PMPoke){
+        yesButton.tag = model.id!
+        noButton.tag = model.id!
         self.viewModel.model = model
     }
 

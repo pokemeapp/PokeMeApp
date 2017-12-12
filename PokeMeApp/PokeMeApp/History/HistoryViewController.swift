@@ -155,19 +155,39 @@ class HistoryViewController: UIViewController {
         }).addDisposableTo(disposeBag)
     }
     @IBAction func yesButtonTapped(_ sender: Any) {
-        //TODO: Server calling
         guard let button = sender as? UIButton else {
             return
         }
-        button.setTitleColor(Constants.Colors.Green, for: .normal)
+
+        startActivityIndicator()
+        api.post("api/pokes/\(button.tag)/response/yes", entity: "") { (error, response: String?) in
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error sending response!", message: error!.localizedDescription)
+                return
+            }
+
+            button.setTitleColor(Constants.Colors.Green, for: .normal)
+        }
     }
     
     @IBAction func noButtonTapped(_ sender: Any) {
-        //TODO: Server calling
         guard let button = sender as? UIButton else {
             return
         }
-        button.setTitleColor(Constants.Colors.Green, for: .normal)
+
+        startActivityIndicator()
+        api.post("api/pokes/\(button.tag)/response/no", entity: "") { (error, response: String?) in
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error sending response!", message: error!.localizedDescription)
+                return
+            }
+
+            button.setTitleColor(Constants.Colors.Green, for: .normal)
+        }
     }
     
 }
