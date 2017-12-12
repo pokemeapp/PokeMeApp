@@ -20,6 +20,7 @@
 "Login.Login" = "Login";
 
 "UserHabitCell.Done" = "Done";
+"UserHabitCell.Snooze" = "Snooze";
 "UserHabitSectionName" = "Name";
 "UserHabitSectionDescription" = "Description";
 "UserHabitSectionDate" = "Date";
