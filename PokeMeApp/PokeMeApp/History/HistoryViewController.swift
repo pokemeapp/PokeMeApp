@@ -95,7 +95,6 @@ class HistoryViewController: UIViewController {
 
         pokeUpdateGroup.notify(queue: .main) {
             self.stopActivityIndicator()
-
             self.initHistory()
         }
 

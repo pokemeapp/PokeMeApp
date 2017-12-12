@@ -78,11 +78,16 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 extension RegistrationViewController {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.tableViewCenterYConstraint.constant = -200
+        if Constants.Devices.iPhoneSE {
+            self.tableViewCenterYConstraint.constant = -200
+        }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.tableViewCenterYConstraint.constant = 0
+        if Constants.Devices.iPhoneSE {
+            self.tableViewCenterYConstraint.constant = 0
+        }
     }
     
 }
