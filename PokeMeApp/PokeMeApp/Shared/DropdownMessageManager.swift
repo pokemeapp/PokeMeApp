@@ -54,7 +54,7 @@ class DropdownMessageManager: NSObject{
     
     func createDropdownNotification(from userInfo: [AnyHashable : Any]) -> DropdownNotification?{
         print(userInfo)
-        if let message = userInfo["notification_type"] as? String  {
+        if let message = userInfo["title"] as? String  {
             return DropdownNotification(message: message)
             
         }

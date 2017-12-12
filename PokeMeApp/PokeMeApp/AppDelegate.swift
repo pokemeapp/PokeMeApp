@@ -168,7 +168,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             let friendsDashboardViewController = storyBoard.instantiateViewController(withIdentifier: "FriendsDashboardViewController") as! FriendsDashboardViewController
             let historyViewController: HistoryViewController = storyBoard.instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
-            //TODO: Handle user server calling
+            friendsDashboardViewController.api = self.api!
+            historyViewController.api = self.api!
+            historyViewController.friendId = userId
             let tabBarController = topController
             guard tabBarController is UITabBarController else {
                 return
