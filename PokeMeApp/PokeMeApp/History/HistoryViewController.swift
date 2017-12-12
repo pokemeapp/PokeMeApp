@@ -19,8 +19,9 @@ class HistoryViewController: UIViewController {
     var sections: Variable<[HistorySection]> = Variable([])
     
     var dataSource: RxTableViewSectionedReloadDataSource<HistorySection> = RxTableViewSectionedReloadDataSource<HistorySection>()
-    
-    var histories: [History] = [History(), History(), History(), History()]
+
+    var friendId: Int!
+    var history: [PMPoke] = []
     var api: PMAPI!
     var pokes = Variable([PMPokePrototype]())
     let disposeBag = DisposeBag()
@@ -48,11 +49,77 @@ class HistoryViewController: UIViewController {
             
             self.pokes.value = pokePrototypes!
         }
+
+        self.updateHistory()
+    }
+
+    func updateHistory() {
+
+        startActivityIndicator()
+        api.get("api/pokes/\(friendId!)", query: nil) { (error, pokes: [PMPoke]?) in
+
+            guard error == nil else {
+                self.displayAlert(title: "Error getting history!", message: error!.localizedDescription)
+                self.stopActivityIndicator()
+                return
+            }
+
+            self.history = pokes!
+
+            self.updatePokePrototypes()
+        }
+
+    }
+
+    func updatePokePrototypes() {
+
+        let pokeUpdateGroup = DispatchGroup()
+
+        for poke in self.history {
+            pokeUpdateGroup.enter()
+
+            startActivityIndicator()
+            self.api.get("api/pokes/prototypes/\(poke.prototype_id!)") { (error, prototype: PMPokePrototype?) in
+                pokeUpdateGroup.leave()
+
+                guard error == nil else {
+                    self.displayAlert(title: "Error getting poke prototypes!", message: error!.localizedDescription)
+                    self.stopActivityIndicator()
+                    self.history = []
+                    return
+                }
+
+                poke.prototype = prototype
+            }
+
+        }
+
+        pokeUpdateGroup.notify(queue: .main) {
+            self.stopActivityIndicator()
+
+            print(self.history[0].prototype?.message)
+        }
+
+    }
+
+    func send(pokePrototype: PMPokePrototype) {
+        let poke = PMPoke()
+        poke.target_id = friendId
+
+        startActivityIndicator()
+        self.api.post("api/pokes/prototypes/\(pokePrototype.id!)/send", entity: poke) { (error, poke: PMPoke?) in
+            self.stopActivityIndicator()
+            guard error == nil else {
+                self.displayAlert(title: "Error sending poke!", message: error!.localizedDescription)
+                return
+            }
+
+        }
     }
 
     func initHistory(){
         self.sections.value = [
-            HistorySection(header: "History", items: histories),
+            //HistorySection(header: "History", items: history),
         ]
     }
     
@@ -85,8 +152,8 @@ class HistoryViewController: UIViewController {
         self.pokes.asObservable().bind(to: self.masterView.collectionView.rx.items(cellIdentifier: Constants.Cells.PokeHistoryCell)){ (index, model: PMPokePrototype, cell: PokeHistoryCell) in
             cell.bind(to: model)
         }.addDisposableTo(disposeBag)
-        self.masterView.collectionView.rx.itemSelected.subscribe(onNext: { pokePrototype in
-            //TODO: send poke
+        self.masterView.collectionView.rx.modelSelected(PMPokePrototype.self).subscribe(onNext: { pokePrototype in
+            self.send(pokePrototype: pokePrototype)
         }).addDisposableTo(disposeBag)
     }
     @IBAction func yesButtonTapped(_ sender: Any) {
