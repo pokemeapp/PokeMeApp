@@ -40,6 +40,7 @@
 		503EBECE1FAE40240060CC42 /* MockHabitGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBECD1FAE40240060CC42 /* MockHabitGenerator.swift */; };
 		503EBED01FAE40B60060CC42 /* MockHabitDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBECF1FAE40B60060CC42 /* MockHabitDatabase.swift */; };
 		503EBED21FAE43BD0060CC42 /* UserHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503EBED11FAE43BD0060CC42 /* UserHabitViewModel.swift */; };
+		5041517F1FE028EE003B3386 /* Certificates.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5041517D1FE028EE003B3386 /* Certificates.pem */; };
 		50434D591FAE0700008B01F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D581FAE0700008B01F5 /* ProfileViewController.swift */; };
 		50434D5B1FAE0711008B01F5 /* ProfileMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D5A1FAE0711008B01F5 /* ProfileMasterView.swift */; };
 		50434D5D1FAE0847008B01F5 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50434D5C1FAE0847008B01F5 /* ProfileImageView.swift */; };
@@ -233,6 +234,7 @@
 		503EBECD1FAE40240060CC42 /* MockHabitGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHabitGenerator.swift; sourceTree = "<group>"; };
 		503EBECF1FAE40B60060CC42 /* MockHabitDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHabitDatabase.swift; sourceTree = "<group>"; };
 		503EBED11FAE43BD0060CC42 /* UserHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHabitViewModel.swift; sourceTree = "<group>"; };
+		5041517D1FE028EE003B3386 /* Certificates.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Certificates.pem; sourceTree = "<group>"; };
 		50434D581FAE0700008B01F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		50434D5A1FAE0711008B01F5 /* ProfileMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMasterView.swift; sourceTree = "<group>"; };
 		50434D5C1FAE0847008B01F5 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 		50C091341F76B2FF00C1451D /* PokeMeApp */ = {
 			isa = PBXGroup;
 			children = (
+				5041517D1FE028EE003B3386 /* Certificates.pem */,
 				50F38D281FCB5E1100838CB4 /* EditPoke */,
 				50F38D1F1FCB5C1100838CB4 /* UserPokes */,
 				50F38D0E1FCB3CB600838CB4 /* History */,
@@ -861,6 +864,7 @@
 			files = (
 				50C091401F76B2FF00C1451D /* LaunchScreen.storyboard in Resources */,
 				503EBEC71FAE33F40060CC42 /* UserHabitCellView.xib in Resources */,
+				5041517F1FE028EE003B3386 /* Certificates.pem in Resources */,
 				503736941F797473001C9C13 /* PMButton.xib in Resources */,
 				50F38D0B1FCA18DD00838CB4 /* EmptyDataSet.xib in Resources */,
 				50C091B21F77F25C00C1451D /* Localizable.strings in Resources */,
