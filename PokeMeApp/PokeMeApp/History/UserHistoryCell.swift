@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import PokeMeKit
 
 class UserHistoryCell: UITableViewCell {
 
@@ -23,6 +24,8 @@ class UserHistoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.messageContainerView.roundCorners(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radius: self.messageContainerView.frame.height / 2.0)
+        self.yesButton.isEnabled = false
+        self.noButton.isEnabled = false
         self.bindComponents()
     }
 
@@ -30,7 +33,7 @@ class UserHistoryCell: UITableViewCell {
         self.viewModel.message.asObservable().bind(to: self.messageLabel.rx.text).addDisposableTo(disposeBag)
     }
     
-    func bind(to model: History){
+    func bind(to model: PMPoke){
         self.viewModel.model = model
     }
     

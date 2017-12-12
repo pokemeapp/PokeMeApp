@@ -9,11 +9,14 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import PokeMeKit
 
 class PartnerHistoryCell: UITableViewCell {
 
     @IBOutlet weak var messageContainerView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var yesButton: CYTranslatedButton!
+    @IBOutlet weak var noButton: CYTranslatedButton!
     
     let disposeBag = DisposeBag()
     var viewModel = ParnerHistoryViewModel()
@@ -30,7 +33,7 @@ class PartnerHistoryCell: UITableViewCell {
         self.viewModel.message.asObservable().bind(to: self.messageLabel.rx.text).addDisposableTo(disposeBag)
     }
     
-    func bind(to model: History){
+    func bind(to model: PMPoke){
         self.viewModel.model = model
     }
 

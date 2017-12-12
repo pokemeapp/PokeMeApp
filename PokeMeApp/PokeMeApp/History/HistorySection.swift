@@ -10,10 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import PokeMeKit
 
 struct HistorySection {
     var header: String
-    var items: [History]
+    var items: [PMPoke]
 }
 
 extension HistorySection : SectionModelType {
@@ -22,7 +23,7 @@ extension HistorySection : SectionModelType {
         return header
     }
     
-    init(original: HistorySection, items: [History]) {
+    init(original: HistorySection, items: [PMPoke]) {
         self = original
         self.items = items
     }

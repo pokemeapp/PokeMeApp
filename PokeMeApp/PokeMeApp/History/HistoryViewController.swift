@@ -54,7 +54,6 @@ class HistoryViewController: UIViewController {
     }
 
     func updateHistory() {
-
         startActivityIndicator()
         api.get("api/pokes/\(friendId!)", query: nil) { (error, pokes: [PMPoke]?) in
 
@@ -97,7 +96,7 @@ class HistoryViewController: UIViewController {
         pokeUpdateGroup.notify(queue: .main) {
             self.stopActivityIndicator()
 
-            print(self.history[0].prototype?.message)
+            self.initHistory()
         }
 
     }
@@ -119,7 +118,7 @@ class HistoryViewController: UIViewController {
 
     func initHistory(){
         self.sections.value = [
-            //HistorySection(header: "History", items: history),
+            HistorySection(header: "History", items: history),
         ]
     }
     
@@ -130,7 +129,7 @@ class HistoryViewController: UIViewController {
     
     func configureCell(){
         dataSource.configureCell = { dataSource, tableView, indexPath, item in
-            if item.isUser! {
+            if item.target_id == self.friendId {
                 let cell: UserHistoryCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.UserHistoryCell) as! UserHistoryCell
                 cell.bind(to: item)
                 return cell

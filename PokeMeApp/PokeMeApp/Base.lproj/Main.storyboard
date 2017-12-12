@@ -1674,6 +1674,8 @@
                                         <connections>
                                             <outlet property="messageContainerView" destination="EKn-kJ-rxo" id="fIw-VO-Z1e"/>
                                             <outlet property="messageLabel" destination="9xG-CM-ypl" id="lMY-KD-nEa"/>
+                                            <outlet property="noButton" destination="qvD-Lw-69M" id="eqw-Gx-at1"/>
+                                            <outlet property="yesButton" destination="1iT-Vi-O4e" id="VxJ-Y2-WQb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -9,15 +9,16 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PokeMeKit
 
 class UserHistoryViewModel: NSObject {
 
-    var model: History? {
+    var model: PMPoke? {
         didSet {
             guard let model = model else {
                 return
             }
-            message.value = model.message!
+            message.value = model.prototype!.message
         }
     }
     
