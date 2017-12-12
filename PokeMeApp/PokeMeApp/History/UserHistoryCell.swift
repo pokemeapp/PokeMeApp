@@ -34,6 +34,12 @@ class UserHistoryCell: UITableViewCell {
     }
     
     func bind(to model: PMPoke){
+        if model.response == "yes" {
+            yesButton.setTitleColor(Constants.Colors.Green, for: .normal)
+        }
+        if model.response == "no" {
+            noButton.setTitleColor(Constants.Colors.Green, for: .normal)
+        }
         self.viewModel.model = model
     }
     

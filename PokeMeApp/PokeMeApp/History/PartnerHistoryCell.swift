@@ -36,6 +36,16 @@ class PartnerHistoryCell: UITableViewCell {
     func bind(to model: PMPoke){
         yesButton.tag = model.id!
         noButton.tag = model.id!
+        if model.response == "yes" {
+            yesButton.setTitleColor(Constants.Colors.Green, for: .normal)
+            yesButton.isEnabled = false
+            noButton.isEnabled = false
+        }
+        if model.response == "no" {
+            noButton.setTitleColor(Constants.Colors.Green, for: .normal)
+            yesButton.isEnabled = false
+            noButton.isEnabled = false
+        }
         self.viewModel.model = model
     }
 

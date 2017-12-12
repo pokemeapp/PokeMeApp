@@ -60,7 +60,31 @@ class LoginViewController: UIViewController {
                 guard error == nil else {
                     return self.displayAlert(title: "Login failed!".localized, message: error!.localizedDescription)
                 }
-                
+
+                if let deviceToken = (UIApplication.shared.delegate as! AppDelegate).deviceToken {
+                    class Token: PMAPIEntity {
+                        init(token: String) {
+                            self.token = token
+                        }
+
+                        var token: String?
+                    }
+
+                    self.startActivityIndicator()
+                    self.api.post("api/user/add_device_token", entity: Token(token: deviceToken)) { (error, token: Token?) in
+                        self.stopActivityIndicator()
+
+                        guard error == nil else {
+                            self.displayAlert(title: "Error registering device token!", message: error!.localizedDescription)
+                            return
+                        }
+
+                        self.dismiss(animated: true, completion: nil)
+                    }
+
+                    return
+                }
+
                 self.dismiss(animated: true, completion: nil)
             }
           

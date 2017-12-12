@@ -103,15 +103,18 @@ class HistoryViewController: UIViewController {
     func send(pokePrototype: PMPokePrototype) {
         let poke = PMPoke()
         poke.target_id = friendId
+        poke.prototype = pokePrototype
 
         startActivityIndicator()
-        self.api.post("api/pokes/prototypes/\(pokePrototype.id!)/send", entity: poke) { (error, poke: PMPoke?) in
+        self.api.post("api/pokes/prototypes/\(pokePrototype.id!)/send", entity: poke) { (error, notPoke: PMPoke?) in
             self.stopActivityIndicator()
             guard error == nil else {
                 self.displayAlert(title: "Error sending poke!", message: error!.localizedDescription)
                 return
             }
 
+            self.history.append(poke)
+            self.initHistory()
         }
     }
 
@@ -154,13 +157,22 @@ class HistoryViewController: UIViewController {
             self.send(pokePrototype: pokePrototype)
         }).addDisposableTo(disposeBag)
     }
+
+    class YesResponse: PMAPIEntity {
+        var response = "yes"
+    }
+
+    class NoResponse: PMAPIEntity {
+        var response = "no"
+    }
+
     @IBAction func yesButtonTapped(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
         }
 
         startActivityIndicator()
-        api.post("api/pokes/\(button.tag)/response/yes", entity: "") { (error, response: String?) in
+        api.post("api/pokes/\(button.tag)/response", entity: YesResponse()) { (error, response: YesResponse?) in
             self.stopActivityIndicator()
 
             guard error == nil else {
@@ -178,7 +190,7 @@ class HistoryViewController: UIViewController {
         }
 
         startActivityIndicator()
-        api.post("api/pokes/\(button.tag)/response/no", entity: "") { (error, response: String?) in
+        api.post("api/pokes/\(button.tag)/response", entity: NoResponse()) { (error, response: NoResponse?) in
             self.stopActivityIndicator()
 
             guard error == nil else {

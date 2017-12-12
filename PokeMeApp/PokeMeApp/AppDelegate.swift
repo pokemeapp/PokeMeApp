@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var habit = PMHabit()
     var userInfo: [AnyHashable : Any]?
     var api: PMAPI?
+    var deviceToken: String?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
@@ -61,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        self.deviceToken = deviceTokenString
         print("APNs device token: \(deviceTokenString)")
     }
     
