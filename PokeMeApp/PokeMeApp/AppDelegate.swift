@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:Constants.Colors.Green]
         registerForPushNotifications(application)
-      
+        
         let apiURL = Constants.API.baseURL
         let httpService = PMAlamofireHTTPService()
         let authenticationManager = PMOAuth2AuthenticationManager(baseURL: apiURL, clientId: Constants.API.clientId, clientSecret: Constants.API.clientSecret, httpService: httpService)
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userDashboardController?.api = api
         friendsDashboardController?.api = api
         profileController?.api = api
-      
+        
         return true
     }
     
@@ -63,25 +63,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        let dropdownNotification = DropdownMessageManager.shared.createDropdownNotification(from: userInfo)
-        showDropDownNotifications(dropdownNotification)
+        /*let dropdownNotification = DropdownMessageManager.shared.createDropdownNotification(from: userInfo)
+         showDropDownNotifications(dropdownNotification)*/
+        self.handleNotification(userInfo)
     }
     
-    func handleNotification(userInfo: [AnyHashable : Any]){
+    func handleNotification(_ userInfo: [AnyHashable : Any]){
+        print(userInfo)
         if let notificationType = userInfo["notification_type"] as? String {
             if(notificationType == "notification"){
                 showSearchSreen()
-            }else if (notificationType == "snoozehabit"){
-                showDashboard()
-            }else if(notificationType == "poke"){
-                if let userId = userInfo["user_id"] as? Int{
-                    self.showHistory(userId)
+            }else if (notificationType == "habbitsnooze" || notificationType == "poke"){
+                if let friendId = userInfo["friend_id"] as? Int{
+                    self.showHistory(friendId)
                 }
             }
-            
         }
     }
-    
     func showDropDownNotifications(_ dropdownNotification: DropdownNotification?){
         guard let dropdownNotification: DropdownNotification = dropdownNotification else {
             return
@@ -108,13 +106,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             if let _: DropdownNotification = dropdownNotification{
-                        let firstController = (tabBarController as! UITabBarController).selectedViewController
-                        guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
-                            return
-                        }
+                let firstController = (tabBarController as! UITabBarController).selectedViewController
+                guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
+                    return
+                }
                 newUserHabitViewController.habit = self.habit
-                        navigationController.popToRootViewController(animated: false)
-                        navigationController.viewControllers = [userDashboardViewController, /*newUserHabitViewController*/]
+                navigationController.popToRootViewController(animated: false)
+                navigationController.viewControllers = [userDashboardViewController, /*newUserHabitViewController*/]
             }
         }
     }
@@ -135,13 +133,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard tabBarController is UITabBarController else {
                 return
             }
-                let firstController = (tabBarController as! UITabBarController).selectedViewController
-                friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
-                guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
-                    return
-                }
-                navigationController.popToRootViewController(animated: false)
-                navigationController.viewControllers = [friendsDashboardViewController]
+            let firstController = (tabBarController as! UITabBarController).selectedViewController
+            friendsDashboardViewController.present(searchViewController, animated: true, completion: nil)
+            guard let navigationController: UINavigationController =  firstController as? UINavigationController else {
+                return
+            }
+            navigationController.popToRootViewController(animated: false)
+            navigationController.viewControllers = [friendsDashboardViewController]
             
         }
     }
