@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController {
         
         self.profileMasterView.saveButton.buttonTapped = { [weak self] button in
             self!.save()
+            
         }
     }
     

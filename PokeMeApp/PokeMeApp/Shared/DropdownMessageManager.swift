@@ -17,23 +17,14 @@ class DropdownMessageManager: NSObject{
     
     func manageDropdown(dropdownNotification: DropdownNotification){
         self.dropdownNotification = dropdownNotification
-        
+        showDropdownMessage(title: dropdownNotification.message)
     }
     
-    func showDropdownMessage(title: String, url: String?){
+    func showDropdownMessage(title: String){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let dropdownMessageView: DropdownMessageView = DropdownMessageView(frame: CGRect(x: 0, y: -90.0, width: appDelegate.window!.frame.size.width, height: 90.0))
         dropdownMessageView.messageLabel.text = title
         dropdownMessageView.onTapCompletitionBlock = self.tapAction
-        if url != nil {
-            SDWebImageManager.shared().imageDownloader?.downloadImage(with: URL(string: url!), options: .useNSURLCache, progress:nil) {(maybeImage, data, error, finished) in
-                if maybeImage != nil || finished == true, error == nil{
-                    dropdownMessageView.profileImageView.image = maybeImage!
-                }
-            }
-        }else{
-            dropdownMessageView.profileImageView.image = Constants.Images.DefaultProfileImage
-        }
         dropdownMessageView.alpha = 1.0
         appDelegate.window?.addSubview(dropdownMessageView)
         self.showAnimation(dropdownMessageView)
@@ -58,7 +49,7 @@ class DropdownMessageManager: NSObject{
     func tapAction(dropdownMessageView: DropdownMessageView){
         dropdownMessageView.removeFromSuperview()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.handleNotification(self.dropdownNotification)
+        appDelegate.handleNotification()
     }
     
     func createDropdownNotification(from userInfo: [AnyHashable : Any]) -> DropdownNotification?{
@@ -66,10 +57,9 @@ class DropdownMessageManager: NSObject{
         print(userInfo)
         if let aps = userInfo["aps"] as? NSDictionary {
             if let _ = aps["alert"] as? NSDictionary {
-            } else if let alert = aps["alert"] as? NSString, let imageUrl = aps["profile_image_url"] as? NSString {
+            } else if let alert = aps["alert"] as? NSString{
                 message = String(alert)
-                let url = String(imageUrl)
-                return DropdownNotification(message: message!, url: url)
+                return DropdownNotification(message: message!)
             }
         }
         

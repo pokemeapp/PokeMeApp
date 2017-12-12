@@ -72,7 +72,7 @@ class UserDashboardViewController: UIViewController {
     
     func snoozeAction(_ model: PMHabit){
         //TODO: @akviktor: Server call
-        LocalPushManager.shared.sendLocalPush(title: "Habit", text: model.description!, time: 60*10)
+        LocalPushManager.shared.setUpLocalNotification(message: model.description!, hm: model.hour!)
     }
     
 }
