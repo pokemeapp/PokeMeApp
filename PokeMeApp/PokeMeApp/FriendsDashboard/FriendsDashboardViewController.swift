@@ -81,6 +81,7 @@ class FriendsDashboardViewController: UIViewController {
             }
             
             viewControlletr.api = api
+            viewControlletr.friendId = (sender as! PMUser).id!
         }
     }
 
@@ -100,8 +101,8 @@ extension FriendsDashboardViewController {
             }
             cell.bind(to: model)
         }).addDisposableTo(disposeBag)
-        self.masterView.tableView.rx.itemSelected.subscribe(onNext:{ _ in
-            self.performSegue(withIdentifier: Constants.Segues.ShowHistory, sender: nil)
+        self.masterView.tableView.rx.modelSelected(PMUser.self).subscribe(onNext:{ model in
+            self.performSegue(withIdentifier: Constants.Segues.ShowHistory, sender: model)
         }).addDisposableTo(disposeBag)
     }
     

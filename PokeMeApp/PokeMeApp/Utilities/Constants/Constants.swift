@@ -11,9 +11,9 @@ import UIKit
 
 struct Constants {
     struct API {
-        static let baseURL = URL(string: "http://localhost:8080/")!
-        static let clientId = "2"
-        static let clientSecret = "2OeyhZx1lDu97qd3tewhRCl9Fxf6m7ZO8DboWXTh"
+        static let baseURL = URL(string: "http://pokemeapp.azurewebsites.net")!
+        static let clientId = "4"
+        static let clientSecret = "Mz4aT4BxjUwPTwODQDqeYmlkjc29Qt0leOXT1bR0"
     }
     
     struct Colors {
