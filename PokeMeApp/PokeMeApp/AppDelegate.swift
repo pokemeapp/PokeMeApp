@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //TODO: Remove it after service implemented
     var habit = PMHabit()
+    var userInfo: [AnyHashable : Any]?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().tintColor = Constants.Colors.Green
@@ -63,9 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        /*let dropdownNotification = DropdownMessageManager.shared.createDropdownNotification(from: userInfo)
-         showDropDownNotifications(dropdownNotification)*/
-        self.handleNotification(userInfo)
+        self.userInfo = userInfo
+        if application.applicationState == .inactive {
+            handleNotification(userInfo)
+        }else{
+            let dropdownNotification = DropdownMessageManager.shared.createDropdownNotification(from: userInfo)
+             showDropDownNotifications(dropdownNotification)
+        }
+        
     }
     
     func handleNotification(_ userInfo: [AnyHashable : Any]){
@@ -86,6 +92,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         DropdownMessageManager.shared.manageDropdown(dropdownNotification: dropdownNotification)
         
+    }
+    
+    func handleNotification(){
+        self.handleNotification(self.userInfo!)
     }
     
     func handleNotification(_ dropdownNotification: DropdownNotification? = nil) {

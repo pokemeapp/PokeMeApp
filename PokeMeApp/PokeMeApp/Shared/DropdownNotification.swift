@@ -12,7 +12,7 @@ class DropdownNotification: NSObject {
 
     var message: String
     
-    init(message: String, url: String? = nil) {
+    init(message: String    ) {
         self.message = message
         super.init()
     }
