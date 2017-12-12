@@ -39,6 +39,20 @@ class UserDashboardViewController: UIViewController {
             present(authenticationController, animated: false, completion: nil)
             return
         }
+
+
+        startActivityIndicator()
+        api.get("api/habits", query: nil) { (error, habits: [PMHabit]?) in
+
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error getting habits!", message: error!.localizedDescription)
+                return
+            }
+
+            self.userHabits.value = habits!
+        }
     }
     
     @IBAction func showUserProfile(_ sender: Any) {
@@ -50,10 +64,11 @@ class UserDashboardViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.Segues.ShowUserHabit {
-            guard let habit: PMHabit = sender as? PMHabit else {
+            guard let newUserHabitViewController: NewUserHabitViewController = segue.destination as? NewUserHabitViewController else {
                 return
             }
-            guard let newUserHabitViewController: NewUserHabitViewController = segue.destination as? NewUserHabitViewController else {
+            newUserHabitViewController.api = api
+            guard let habit: PMHabit = sender as? PMHabit else {
                 return
             }
             newUserHabitViewController.habit = habit
@@ -66,12 +81,32 @@ class UserDashboardViewController: UIViewController {
         }
     }
     
-    func doneAction(){
-        //TODO: @akviktor: Server call
+    func doneAction(_ model: PMHabit){
+        startActivityIndicator()
+        api.post("api/habits/\(model.id!)/done", entity: "") { (error, response: String?) in
+
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error doing habit!", message: error!.localizedDescription)
+                return
+            }
+
+        }
     }
     
     func snoozeAction(_ model: PMHabit){
-        //TODO: @akviktor: Server call
+        startActivityIndicator()
+        api.post("api/habits/\(model.id!)/reject", entity: "") { (error, response: String?) in
+
+            self.stopActivityIndicator()
+
+            guard error == nil else {
+                self.displayAlert(title: "Error snoozing habit!", message: error!.localizedDescription)
+                return
+            }
+
+        }
         LocalPushManager.shared.setUpLocalNotification(message: model.description!, hm: model.hour!)
     }
     
@@ -83,13 +118,13 @@ extension UserDashboardViewController {
         self.userHabits.asObservable().bind(to: self.userDashboardMasterView.tableView.rx.items(cellIdentifier: Constants.Cells.UserHabitCell))({ (_, model: PMHabit, cell: UserHabitCell) in
             cell.bind(to: model)
             cell.userHabitCellView.doneButton.buttonTapped = { [weak self]button in
-                self!.doneAction()
+                self!.doneAction(model)
             }
             cell.userHabitCellView.snoozeButton.buttonTapped = { [weak self]button in
                 self!.snoozeAction(model)
             }
         }).addDisposableTo(disposeBag)
-        self.userDashboardMasterView.tableView.rx.modelSelected(MockHabit.self).subscribe(onNext: { [weak self]model in
+        self.userDashboardMasterView.tableView.rx.modelSelected(PMHabit.self).subscribe(onNext: { [weak self]model in
             self?.performSegue(withIdentifier: Constants.Segues.ShowUserHabit, sender: model)
         }).addDisposableTo(disposeBag)
     }

@@ -13,11 +13,13 @@ import RxDataSources
 import PokeMeKit
 
 class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
+    var api: PMAPI!
     @IBOutlet weak var pickerViewBottomConstraint: NSLayoutConstraint!
     let disposeBag = DisposeBag()
     @IBOutlet var newUserHabitMasterView: NewUserHabitMasterView!
     var habit: PMHabit?
+    var isEdit = false
     var headerTitles: [String] = ["UserHabitSectionName".localized, "UserHabitSectionDescription".localized, "UserHabitSectionDate".localized]
     
     override func viewDidLoad() {
@@ -26,6 +28,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         self.newUserHabitMasterView.tableView.delegate = self
         self.hideKeyboardWhenTappedAround()
         if habit != nil {
+            self.isEdit = true
             self.newUserHabitMasterView.headerView.bindComponents(habit!)
         }else{
             habit = PMHabit()
@@ -33,7 +36,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         self.title = "UserHabit.Title".localized
         self.initBarButtons()
     }
-    
+
     func initBarButtons(){
         let rightButtonItem = UIBarButtonItem.init(
             title: "UserHabit.SaveButton.Title".localized,
@@ -45,7 +48,45 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @objc func saveButtonTapped(){
-        
+
+        // TODO: assign values to props from inputs
+
+        habit?.name = "a"
+        habit?.hour = "12:00"
+        habit?.day = "1000000"
+        habit?.type = "warning"
+        habit?.description = "b"
+
+        guard let habit = self.habit else {
+            return
+        }
+
+        startActivityIndicator()
+
+        if isEdit {
+            api.put("api/habits", entity: habit) {(error, habit: PMHabit?) in
+
+                self.stopActivityIndicator()
+
+                guard error == nil else {
+                    self.displayAlert(title: "Error saving habit!", message: error!.localizedDescription)
+                    return
+                }
+
+            }
+        } else {
+            api.post("api/habits", entity: habit) {(error, habit: PMHabit?) in
+
+                self.stopActivityIndicator()
+
+                guard error == nil else {
+                    self.displayAlert(title: "Error saving habit!", message: error!.localizedDescription)
+                    return
+                }
+
+            }
+        }
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
