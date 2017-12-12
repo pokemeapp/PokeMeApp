@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,6 +22,7 @@
                 <outlet property="doneButton" destination="qCM-3E-73Z" id="aVK-2k-Oyf"/>
                 <outlet property="habitNameLabel" destination="EcE-V1-Oaa" id="cUa-yM-Iwr"/>
                 <outlet property="imageView" destination="Fgh-1D-59G" id="kKU-lS-LiN"/>
+                <outlet property="snoozeButton" destination="Ki4-h1-On6" id="HUp-SY-xpp"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,13 +52,23 @@
                                 <constraint firstAttribute="width" secondItem="qCM-3E-73Z" secondAttribute="height" multiplier="3:1" id="jGN-Lp-55U"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ki4-h1-On6" customClass="PMButton" customModule="PokeMeApp" customModuleProvider="target">
+                            <rect key="frame" x="263" y="15" width="90" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Ki4-h1-On6" secondAttribute="height" multiplier="3:1" id="2AK-tP-ZmD"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="qCM-3E-73Z" firstAttribute="leading" secondItem="Ki4-h1-On6" secondAttribute="trailing" constant="8" id="2b1-5C-KMH"/>
                         <constraint firstItem="Fgh-1D-59G" firstAttribute="centerY" secondItem="xic-Ai-JIT" secondAttribute="centerY" id="3Qx-DA-bnD"/>
                         <constraint firstItem="qCM-3E-73Z" firstAttribute="height" secondItem="xic-Ai-JIT" secondAttribute="height" multiplier="0.5" id="4ue-tG-T5N"/>
+                        <constraint firstItem="Ki4-h1-On6" firstAttribute="height" secondItem="qCM-3E-73Z" secondAttribute="height" id="6Bm-iP-TwU"/>
                         <constraint firstAttribute="trailing" secondItem="qCM-3E-73Z" secondAttribute="trailing" constant="8" id="DPA-4Z-Qhk"/>
                         <constraint firstItem="Fgh-1D-59G" firstAttribute="leading" secondItem="xic-Ai-JIT" secondAttribute="leading" constant="6" id="RlN-ti-QZC"/>
+                        <constraint firstItem="Ki4-h1-On6" firstAttribute="centerY" secondItem="xic-Ai-JIT" secondAttribute="centerY" id="hUA-P5-Tbh"/>
                         <constraint firstItem="EcE-V1-Oaa" firstAttribute="width" secondItem="xic-Ai-JIT" secondAttribute="width" multiplier="0.4" id="n7Z-L2-fYv"/>
                         <constraint firstItem="EcE-V1-Oaa" firstAttribute="leading" secondItem="Fgh-1D-59G" secondAttribute="trailing" constant="8" id="rba-vp-ql7"/>
                         <constraint firstItem="Fgh-1D-59G" firstAttribute="height" secondItem="xic-Ai-JIT" secondAttribute="height" multiplier="0.7" id="scX-a2-LHm"/>

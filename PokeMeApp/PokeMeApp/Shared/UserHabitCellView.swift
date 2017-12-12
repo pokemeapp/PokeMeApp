@@ -13,11 +13,13 @@ class UserHabitCellView: UIView {
     @IBOutlet weak var imageView: ProfileImageView!
     
     @IBOutlet weak var doneButton: PMButton!
+    @IBOutlet weak var snoozeButton: PMButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.loadXib()
         self.style()
         self.doneButton.title = "UserHabitCell.Done".localized
+        self.snoozeButton.title = "UserHabitCell.Snooze".localized
     }
     
     func style(){

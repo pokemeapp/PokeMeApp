@@ -66,6 +66,15 @@ class UserDashboardViewController: UIViewController {
         }
     }
     
+    func doneAction(){
+        //TODO: @akviktor: Server call
+    }
+    
+    func snoozeAction(_ model: PMHabit){
+        //TODO: @akviktor: Server call
+        LocalPushManager.shared.sendLocalPush(title: "Habit", text: model.description!, time: 60*10)
+    }
+    
 }
 
 extension UserDashboardViewController {
@@ -73,6 +82,12 @@ extension UserDashboardViewController {
     func initObservers(){
         self.userHabits.asObservable().bind(to: self.userDashboardMasterView.tableView.rx.items(cellIdentifier: Constants.Cells.UserHabitCell))({ (_, model: PMHabit, cell: UserHabitCell) in
             cell.bind(to: model)
+            cell.userHabitCellView.doneButton.buttonTapped = { [weak self]button in
+                self!.doneAction()
+            }
+            cell.userHabitCellView.snoozeButton.buttonTapped = { [weak self]button in
+                self!.snoozeAction(model)
+            }
         }).addDisposableTo(disposeBag)
         self.userDashboardMasterView.tableView.rx.modelSelected(MockHabit.self).subscribe(onNext: { [weak self]model in
             self?.performSegue(withIdentifier: Constants.Segues.ShowUserHabit, sender: model)
