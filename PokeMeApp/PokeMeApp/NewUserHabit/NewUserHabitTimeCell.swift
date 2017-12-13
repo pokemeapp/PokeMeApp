@@ -11,6 +11,7 @@ import UIKit
 class NewUserHabitTimeCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
+    var controller: NewUserHabitViewController?
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -23,7 +23,7 @@ class NewHabitHeaderView: UIView {
     var selectedType: String?
     var lastButton: UIButton?
     var buttons: [UIButton] = []
-    
+    var controller: NewUserHabitViewController?
     override func awakeFromNib() {
         super.awakeFromNib()
         self.buttons = [healthButton, todayButton, notificationButton, warningButton]
@@ -59,6 +59,7 @@ class NewHabitHeaderView: UIView {
         lastButton?.alpha = 1.0
         button.alpha = 0.0
         lastButton = button
+        controller?.habit?.type = self.selectedType
     }
     
 }

@@ -24,6 +24,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.newUserHabitMasterView.headerView.controller = self
         self.newUserHabitMasterView.tableView.dataSource = self
         self.newUserHabitMasterView.tableView.delegate = self
         self.hideKeyboardWhenTappedAround()
@@ -35,6 +36,7 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         }
         self.title = "UserHabit.Title".localized
         self.initBarButtons()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDays), name: Constants.Events.UpdateDays, object: nil)
     }
 
     func initBarButtons(){
@@ -47,16 +49,19 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         self.navigationItem.rightBarButtonItem = rightButtonItem
     }
     
+    @objc func updateDays(notification: Notification){
+        guard let days = notification.object as? String else {
+            return
+        }
+        habit?.day = days
+    }
+    
     @objc func saveButtonTapped(){
 
         // TODO: assign values to props from inputs
-
-        habit?.name = "a"
-        habit?.hour = "12:00"
-        habit?.day = "1000000"
-        habit?.type = "warning"
-        habit?.description = "b"
-
+        let cell: NewUserHabitDayCell = self.newUserHabitMasterView.tableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! NewUserHabitDayCell
+        habit?.day = getDayFrom(cell)
+        print(habit!.day!)
         guard let habit = self.habit else {
             return
         }
@@ -78,12 +83,13 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
             api.post("api/habits", entity: habit) {(error, habit: PMHabit?) in
 
                 self.stopActivityIndicator()
-
+                
                 guard error == nil else {
                     self.displayAlert(title: "Error saving habit!", message: error!.localizedDescription)
                     return
                 }
-
+                self.navigationController?.popViewController(animated: true)
+                LocalPushManager.shared.setUpLocalNotification(message: habit!.description!, hm: habit!.hour!)
             }
         }
 
@@ -104,18 +110,23 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         if indexPath.section == 0 {
             let cell: NewUserHabitNameCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitNameCell, for: indexPath) as! NewUserHabitNameCell
             cell.nameLabel.text = habit?.name ?? ""
+            cell.controller = self
             return cell
         }else if indexPath.section == 1 {
             let cell: NewUserHabitDescriptionsCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitDescriptionsCell, for: indexPath) as! NewUserHabitDescriptionsCell
             cell.descriptionLabel.text = habit?.description ?? ""
+            cell.controller = self
             return cell
         }else if indexPath.section == 2 && indexPath.row == 0 {
             let cell: NewUserHabitDayCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitDayCell, for: indexPath) as! NewUserHabitDayCell
-            
+            cell.days = habit?.day ?? "0000000"
             return cell
         }else if indexPath.section == 2 && indexPath.row == 1{
             let cell: NewUserHabitTimeCell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.NewUserHabitTimeCell, for: indexPath) as! NewUserHabitTimeCell
-            cell.timeLabel.text = habit?.hour == nil ? Constants.Strings.DefaultHabitTime : habit!.hour
+            let hour = habit?.hour ?? "12:00:00"
+            let endIndex = hour.index(hour.endIndex, offsetBy: -3)
+            let truncated = hour.substring(to: endIndex)
+            cell.timeLabel.text = truncated
             return cell
         }
         return UITableViewCell()
@@ -135,9 +146,14 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    func getDayFrom(_ cell: NewUserHabitDayCell) -> String{
+        
+        return cell.getBoxes()
+    }
+    
     @IBAction func closePickerView(_ sender: Any) {
         let date = self.newUserHabitMasterView.pickerView.date
-        habit?.hour = date.toHourMinute()
+        habit?.hour = date.toHourMinute() + ":00"
         self.pickerViewBottomConstraint.constant = -200.0
         self.newUserHabitMasterView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.newUserHabitMasterView.tableView.reloadRows(at: [IndexPath(row: 1, section: 2)], with: .none)
