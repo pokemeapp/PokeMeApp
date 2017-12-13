@@ -72,4 +72,8 @@ struct Constants {
         static let iPhoneSE = !IPad && UIScreen.main.nativeBounds.size.height == 1136
         static let iPhone7 = !IPad && UIScreen.main.nativeBounds.size.height == 1334
     }
+    
+    struct Events {
+        static let UpdateDays = NSNotification.Name(rawValue: "UpdateDays")
+    }
 }
