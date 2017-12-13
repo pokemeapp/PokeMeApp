@@ -33,9 +33,9 @@ class NewUserHabitDayCell: UITableViewCell {
         var i: Int = 0
         boxes.forEach { (box) in
             if days[i] == "0" {
-                box.isSelected = false
+                box.setCheckState(.unchecked, animated: false)
             }else {
-                box.isSelected = true
+                box.setCheckState(.checked, animated: false)
             }
             i += 1
         }

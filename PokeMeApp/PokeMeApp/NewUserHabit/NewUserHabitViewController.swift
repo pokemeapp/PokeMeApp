@@ -61,6 +61,9 @@ class NewUserHabitViewController: UIViewController, UITableViewDelegate, UITable
         // TODO: assign values to props from inputs
         let cell: NewUserHabitDayCell = self.newUserHabitMasterView.tableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! NewUserHabitDayCell
         habit?.day = getDayFrom(cell)
+        if habit?.hour == nil {
+            habit?.hour = "12:00:00"
+        }
         print(habit!.day!)
         guard let habit = self.habit else {
             return

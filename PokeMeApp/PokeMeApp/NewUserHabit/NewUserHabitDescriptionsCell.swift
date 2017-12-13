@@ -16,8 +16,8 @@ class NewUserHabitDescriptionsCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         self.descriptionLabel.delegate = self
     }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
+
+    func textViewDidChange(_ textView: UITextView) {
         guard let controller = controller else {
             return
         }
